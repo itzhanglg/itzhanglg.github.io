@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="设计模式,">
 
 
 
@@ -124,18 +124,19 @@
 
 
 <meta name="description" content="一：设计模式七大原则1.设计模式的目的123456编写软件过程中,程序员面临着来自耦合性,内聚性以及可维护性,可扩展性,重用性,灵活性等多方面的挑战,设计模式是为了让程序(软件),具有更好    1)代码重用性(即:相同功能的代码,不用多次编写)    2)可读性(即:编程规范性,便于其他程序员的阅读和理解)    3)可扩展性(即:当需要增加新的功能时,非常的方便,称为可维护)    4)可靠性">
+<meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="itzlg">
+<meta property="og:title" content="设计模式六大原则">
 <meta property="og:url" content="http://zhangligong.xyz/2019/08/27/1_设计模式七大原则/index.html">
 <meta property="og:site_name" content="itzlg">
 <meta property="og:description" content="一：设计模式七大原则1.设计模式的目的123456编写软件过程中,程序员面临着来自耦合性,内聚性以及可维护性,可扩展性,重用性,灵活性等多方面的挑战,设计模式是为了让程序(软件),具有更好    1)代码重用性(即:相同功能的代码,不用多次编写)    2)可读性(即:编程规范性,便于其他程序员的阅读和理解)    3)可扩展性(即:当需要增加新的功能时,非常的方便,称为可维护)    4)可靠性">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="e:%5CjavaWork%5C08_%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%5Cpicture%5C%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3.png">
-<meta property="og:updated_time" content="2019-07-23T17:21:24.542Z">
+<meta property="og:image" content="http://zhangligong.xyz/.xyz//%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3.png">
+<meta property="og:updated_time" content="2019-08-28T15:16:56.339Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="itzlg">
+<meta name="twitter:title" content="设计模式六大原则">
 <meta name="twitter:description" content="一：设计模式七大原则1.设计模式的目的123456编写软件过程中,程序员面临着来自耦合性,内聚性以及可维护性,可扩展性,重用性,灵活性等多方面的挑战,设计模式是为了让程序(软件),具有更好    1)代码重用性(即:相同功能的代码,不用多次编写)    2)可读性(即:编程规范性,便于其他程序员的阅读和理解)    3)可扩展性(即:当需要增加新的功能时,非常的方便,称为可维护)    4)可靠性">
-<meta name="twitter:image" content="e:%5CjavaWork%5C08_%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%5Cpicture%5C%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3.png">
+<meta name="twitter:image" content="http://zhangligong.xyz/.xyz//%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3.png">
 
 
 
@@ -171,7 +172,7 @@
 
 
 
-  <title> | itzlg</title>
+  <title>设计模式六大原则 | itzlg</title>
   
 
 
@@ -367,7 +368,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">设计模式六大原则</h1>
         
 
         <div class="post-meta">
@@ -379,7 +380,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-27T04:35:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-27T02:38:12+08:00">
                 2019-08-27
               </time>
             
@@ -389,6 +390,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -424,7 +447,7 @@
 <h4 id="3-单一职责原则"><a href="#3-单一职责原则" class="headerlink" title="3.单一职责原则"></a>3.单一职责原则</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.介绍：一个类应该只负责一项职责</span><br><span class="line"><span class="number">2</span>.注意事项和细节：</span><br><span class="line">    <span class="number">1</span>)降低类的复杂度,一个类只负责一项职责。</span><br><span class="line">    <span class="number">2</span>)提高类的可读性,可维护性</span><br><span class="line">    <span class="number">3</span>)降低变更引起的风险</span><br><span class="line">    <span class="number">4</span>)通常情况下,我们应当遵守单一职责原则,只有逻辑足够简单,才可以在代码级违反单一职责原则;只有类中方法数量足够少,可以在方法级别保持单一职责原则</span><br></pre></td></tr></table></figure>
 
 <h4 id="4-接口隔离原则"><a href="#4-接口隔离原则" class="headerlink" title="4.接口隔离原则"></a>4.接口隔离原则</h4><p>介绍：一个类对另一个类的依赖应该建立在最小的接口上</p>
-<p><img src="E:%5CjavaWork%5C08_%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%5Cpicture%5C%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3.png" alt="单一职责"></p>
+<p><img src="/.xyz//%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3.png" alt="单一职责"></p>
 <blockquote>
 <p>  传统方法的问题：类A通过接口Interface依赖类B,类C通过接口Interface依赖类D,如果接口Interface对于类A和类c来说不是最小接口，那么类B和类D必须去实现他们不需要的方法<br>  接口隔离原则改进：接口interface中出现的方法，按实际情况拆分为多个接口</p>
 </blockquote>
@@ -456,7 +479,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://zhangligong.xyz/2019/08/27/1_设计模式七大原则/" title>http://zhangligong.xyz/2019/08/27/1_设计模式七大原则/</a>
+    <a href="http://zhangligong.xyz/2019/08/27/1_设计模式七大原则/" title="设计模式六大原则">http://zhangligong.xyz/2019/08/27/1_设计模式七大原则/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -469,6 +492,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+        </div>
+      
 
       
       
@@ -478,8 +507,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/27/7_建造者模式/" rel="next" title>
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2019/08/27/2_UML类图/" rel="next" title="UML类图及类之间关系">
+                <i class="fa fa-chevron-left"></i> UML类图及类之间关系
               </a>
             
           </div>
@@ -488,8 +517,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/27/2_UML类图/" rel="prev" title>
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/28/7_建造者模式/" rel="prev" title="设计模式之建造者模式">
+                设计模式之建造者模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -607,14 +636,32 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>

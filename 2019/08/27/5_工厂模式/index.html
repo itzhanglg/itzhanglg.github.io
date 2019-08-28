@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="设计模式,">
 
 
 
@@ -124,21 +124,22 @@
 
 
 <meta name="description" content="一：简单工厂模式1.看一个具体需求1234看一个披萨的项目：要便于披萨种类的扩展，要便于维护1)披萨的种类很多(比如 GreekPizz、CheesePizz 等)2)披萨的制作有 prepare，bake, cut, box3)完成披萨店订购功能。  2.传统方式来完成  编写 OrderPizza.java 去订购需要的各种 Pizza 1234567891011121314151617181">
+<meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="itzlg">
+<meta property="og:title" content="设计模式之工厂模式">
 <meta property="og:url" content="http://zhangligong.xyz/2019/08/27/5_工厂模式/index.html">
 <meta property="og:site_name" content="itzlg">
 <meta property="og:description" content="一：简单工厂模式1.看一个具体需求1234看一个披萨的项目：要便于披萨种类的扩展，要便于维护1)披萨的种类很多(比如 GreekPizz、CheesePizz 等)2)披萨的制作有 prepare，bake, cut, box3)完成披萨店订购功能。  2.传统方式来完成  编写 OrderPizza.java 去订购需要的各种 Pizza 1234567891011121314151617181">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="e:%5CjavaWork%5C06_%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%5Cpicture%5C%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BC%A0%E7%BB%9F%E6%96%B9%E5%BC%8F.png">
-<meta property="og:image" content="http://zhangligong.xyz/2019/08/27/5_工厂模式/picture/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png">
-<meta property="og:image" content="http://zhangligong.xyz/2019/08/27/5_工厂模式/picture/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.png">
-<meta property="og:image" content="http://zhangligong.xyz/2019/08/27/5_工厂模式/picture/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png">
-<meta property="og:updated_time" content="2019-08-11T16:04:15.664Z">
+<meta property="og:image" content="http://zhangligong.xyz/.xyz//5_%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%5C%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BC%A0%E7%BB%9F%E6%96%B9%E5%BC%8F.png">
+<meta property="og:image" content="http://zhangligong.xyz/.xyz//%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png">
+<meta property="og:image" content="http://zhangligong.xyz/.xyz//%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.png">
+<meta property="og:image" content="http://zhangligong.xyz/.xyz//%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png">
+<meta property="og:updated_time" content="2019-08-28T15:20:51.156Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="itzlg">
+<meta name="twitter:title" content="设计模式之工厂模式">
 <meta name="twitter:description" content="一：简单工厂模式1.看一个具体需求1234看一个披萨的项目：要便于披萨种类的扩展，要便于维护1)披萨的种类很多(比如 GreekPizz、CheesePizz 等)2)披萨的制作有 prepare，bake, cut, box3)完成披萨店订购功能。  2.传统方式来完成  编写 OrderPizza.java 去订购需要的各种 Pizza 1234567891011121314151617181">
-<meta name="twitter:image" content="e:%5CjavaWork%5C06_%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%5Cpicture%5C%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BC%A0%E7%BB%9F%E6%96%B9%E5%BC%8F.png">
+<meta name="twitter:image" content="http://zhangligong.xyz/.xyz//5_%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%5C%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BC%A0%E7%BB%9F%E6%96%B9%E5%BC%8F.png">
 
 
 
@@ -174,7 +175,7 @@
 
 
 
-  <title> | itzlg</title>
+  <title>设计模式之工厂模式 | itzlg</title>
   
 
 
@@ -370,7 +371,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">设计模式之工厂模式</h1>
         
 
         <div class="post-meta">
@@ -382,7 +383,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-27T04:35:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-27T01:26:30+08:00">
                 2019-08-27
               </time>
             
@@ -392,6 +393,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -423,7 +446,7 @@
         <h3 id="一：简单工厂模式"><a href="#一：简单工厂模式" class="headerlink" title="一：简单工厂模式"></a>一：简单工厂模式</h3><h4 id="1-看一个具体需求"><a href="#1-看一个具体需求" class="headerlink" title="1.看一个具体需求"></a>1.看一个具体需求</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">看一个披萨的项目：要便于披萨种类的扩展，要便于维护</span><br><span class="line"><span class="number">1</span>)披萨的种类很多(比如 GreekPizz、CheesePizz 等)</span><br><span class="line"><span class="number">2</span>)披萨的制作有 prepare，bake, cut, box</span><br><span class="line"><span class="number">3</span>)完成披萨店订购功能。</span><br></pre></td></tr></table></figure>
 
 <p>2.传统方式来完成</p>
-<p><img src="E:%5CjavaWork%5C06_%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%5Cpicture%5C%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BC%A0%E7%BB%9F%E6%96%B9%E5%BC%8F.png" alt="工厂设计模式-传统方式"></p>
+<p><img src="/.xyz//5_%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%5C%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BC%A0%E7%BB%9F%E6%96%B9%E5%BC%8F.png" alt="工厂设计模式-传统方式"></p>
 <p>编写 OrderPizza.java 去订购需要的各种 Pizza</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderPizza</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">	<span class="comment">// 构造器</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">OrderPizza</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		Pizza pizza = <span class="keyword">null</span>;</span><br><span class="line">		String orderType; <span class="comment">// 订购披萨的类型</span></span><br><span class="line">		<span class="keyword">do</span> &#123;</span><br><span class="line">			orderType = getType();</span><br><span class="line">			<span class="keyword">if</span> (orderType.equals(<span class="string">"greek"</span>)) &#123;</span><br><span class="line">				pizza = <span class="keyword">new</span> GreekPizza();</span><br><span class="line">				pizza.setName(<span class="string">" 希腊披萨 "</span>);</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (orderType.equals(<span class="string">"cheese"</span>)) &#123;</span><br><span class="line">				pizza = <span class="keyword">new</span> CheesePizza();</span><br><span class="line">				pizza.setName(<span class="string">" 奶酪披萨 "</span>);</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (orderType.equals(<span class="string">"pepper"</span>)) &#123;</span><br><span class="line">				pizza = <span class="keyword">new</span> PepperPizza();</span><br><span class="line">				pizza.setName(<span class="string">"胡椒披萨"</span>);</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//输出pizza 制作过程</span></span><br><span class="line">			pizza.prepare();</span><br><span class="line">			pizza.bake();</span><br><span class="line">			pizza.cut();</span><br><span class="line">			pizza.box();</span><br><span class="line">			</span><br><span class="line">		&#125; <span class="keyword">while</span> (<span class="keyword">true</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -437,7 +460,7 @@
 
 <p>4.使用简单工厂模式</p>
 <p>简单工厂模式的设计方案: 定义一个可以实例化 Pizaa 对象的类，封装创建对象的代码</p>
-<p><img src="picture/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png" alt="简单工厂模式"></p>
+<p><img src="/.xyz//%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png" alt="简单工厂模式"></p>
 <p>SimpleFactory.java类：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//简单工厂类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//更加orderType 返回对应的Pizza 对象</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Pizza <span class="title">createPizza</span><span class="params">(String orderType)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Pizza pizza = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"使用简单工厂模式"</span>);</span><br><span class="line">		<span class="keyword">if</span> (orderType.equals(<span class="string">"greek"</span>)) &#123;</span><br><span class="line">			pizza = <span class="keyword">new</span> GreekPizza();</span><br><span class="line">			pizza.setName(<span class="string">" 希腊披萨 "</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (orderType.equals(<span class="string">"cheese"</span>)) &#123;</span><br><span class="line">			pizza = <span class="keyword">new</span> CheesePizza();</span><br><span class="line">			pizza.setName(<span class="string">" 奶酪披萨 "</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (orderType.equals(<span class="string">"pepper"</span>)) &#123;</span><br><span class="line">			pizza = <span class="keyword">new</span> PepperPizza();</span><br><span class="line">			pizza.setName(<span class="string">"胡椒披萨"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> pizza;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//简单工厂模式 也叫 静态工厂模式 </span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Pizza <span class="title">createPizza2</span><span class="params">(String orderType)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Pizza pizza = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"使用简单工厂模式2"</span>);</span><br><span class="line">		<span class="keyword">if</span> (orderType.equals(<span class="string">"greek"</span>)) &#123;</span><br><span class="line">			pizza = <span class="keyword">new</span> GreekPizza();</span><br><span class="line">			pizza.setName(<span class="string">" 希腊披萨 "</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (orderType.equals(<span class="string">"cheese"</span>)) &#123;</span><br><span class="line">			pizza = <span class="keyword">new</span> CheesePizza();</span><br><span class="line">			pizza.setName(<span class="string">" 奶酪披萨 "</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (orderType.equals(<span class="string">"pepper"</span>)) &#123;</span><br><span class="line">			pizza = <span class="keyword">new</span> PepperPizza();</span><br><span class="line">			pizza.setName(<span class="string">"胡椒披萨"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> pizza;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -457,7 +480,7 @@
 <h4 id="3-工厂方法模式介绍"><a href="#3-工厂方法模式介绍" class="headerlink" title="3.工厂方法模式介绍"></a>3.工厂方法模式介绍</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>)工厂方法模式设计方案：将披萨项目的实例化功能抽象成抽象方法，在不同的口味点餐子类中具体实现。</span><br><span class="line"><span class="number">2</span>)工厂方法模式：定义了一个创建对象的抽象方法，由子类决定要实例化的类。工厂方法模式将对象的实例化推迟到子类。</span><br></pre></td></tr></table></figure>
 
 <p>4.应用</p>
-<h5 id="4-1-思路分析"><a href="#4-1-思路分析" class="headerlink" title="4.1 思路分析"></a>4.1 思路分析</h5><p><img src="picture/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.png" alt="工厂方法模式"></p>
+<h5 id="4-1-思路分析"><a href="#4-1-思路分析" class="headerlink" title="4.1 思路分析"></a>4.1 思路分析</h5><p><img src="/.xyz//%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.png" alt="工厂方法模式"></p>
 <h5 id="4-2-OrderPizza-java类"><a href="#4-2-OrderPizza-java类" class="headerlink" title="4.2 OrderPizza.java类"></a>4.2 OrderPizza.java类</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderPizza</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//定义一个抽象方法，createPizza , 让各个工厂子类自己实现</span></span><br><span class="line">	<span class="function"><span class="keyword">abstract</span> Pizza <span class="title">createPizza</span><span class="params">(String orderType)</span></span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 构造器</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">OrderPizza</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		Pizza pizza = <span class="keyword">null</span>;</span><br><span class="line">		String orderType; <span class="comment">// 订购披萨的类型</span></span><br><span class="line">		<span class="keyword">do</span> &#123;</span><br><span class="line">			orderType = getType();</span><br><span class="line">			pizza = createPizza(orderType); <span class="comment">//抽象方法，由工厂子类完成</span></span><br><span class="line">			<span class="comment">//输出pizza 制作过程</span></span><br><span class="line">			pizza.prepare();</span><br><span class="line">			pizza.bake();</span><br><span class="line">			pizza.cut();</span><br><span class="line">			pizza.box();</span><br><span class="line">			</span><br><span class="line">		&#125; <span class="keyword">while</span> (<span class="keyword">true</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 写一个方法，可以获取客户希望订购的披萨种类</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> String <span class="title">getType</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			BufferedReader strin = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span><br><span class="line">			System.out.println(<span class="string">"input pizza 种类:"</span>);</span><br><span class="line">			String str = strin.readLine();</span><br><span class="line">			<span class="keyword">return</span> str;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			<span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h5 id="4-3-BJOrderPizza-java类"><a href="#4-3-BJOrderPizza-java类" class="headerlink" title="4.3 BJOrderPizza.java类"></a>4.3 BJOrderPizza.java类</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BJOrderPizza</span> <span class="keyword">extends</span> <span class="title">OrderPizza</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function">Pizza <span class="title">createPizza</span><span class="params">(String orderType)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">		Pizza pizza = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">if</span>(orderType.equals(<span class="string">"cheese"</span>)) &#123;</span><br><span class="line">			pizza = <span class="keyword">new</span> BJCheesePizza();</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (orderType.equals(<span class="string">"pepper"</span>)) &#123;</span><br><span class="line">			pizza = <span class="keyword">new</span> BJPepperPizza();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">return</span> pizza;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -469,7 +492,7 @@
 
 <p>2.应用</p>
 <p>2.1 思路分析</p>
-<p><img src="picture/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png" alt="抽象工厂模式"></p>
+<p><img src="/.xyz//%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png" alt="抽象工厂模式"></p>
 <p>2.2 AbsFactory.java类</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//一个抽象工厂模式的抽象层(接口)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">AbsFactory</span> </span>&#123;</span><br><span class="line">	<span class="comment">//让下面的工厂子类来 具体实现</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Pizza <span class="title">createPizza</span><span class="params">(String orderType)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -511,7 +534,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://zhangligong.xyz/2019/08/27/5_工厂模式/" title>http://zhangligong.xyz/2019/08/27/5_工厂模式/</a>
+    <a href="http://zhangligong.xyz/2019/08/27/5_工厂模式/" title="设计模式之工厂模式">http://zhangligong.xyz/2019/08/27/5_工厂模式/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -524,6 +547,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+        </div>
+      
 
       
       
@@ -533,8 +562,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/27/4_单例设计模式/" rel="next" title>
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2019/08/27/4_单例设计模式/" rel="next" title="设计模式之单例设计模式">
+                <i class="fa fa-chevron-left"></i> 设计模式之单例设计模式
               </a>
             
           </div>
@@ -543,8 +572,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/27/6_原型模式/" rel="prev" title>
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/27/6_原型模式/" rel="prev" title="设计模式之原型模式">
+                设计模式之原型模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -662,14 +691,32 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
