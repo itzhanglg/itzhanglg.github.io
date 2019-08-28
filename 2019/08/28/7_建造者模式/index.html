@@ -131,14 +131,14 @@
 <meta property="og:site_name" content="itzlg">
 <meta property="og:description" content="1.盖房项目问题1)需要建房子：这一过程为打桩、砌墙、封顶2)房子有各种各样的，比如普通房，高楼，别墅，各种房子的过程虽然一样，但是要求不要相同的. 1.1 思路分析：  1.2 传统应用 AbstractHouse.java 123456789101112131415public abstract class AbstractHouse &amp;#123;		//打地基	public abstract">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://zhangligong.xyz/.xyz//7_%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%5C%E4%BC%A0%E7%BB%9F%E7%9B%96%E6%88%BF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.png">
-<meta property="og:image" content="http://zhangligong.xyz/.xyz//7_%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%5C%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%E7%B1%BB%E5%9B%BE.png">
-<meta property="og:image" content="http://zhangligong.xyz/.xyz//7_%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%5C%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8Fuml%E5%9B%BE.png">
-<meta property="og:updated_time" content="2019-08-28T15:22:27.089Z">
+<meta property="og:image" content="http://zhangligong.xyz/.xyz//7_%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%5C1.png">
+<meta property="og:image" content="http://zhangligong.xyz/.xyz//7_%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%5C2.png">
+<meta property="og:image" content="http://zhangligong.xyz/.xyz//7_%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%5C3.png">
+<meta property="og:updated_time" content="2019-08-28T16:40:34.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式之建造者模式">
 <meta name="twitter:description" content="1.盖房项目问题1)需要建房子：这一过程为打桩、砌墙、封顶2)房子有各种各样的，比如普通房，高楼，别墅，各种房子的过程虽然一样，但是要求不要相同的. 1.1 思路分析：  1.2 传统应用 AbstractHouse.java 123456789101112131415public abstract class AbstractHouse &amp;#123;		//打地基	public abstract">
-<meta name="twitter:image" content="http://zhangligong.xyz/.xyz//7_%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%5C%E4%BC%A0%E7%BB%9F%E7%9B%96%E6%88%BF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.png">
+<meta name="twitter:image" content="http://zhangligong.xyz/.xyz//7_%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%5C1.png">
 
 
 
@@ -444,7 +444,7 @@
       
         <h3 id="1-盖房项目问题"><a href="#1-盖房项目问题" class="headerlink" title="1.盖房项目问题"></a>1.盖房项目问题</h3><p>1)需要建房子：这一过程为打桩、砌墙、封顶<br>2)房子有各种各样的，比如普通房，高楼，别墅，各种房子的过程虽然一样，但是要求不要相同的.</p>
 <p>1.1 思路分析：</p>
-<p><img src="/.xyz//7_%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%5C%E4%BC%A0%E7%BB%9F%E7%9B%96%E6%88%BF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.png" alt="传统盖房解决方法"></p>
+<p><img src="/.xyz//7_%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%5C1.png" alt="传统盖房解决方法"></p>
 <p>1.2 传统应用</p>
 <p>AbstractHouse.java</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractHouse</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//打地基</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">buildBasic</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="comment">//砌墙</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">buildWalls</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="comment">//封顶</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">roofed</span><span class="params">()</span></span>;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">build</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		buildBasic();</span><br><span class="line">		buildWalls();</span><br><span class="line">		roofed();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -464,10 +464,10 @@
 <p>2.2 四个角色</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>)Product（产品角色）： 一个具体的产品对象。</span><br><span class="line"><span class="number">2</span>)Builder（抽象建造者）： 创建一个 Product 对象的各个部件指定的 接口/抽象类。</span><br><span class="line"><span class="number">3</span>)ConcreteBuilder（具体建造者）： 实现接口，构建和装配各个部件。</span><br><span class="line"><span class="number">4</span>)Director（指挥者）： 构建一个使用 Builder 接口的对象。它主要是用于创建一个复杂的对象。它主要有两个作用，一是：隔离了客户与对象的生产过程，二是：负责控制产品对象的生产过程。</span><br></pre></td></tr></table></figure>
 
-<p>2.3 原理类图<img src="/.xyz//7_%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%5C%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%E7%B1%BB%E5%9B%BE.png" alt="建造者模式类图"></p>
+<p>2.3 原理类图<img src="/.xyz//7_%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%5C2.png" alt="建造者模式类图"></p>
 <p>2.4 应用</p>
 <p>uml类图：</p>
-<p><img src="/.xyz//7_%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%5C%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8Fuml%E5%9B%BE.png" alt="建造者模式uml图"></p>
+<p><img src="/.xyz//7_%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%5C3.png" alt="建造者模式uml图"></p>
 <p>House.java</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//产品-&gt;Product</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">House</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String baise;</span><br><span class="line">	<span class="keyword">private</span> String wall;</span><br><span class="line">	<span class="keyword">private</span> String roofed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -553,8 +553,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/27/1_设计模式七大原则/" rel="next" title="设计模式六大原则">
-                <i class="fa fa-chevron-left"></i> 设计模式六大原则
+              <a href="/2019/08/27/firstBlog/" rel="next" title="firstBlog">
+                <i class="fa fa-chevron-left"></i> firstBlog
               </a>
             
           </div>
