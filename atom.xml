@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>LIGONG`S BLOG</title>
   
-  <subtitle>技术分析及生活中的点点滴滴</subtitle>
+  <subtitle>技术分享及生活中的点点滴滴</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhangligong.xyz/"/>

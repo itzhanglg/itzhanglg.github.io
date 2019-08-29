@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-loading-bar.min.css?v=1.0.2">
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    search: {
+      root: '/',
+      path: 'search.xml'
+    },
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="一：设计模式七大原则1.设计模式的目的123456编写软件过程中,程序员面临着来自耦合性,内聚性以及可维护性,可扩展性,重用性,灵活性等多方面的挑战,设计模式是为了让程序(软件),具有更好    1)代码重用性(即:相同功能的代码,不用多次编写)    2)可读性(即:编程规范性,便于其他程序员的阅读和理解)    3)可扩展性(即:当需要增加新的功能时,非常的方便,称为可维护)    4)可靠性">
+<meta name="keywords" content="设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式六大原则">
+<meta property="og:url" content="http://zhangligong.xyz/2019/08/22/blog001/index.html">
+<meta property="og:site_name" content="LIGONG`S BLOG">
+<meta property="og:description" content="一：设计模式七大原则1.设计模式的目的123456编写软件过程中,程序员面临着来自耦合性,内聚性以及可维护性,可扩展性,重用性,灵活性等多方面的挑战,设计模式是为了让程序(软件),具有更好    1)代码重用性(即:相同功能的代码,不用多次编写)    2)可读性(即:编程规范性,便于其他程序员的阅读和理解)    3)可扩展性(即:当需要增加新的功能时,非常的方便,称为可维护)    4)可靠性">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://zhangligong.xyz/2019/08/22/blog001/hexo1.png">
+<meta property="og:updated_time" content="2019-08-28T18:01:15.093Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="设计模式六大原则">
+<meta name="twitter:description" content="一：设计模式七大原则1.设计模式的目的123456编写软件过程中,程序员面临着来自耦合性,内聚性以及可维护性,可扩展性,重用性,灵活性等多方面的挑战,设计模式是为了让程序(软件),具有更好    1)代码重用性(即:相同功能的代码,不用多次编写)    2)可读性(即:编程规范性,便于其他程序员的阅读和理解)    3)可扩展性(即:当需要增加新的功能时,非常的方便,称为可维护)    4)可靠性">
+<meta name="twitter:image" content="http://zhangligong.xyz/2019/08/22/blog001/hexo1.png">
+  <link rel="alternate" href="/atom.xml" title="LIGONG`S BLOG" type="application/atom+xml">
+  <link rel="canonical" href="http://zhangligong.xyz/2019/08/22/blog001/">
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>设计模式六大原则 | LIGONG`S BLOG</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?90842fee1868b5a4f63b476ab8c13deb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/itzhanglg"><img style="position:absolute;top:0;right:0;border:0;" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+	
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LIGONG`S BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">技术分享及生活中的点点滴滴</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+      
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+      
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">1</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+      
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">1</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">8</span></a>
+
+  </li>
+        <li class="menu-item menu-item-search">
+          <a href="javascript:;" class="popup-trigger">
+          
+            <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+    
+
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+    </div>
+</nav>
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhangligong.xyz/2019/08/22/blog001/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ligong zhang">
+      <meta itemprop="description" content="人心中的成见是一座大山，任你怎么努力都休想搬动">
+      <meta itemprop="image" content="/images/head.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LIGONG`S BLOG">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">设计模式六大原则
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-22 13:38:12" itemprop="dateCreated datePublished" datetime="2019-08-22T13:38:12+08:00">2019-08-22</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-29 02:01:15" itemprop="dateModified" datetime="2019-08-29T02:01:15+08:00">2019-08-29</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/设计模式/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon"
+              >
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          <br>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="一：设计模式七大原则"><a href="#一：设计模式七大原则" class="headerlink" title="一：设计模式七大原则"></a>一：设计模式七大原则</h3><h4 id="1-设计模式的目的"><a href="#1-设计模式的目的" class="headerlink" title="1.设计模式的目的"></a>1.设计模式的目的</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">编写软件过程中,程序员面临着来自耦合性,内聚性以及可维护性,可扩展性,重用性,灵活性等多方面的挑战,设计模式是为了让程序(软件),具有更好</span><br><span class="line">    <span class="number">1</span>)代码重用性(即:相同功能的代码,不用多次编写)</span><br><span class="line">    <span class="number">2</span>)可读性(即:编程规范性,便于其他程序员的阅读和理解)</span><br><span class="line">    <span class="number">3</span>)可扩展性(即:当需要增加新的功能时,非常的方便,称为可维护)</span><br><span class="line">    <span class="number">4</span>)可靠性(即:当我们增加新的功能后,对原来的功能没有影响)</span><br><span class="line">    <span class="number">5</span>)使程序呈现高内聚,低耦合的特性</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-设计模式七大原则"><a href="#2-设计模式七大原则" class="headerlink" title="2.设计模式七大原则"></a>2.设计模式七大原则</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">设计模式原则,其实就是程序员在编程时,应当遵守的原则,也是各种设计模式的基础(即:设计模式为什么这样设计的依据)</span><br><span class="line">设计模式常用的七大原则有：</span><br><span class="line">	<span class="number">1</span>）单一职责原则</span><br><span class="line">	<span class="number">2</span>）接口隔离原则</span><br><span class="line">	<span class="number">3</span>）依赖倒转原则</span><br><span class="line">	<span class="number">4</span>）里氏替换原则</span><br><span class="line">	<span class="number">5</span>）开闭原则</span><br><span class="line">	<span class="number">6</span>）迪米特法则</span><br><span class="line">	<span class="number">7</span>）合成复用原则</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-单一职责原则"><a href="#3-单一职责原则" class="headerlink" title="3.单一职责原则"></a>3.单一职责原则</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.介绍：一个类应该只负责一项职责</span><br><span class="line"><span class="number">2</span>.注意事项和细节：</span><br><span class="line">    <span class="number">1</span>)降低类的复杂度,一个类只负责一项职责。</span><br><span class="line">    <span class="number">2</span>)提高类的可读性,可维护性</span><br><span class="line">    <span class="number">3</span>)降低变更引起的风险</span><br><span class="line">    <span class="number">4</span>)通常情况下,我们应当遵守单一职责原则,只有逻辑足够简单,才可以在代码级违反单一职责原则;只有类中方法数量足够少,可以在方法级别保持单一职责原则</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-接口隔离原则"><a href="#4-接口隔离原则" class="headerlink" title="4.接口隔离原则"></a>4.接口隔离原则</h4><p>介绍：一个类对另一个类的依赖应该建立在最小的接口上</p>
+<p><img src="/2019/08/22/blog001/hexo1.png" alt="单一职责"></p>
+<blockquote>
+<p>  传统方法的问题：类A通过接口Interface依赖类B,类C通过接口Interface依赖类D,如果接口Interface对于类A和类c来说不是最小接口，那么类B和类D必须去实现他们不需要的方法<br>  接口隔离原则改进：接口interface中出现的方法，按实际情况拆分为多个接口</p>
+</blockquote>
+<h4 id="5-依赖倒转原则"><a href="#5-依赖倒转原则" class="headerlink" title="5.依赖倒转原则"></a>5.依赖倒转原则</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.介绍：</span><br><span class="line">	<span class="number">1</span>）细节应该依赖抽象</span><br><span class="line">	<span class="number">2</span>）中心思想：面向接口编程</span><br><span class="line">	<span class="number">3</span>）设计理念：相对于细节的多变性,抽象的东西要稳定的多。以抽象为基础搭建的架构比以细节为基础的架构要稳定的多。在java中,抽象指的是接口或抽象类,细节就是具体的实现类</span><br><span class="line">	<span class="number">4</span>）使用接口或抽象类的目的是制定好规范,而不涉及任何具体的操作,把展现细节的任务交给他们的实现类去完成</span><br><span class="line"><span class="number">2</span>.依赖关系传递的三种方式：</span><br><span class="line">	<span class="number">1</span>）接口传递</span><br><span class="line">	<span class="number">2</span>）构造方法传递</span><br><span class="line">	<span class="number">3</span>）setter方式传递</span><br><span class="line"><span class="number">3</span>.注意事项和细节：</span><br><span class="line">	<span class="number">1</span>)低层模块尽量都要有抽象类或接口,或者两者都有,程序稳定性更好.</span><br><span class="line">  	<span class="number">2</span>)变量的声明类型尽量是抽象类或接口,这样我们的变量引用和实际对象间,就存在一个缓冲层,利于程序扩展和优化</span><br><span class="line">  	<span class="number">3</span>)继承时遵循里氏替换原则</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-里氏替换原则"><a href="#6-里氏替换原则" class="headerlink" title="6.里氏替换原则"></a>6.里氏替换原则</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.oo中的继承性的思考和说明：</span><br><span class="line">	继承在给程序设计带来便利的同时,也带来了弊端。比如使用继承会给程序带来侵入性,程序的可移植性降低,·增加对象间的耦合性,如果一个类被其他的类所继承,则当这个类需要修改时,必须考虑到所有的子类,并且义类修改后,所有涉及到子类的功能都有可能产生故障</span><br><span class="line"><span class="number">2</span>.介绍：</span><br><span class="line">	<span class="number">1</span>）所有引用基类的地方必须能透明地使用其子类的对象</span><br><span class="line">	<span class="number">2</span>）使用继承时，在子类中尽量不要重写父类的方法</span><br><span class="line">	<span class="number">3</span>）里氏原则告诉我们，继承实际让两个类耦合性增强了，在适当情况下，可以通过聚合，组合，依赖来解决问题</span><br><span class="line"><span class="number">3</span>.解决方法：</span><br><span class="line">	<span class="number">1</span>）在实际编程中,我们常常会通过重写父类的方法完成新的功能,这样写起来虽然简单,但整个继承体系的复用性会比较差。特别是运行多态比较频繁的时候</span><br><span class="line">	<span class="number">2</span>）方法：原来的父类和子类都继承一个更通俗的基类，原有的继承关系去掉，采用依赖，聚合，组合等关系代替。</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-开闭原则"><a href="#7-开闭原则" class="headerlink" title="7.开闭原则"></a>7.开闭原则</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.介绍：</span><br><span class="line">	<span class="number">1</span>）开闭原则是编程中最基础，最重要的设计原则</span><br><span class="line">	<span class="number">2</span>）类，模块和函数应该对扩展开放(提供方)，对修改关闭(使用方)。用抽象构建框架，用实现扩展细节。（即当给类增加新功能时，尽量不修改代码，或尽可能少修改代码）</span><br><span class="line">	<span class="number">3</span>）当软件需要变化时，尽量通过扩展软件实体的行为来实现变化，而不是通过修改已有的代码来实现变化</span><br></pre></td></tr></table></figure>
+
+<h4 id="8-迪米特法则"><a href="#8-迪米特法则" class="headerlink" title="8.迪米特法则"></a>8.迪米特法则</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.介绍：</span><br><span class="line">	<span class="number">1</span>）迪米特法则(Demeter Principle)又叫最少知道原则,即一个类对自己依赖的类知道的越少越好。也就是说,对于被依赖的类不管多么复杂,都尽量将逻辑封装在类的内部。对外除了提供的<span class="keyword">public</span>方法,不对外泄露任何信息</span><br><span class="line">	<span class="number">2</span>）迪米特法则还有个更简单的定义:只与直接的朋友通信</span><br><span class="line">	<span class="number">3</span>）直接的朋友:每个对象都会与其他对象有耦合关系,只要两个对象之间有耦合关系,我们就说这两个对象之间是朋友关系。耦合的方式很多,依赖,关联,组合,聚合等。其中,我们称出现成员变量,方法参数,方法返回值中的类为直接的朋友,而出现在局部变量中的类不是直接的朋友。也就是说,陌生的类最好不要以局部变量的形式出现在类的内部。</span><br><span class="line"><span class="number">2</span>.注意事项和细节</span><br><span class="line">	<span class="number">1</span>）迪米特法则的核心是降低类之间的耦合</span><br><span class="line">	<span class="number">2</span>）但是注意:由于每个类都减少了不必要的依赖,因此迪米特法则只是要求降低类间(对象间)耦合关系, 并不是要求完全没有依赖关系</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+	
+	<div>
+      
+        
+      
+	</div>
+	
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+	  
+	</div>
+
+    <footer class="post-footer">
+          
+        
+        <div class="post-tags">
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+        </div>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+              <a href="/2019/08/21/firstBlog/" rel="next" title="firstBlog">
+                <i class="fa fa-chevron-left"></i> firstBlog
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+              <a href="/2019/08/23/blog002/" rel="prev" title="UML类图及类之间关系">
+                UML类图及类之间关系 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="lv-container" data-id="city" data-uid="your uid"></div>
+  </div>
+  
+  
+
+
+
+
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/head.png"
+      alt="ligong zhang">
+  <p class="site-author-name" itemprop="name">ligong zhang</p>
+  <div class="site-description motion-element" itemprop="description">人心中的成见是一座大山，任你怎么努力都休想搬动</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="chat motion-element"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://blog.csdn.net/zhixingwu" title="CSDN &rarr; https://blog.csdn.net/zhixingwu" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>CSDN</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.cnblogs.com/itzlg/" title="博客园 &rarr; https://www.cnblogs.com/itzlg/" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>博客园</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/itzhanglg" title="GitHub &rarr; https://github.com/itzhanglg" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/5378314785/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" title="微博 &rarr; https://weibo.com/5378314785/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>微博</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.zhihu.com/people/zhang-li-gong-2/activities" title="知乎 &rarr; https://www.zhihu.com/people/zhang-li-gong-2/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>知乎</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://juejin.im/user/58004bd5128fe1005492d51f" title="掘金 &rarr; https://juejin.im/user/58004bd5128fe1005492d51f" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>掘金</a>
+      </span>
+    
+  </div>
+
+
+  <div class="links-of-blogroll motion-element links-of-blogroll-block">
+    <div class="links-of-blogroll-title">
+      <i class="fa  fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://segmentfault.com/" title="https://segmentfault.com/" rel="noopener" target="_blank">Segmentfault</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.v2ex.com/" title="https://www.v2ex.com/" rel="noopener" target="_blank">V2EX</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.infoq.cn/" title="https://www.infoq.cn/" rel="noopener" target="_blank">InfoQ</a>
+        </li>
+      
+    </ul>
+  </div>
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一：设计模式七大原则"><span class="nav-number">1.</span> <span class="nav-text">一：设计模式七大原则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-设计模式的目的"><span class="nav-number">1.1.</span> <span class="nav-text">1.设计模式的目的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-设计模式七大原则"><span class="nav-number">1.2.</span> <span class="nav-text">2.设计模式七大原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-单一职责原则"><span class="nav-number">1.3.</span> <span class="nav-text">3.单一职责原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-接口隔离原则"><span class="nav-number">1.4.</span> <span class="nav-text">4.接口隔离原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-依赖倒转原则"><span class="nav-number">1.5.</span> <span class="nav-text">5.依赖倒转原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-里氏替换原则"><span class="nav-number">1.6.</span> <span class="nav-text">6.里氏替换原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-开闭原则"><span class="nav-number">1.7.</span> <span class="nav-text">7.开闭原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-迪米特法则"><span class="nav-number">1.8.</span> <span class="nav-text">8.迪米特法则</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhangligong</span>
+</div>
+
+<div class="powered-by">
+	<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+    本站访客数:<span id="busuanzi_value_site_pv"></span>
+	</span>
+  </div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共11.6k字</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+      </div>
+
+    
+
+  </div>
+
+  
+    
+    
+  
+  <script color='0,0,255' opacity='0.7' zIndex='-2' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  <script src="/js/utils.js?v=7.3.0"></script>
+  <script src="/js/motion.js?v=7.3.0"></script>
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+  
+  <script src="/js/schemes/muse.js?v=7.3.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.3.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script>
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<script>
+  window.livereOptions = {
+    refer: '2019/08/22/blog001/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+  
+	<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
