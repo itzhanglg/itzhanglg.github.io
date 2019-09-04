@@ -1699,7 +1699,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff187d;
+  background: #32ffff;
 }
 .feed-link,
 .chat {
@@ -2762,7 +2762,7 @@ hr {
   }
 }
 body {
-  background: url("/images/13347.jpg");
+  background: url("/images/background.jpg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
