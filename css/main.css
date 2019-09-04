@@ -1699,7 +1699,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #32ffff;
+  background: #9d4fff;
 }
 .feed-link,
 .chat {
@@ -2694,21 +2694,6 @@ hr {
 .post-button a:hover {
   border-bottom-color: #222;
 }
-.sidebar {
-  right: auto;
-  left: 0;
-}
-.sidebar-toggle,
-.back-to-top {
-  right: auto;
-  left: 30px;
-}
-@media (max-width: 991px) {
-  .sidebar-toggle,
-  .back-to-top {
-    left: 20px;
-  }
-}
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
 }
@@ -2762,7 +2747,7 @@ hr {
   }
 }
 body {
-  background: url("/images/background.jpg.jpg");
+  background: url("/images/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
