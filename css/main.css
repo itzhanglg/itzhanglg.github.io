@@ -393,7 +393,7 @@ body {
 }
 @media (min-width: 1200px) {
   .container .header-inner {
-    width: 800px;
+    width: 860px;
   }
 }
 @media (min-width: 1600px) {
@@ -407,7 +407,7 @@ body {
 }
 @media (min-width: 1200px) {
   .container .main-inner {
-    width: 800px;
+    width: 860px;
   }
 }
 @media (min-width: 1600px) {
@@ -425,7 +425,7 @@ body {
 }
 @media (min-width: 1200px) {
   .container .footer-inner {
-    width: 800px;
+    width: 860px;
   }
 }
 @media (min-width: 1600px) {
@@ -480,9 +480,9 @@ code {
   overflow-wrap: break-word;
   word-wrap: break-word;
   padding: 2px 4px;
-  color: #555;
+  color: #d05;
   background: #eee;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 pre {
   overflow: auto;
@@ -1171,7 +1171,6 @@ pre .javascript .function {
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
-  color: #fff !important;
 }
 .menu .menu-item a:hover,
 .menu .menu-item span.exturl:hover {
@@ -1699,7 +1698,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9d4fff;
+  background: #44ff4e;
 }
 .feed-link,
 .chat {
@@ -2771,16 +2770,15 @@ body {
   color: #bbb lue;
 }
 .post {
-  margin-top: 60px;
-  margin-bottom: 60px;
-  padding: 25px;
-  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
+  margin-top: 10px;
+  margin-bottom: 40px;
+  padding: 18px;
+  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.8);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
 .content {
   border-radius: 10px;
   margin-top: 60px;
-  background: rgba(255,255,255,0.85) none repeat scroll !important;
 }
 .main-inner {
   width: 90%;
@@ -2791,4 +2789,81 @@ body {
 }
 .footer-inner {
   color: #fff;
+}
+.header {
+  background: url("http://ojoba1c98.bkt.clouddn.com/img/header/header_background.jpg");
+}
+.site-subtitle {
+  font-size: 15px;
+  color: #fff;
+}
+.site-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.brand {
+  background: transparent;
+}
+.menu {
+  padding-left: 0;
+  text-align: center;
+  background: rgba(240,240,240,0.2);
+  margin-left: auto;
+  margin-right: auto;
+  width: 536px;
+  border-radius: 5px;
+}
+a {
+  color: #000;
+}
+a:hover {
+  color: #ff106c;
+  border-bottom-color: #ff106c;
+}
+.menu .menu-item a {
+  font-size: 14px;
+}
+.menu .menu-item a:hover {
+  border-bottom-color: #ff106c;
+}
+.site-description {
+  font-size: 16px;
+}
+.header-inner {
+  padding: 45px 0 25px;
+  width: 700px;
+}
+.site-author-name {
+  font-family: 'Comic Sans MS', sans-serif;
+  font-size: 20px;
+}
+.posts-expand .post-eof {
+  margin: 40px auto 40px;
+  background: #000;
+}
+.posts-expand .post {
+  margin-top: 80px;
+  background: rgba(255,255,255,0.85) none repeat scroll !important;
+  border-radius: 8px;
+}
+.btn {
+  margin-top: 20px;
+}
+.post-button a {
+  display: block;
+  width: 70px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-bottom: 1px solid #666;
+}
+.post-button a:hover {
+  color: #00acec;
+  background-color: #fff;
+  border-radius: 3px;
+  border-bottom: 1px solid #00acec;
+}
+code {
+  color: #e6006b;
+  background: #fff;
+  border-radius: 3px;
 }
