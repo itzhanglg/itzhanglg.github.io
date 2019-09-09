@@ -12,7 +12,7 @@ const ap = new APlayer({
       {
         name: '一曲相思',
         artist: '半阳',
-        url: 'http://www.ytmp3.cn/down/47681.mp3',
+        url: 'http://www.ytmp3.cn/down/57306.mp3',
         cover: 'http://img.ytmp3.cn/image/91.jpg',
       },
       {

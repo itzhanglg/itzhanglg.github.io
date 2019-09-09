@@ -1698,7 +1698,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #44ff4e;
+  background: #dacf5b;
 }
 .feed-link,
 .chat {
@@ -2759,7 +2759,7 @@ body {
   background: rgba(0,0,0,0.2) none repeat scroll !important;
 }
 #sidebar {
-  background: url("images/sidebar.jpg");
+  background: url("/images/sidebar.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2772,7 +2772,7 @@ body {
 .post {
   margin-top: 10px;
   margin-bottom: 40px;
-  padding: 18px;
+  padding: 24px;
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.8);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
@@ -2786,6 +2786,7 @@ body {
 #lv-container {
   border-radius: 10px;
   background: rgba(255,255,255,0.85) none repeat scroll !important;
+  padding: 20px 16px 0px 16px;
 }
 .footer-inner {
   color: #fff;
@@ -2843,8 +2844,18 @@ a:hover {
 }
 .posts-expand .post {
   margin-top: 80px;
-  background: rgba(255,255,255,0.85) none repeat scroll !important;
+  background: rgba(255,255,255,0.9) none repeat scroll !important;
   border-radius: 8px;
+}
+.posts-expand .page {
+  background: rgba(255,255,255,0.9) none repeat scroll !important;
+  border-radius: 8px;
+  padding: 30px 0px;
+}
+.archive {
+  background: rgba(255,255,255,0.9) none repeat scroll !important;
+  border-radius: 8px;
+  padding: 30px 0px;
 }
 .btn {
   margin-top: 20px;
