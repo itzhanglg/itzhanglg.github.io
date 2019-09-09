@@ -1698,7 +1698,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffd00b;
+  background: #ffb5ba;
 }
 .feed-link,
 .chat {
@@ -2856,6 +2856,13 @@ a:hover {
   background: rgba(255,255,255,0.9) none repeat scroll !important;
   border-radius: 8px;
   padding: 30px 0px;
+}
+.post-type-normal {
+  background: rgba(255,255,255,0.85) none repeat scroll !important;
+  border-radius: 8px;
+}
+.use-motion .collection-title {
+  color: #fff;
 }
 .btn {
   margin-top: 20px;
