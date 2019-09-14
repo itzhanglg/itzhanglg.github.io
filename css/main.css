@@ -1698,7 +1698,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffb5ba;
+  background: #abd7ff;
 }
 .feed-link,
 .chat {
@@ -2811,7 +2811,7 @@ body {
   background: rgba(240,240,240,0.2);
   margin-left: auto;
   margin-right: auto;
-  width: 536px;
+  width: 600px;
   border-radius: 5px;
 }
 a {
