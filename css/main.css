@@ -1698,7 +1698,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7e50ac;
+  background: #ebffff;
 }
 .feed-link,
 .chat {
@@ -2884,4 +2884,29 @@ code {
   color: #e6006b;
   background: #fff;
   border-radius: 3px;
+}
+blockquote {
+  color: #c5c8c6;
+  background: #000;
+}
+blockquote p {
+  background: #1d1f21;
+}
+.pagination {
+  margin: 100px 0 0;
+}
+.pagination .page-number.current {
+  border-radius: 5px;
+  background: #00acec;
+}
+.pagination .page-number,
+.pagination .prev,
+.pagination .next {
+  color: #000;
+  background: #ccc;
+  border-radius: 5px;
+}
+.pagination a:hover {
+  background: #00acec;
+  color: #fff;
 }
