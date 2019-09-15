@@ -69,19 +69,22 @@
   };
 </script>
 
-  <meta name="description" content="第一章内容  第二章内容  参考文献www.cnblogs.itzlg">
+  <meta name="description" content="1.什么是webpackwebpack是一个前端资源加载/打包工具。它根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。 官网地址：https://www.webpackjs.com/  从上图看出，webpack可以将多种静态资源js，css，less转换成一个静态文件，减少页面的请求。 2.webpack安装全局安装：    npm install webpack">
+<meta name="keywords" content="webpack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="firstBlog">
-<meta property="og:url" content="http://zhangligong.xyz/2019/08/21/firstBlog/index.html">
+<meta property="og:title" content="webpack入门">
+<meta property="og:url" content="http://zhangligong.xyz/2019/09/15/blog011/index.html">
 <meta property="og:site_name" content="LIGONG`S BLOG">
-<meta property="og:description" content="第一章内容  第二章内容  参考文献www.cnblogs.itzlg">
+<meta property="og:description" content="1.什么是webpackwebpack是一个前端资源加载/打包工具。它根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。 官网地址：https://www.webpackjs.com/  从上图看出，webpack可以将多种静态资源js，css，less转换成一个静态文件，减少页面的请求。 2.webpack安装全局安装：    npm install webpack">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-28T18:20:05.764Z">
+<meta property="og:image" content="http://zhangligong.xyz/2019/09/15/blog011/hexo01.png">
+<meta property="og:updated_time" content="2019-09-15T06:15:48.698Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="firstBlog">
-<meta name="twitter:description" content="第一章内容  第二章内容  参考文献www.cnblogs.itzlg">
+<meta name="twitter:title" content="webpack入门">
+<meta name="twitter:description" content="1.什么是webpackwebpack是一个前端资源加载/打包工具。它根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。 官网地址：https://www.webpackjs.com/  从上图看出，webpack可以将多种静态资源js，css，less转换成一个静态文件，减少页面的请求。 2.webpack安装全局安装：    npm install webpack">
+<meta name="twitter:image" content="http://zhangligong.xyz/2019/09/15/blog011/hexo01.png">
   <link rel="alternate" href="/atom.xml" title="LIGONG`S BLOG" type="application/atom+xml">
-  <link rel="canonical" href="http://zhangligong.xyz/2019/08/21/firstBlog/">
+  <link rel="canonical" href="http://zhangligong.xyz/2019/09/15/blog011/">
 
 
 <script id="page.configurations">
@@ -90,7 +93,7 @@
   };
 </script>
 
-  <title>firstBlog | LIGONG`S BLOG</title>
+  <title>webpack入门 | LIGONG`S BLOG</title>
   
 
 
@@ -293,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhangligong.xyz/2019/08/21/firstBlog/">
+    <link itemprop="mainEntityOfPage" href="http://zhangligong.xyz/2019/09/15/blog011/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ligong zhang">
@@ -307,7 +310,7 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">firstBlog
+          <h1 class="post-title" itemprop="name headline">webpack入门
 
               
             
@@ -327,22 +330,27 @@
                 
               
 
-              <time title="创建时间：2019-08-21 02:38:12" itemprop="dateCreated datePublished" datetime="2019-08-21T02:38:12+08:00">2019-08-21</time>
+              <time title="创建时间：2019-09-15 13:40:58 / 修改时间：14:15:48" itemprop="dateCreated datePublished" datetime="2019-09-15T13:40:58+08:00">2019-09-15</time>
             </span>
           
             
 
             
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-08-29 02:20:05" itemprop="dateModified" datetime="2019-08-29T02:20:05+08:00">2019-08-29</time>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
               </span>
-            
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -362,7 +370,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">31</span>
+              <span title="本文字数">2.2k</span>
             </span>
           
             <span class="post-meta-item">
@@ -372,7 +380,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">1 分钟</span>
+              <span title="阅读时长">2 分钟</span>
             </span>
           
 
@@ -385,11 +393,58 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://www.cnblogs.itzlg" target="_blank" rel="noopener">www.cnblogs.itzlg</a></p>
+        <h3 id="1-什么是webpack"><a href="#1-什么是webpack" class="headerlink" title="1.什么是webpack"></a>1.什么是webpack</h3><p>webpack是一个前端资源加载/打包工具。它根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。</p>
+<p>官网地址：<a href="https://www.webpackjs.com/" target="_blank" rel="noopener">https://www.webpackjs.com/</a></p>
+<p><img src="/2019/09/15/blog011/hexo01.png" alt="webpack图示"></p>
+<p>从上图看出，webpack可以将多种静态资源js，css，less转换成一个静态文件，减少页面的请求。</p>
+<h3 id="2-webpack安装"><a href="#2-webpack安装" class="headerlink" title="2.webpack安装"></a>2.webpack安装</h3><p>全局安装：</p>
+<blockquote>
+<p>  npm install webpack -g</p>
+<p>  npm install webpack-cli -g</p>
+</blockquote>
+<p>查看版本号：</p>
+<blockquote>
+<p>  webpack -v</p>
+</blockquote>
+<h3 id="3-快速入门"><a href="#3-快速入门" class="headerlink" title="3.快速入门"></a>3.快速入门</h3><h4 id="3-1-js打包"><a href="#3-1-js打包" class="headerlink" title="3.1 js打包"></a>3.1 js打包</h4><p>1.创建src文件，src里创建bar.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//bar</span></span><br><span class="line">exports.info = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">document</span>.write(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.src里创建logic.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//logic</span></span><br><span class="line">exports.add = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3.src里创建main.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.js</span></span><br><span class="line"><span class="keyword">var</span> bar = <span class="built_in">require</span>(<span class="string">"./bar"</span>);</span><br><span class="line"><span class="keyword">var</span> logic = <span class="built_in">require</span>(<span class="string">"./logic"</span>);</span><br><span class="line"><span class="built_in">require</span>(<span class="string">'./css1.css'</span>);</span><br><span class="line"></span><br><span class="line">bar.info(<span class="string">"hello world! "</span>+logic.add(<span class="number">100</span>,<span class="number">200</span>));</span><br></pre></td></tr></table></figure>
+
+<p>4.创建配置文件webpack.config.js，与src处于同级目录</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// 读取src文件夹中的main.js(入口文件)</span></span><br><span class="line">  entry: <span class="string">'./src/main.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">	<span class="comment">// path.resolve解析当前相对路径的绝对路径 path.join</span></span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'bundle.js'</span>,</span><br><span class="line">	</span><br><span class="line">  &#125;,</span><br><span class="line">  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>含义：读取当前目录下src文件夹中的main.js（入口文件）内容，把对应的js文件打包，打包后的文件放入当前目录的dist文件夹下，打包后的js文件名为bundle.js。</p>
+<p>5.执行编译命令</p>
+<blockquote>
+<p>  webpack</p>
+</blockquote>
+<p>编译后查看dist文件夹下的bundle.js文件，会发现该文件包含了上面两个js文件的内容</p>
+<p>6.创建index.html页面，引用bundle.js</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"dist/bundle.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>打开index.html页面，查看页面效果</p>
+<h4 id="3-2-css打包"><a href="#3-2-css打包" class="headerlink" title="3.2 css打包"></a>3.2 css打包</h4><p>1.安装style-loader和css-loader</p>
+<p>webpack本身只能处理JavaScript模块，若要处理其他类型的文件，需要使用loader进行转换。</p>
+<p>Loader 可以理解为是模块和资源的转换器，它本身是一个函数，接受源文件作为参数，返回转换的结果。这样，我们就可以通过 require 来加载任何类型的模块或文件，比如CoffeeScript、 JSX、 LESS 或图片。首先我们需要安装相关Loader插件，css-loader 是将 css 装载到 javascript；style-loader 是让 javascript 认识css</p>
+<blockquote>
+<p>  cnpm install style‐loader css‐loader ‐‐save‐dev</p>
+</blockquote>
+<p>2.修改webpack.config.js，添加module</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">'./src/main.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">	<span class="comment">// path.resolve解析当前相对路径的绝对路径 path.join</span></span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'bundle.js'</span>,</span><br><span class="line">	</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">	rules: [</span><br><span class="line">	  <span class="comment">// webpack读取loader时,是从右到左</span></span><br><span class="line">	  <span class="comment">// loader执行顺序是从右到左以管道方式链式调用</span></span><br><span class="line">	  <span class="comment">// css-loader是将css装载到javascript,style-loader是让javascript认识css</span></span><br><span class="line">	  &#123; <span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">use</span>: [<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>] &#125;</span><br><span class="line">	]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>3.src里创建css文件夹，css下创建css1.css</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">	<span class="attribute">background</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4.修改main.js，引入css1.css</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'./css1.css'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>5.重新运行webpack</p>
+<p>6.运行index.html，查看页面背景色</p>
 
     </div>
 
@@ -400,6 +455,35 @@
 	<div>
       
         
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/09/15/blog011/">webpack入门</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 ligong zhang 的个人博客">ligong zhang</a></p>
+  <p><span>发布时间:</span>2019年09月15日 - 13:09</p>
+  <p><span>最后更新:</span>2019年09月15日 - 14:09</p>
+  <p><span>原始链接:</span><a href="/2019/09/15/blog011/" title="webpack入门">http://zhangligong.xyz/2019/09/15/blog011/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://zhangligong.xyz/2019/09/15/blog011/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
       
 	</div>
 	
@@ -415,15 +499,25 @@
 	</div>
 
     <footer class="post-footer">
+          
+        
+        <div class="post-tags">
+            <a href="/tags/webpack/" rel="tag"># webpack</a>
+          
+        </div>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+              <a href="/2019/09/15/blog010/" rel="next" title="npm入门">
+                <i class="fa fa-chevron-left"></i> npm入门
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-              <a href="/2019/08/22/blog001/" rel="prev" title="设计模式六大原则">
-                设计模式六大原则 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/09/15/blog012/" rel="prev" title="es6入门">
+                es6入门 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -658,7 +752,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章"><span class="nav-number">1.</span> <span class="nav-text">第一章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章"><span class="nav-number">2.</span> <span class="nav-text">第二章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">3.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是webpack"><span class="nav-number">1.</span> <span class="nav-text">1.什么是webpack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-webpack安装"><span class="nav-number">2.</span> <span class="nav-text">2.webpack安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-快速入门"><span class="nav-number">3.</span> <span class="nav-text">3.快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-js打包"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 js打包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-css打包"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 css打包</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -830,7 +924,7 @@
 
 <script>
   window.livereOptions = {
-    refer: '2019/08/21/firstBlog/'
+    refer: '2019/09/15/blog011/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
