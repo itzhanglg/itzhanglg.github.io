@@ -69,21 +69,23 @@
   };
 </script>
 
-  <meta name="description" content="IO流分类操作单元：字节流和字符流流的流向：输入流和输出流流的角色：节点流和处理流 IO流体系结构  抽象基本类           节点流(文件流)                                 缓冲流(处理流的一种) InputStream          FileInputStream (read(byte[] buffer))         BufferedInput">
+  <meta name="description" content="IO流原理 I/O是Input/Output的缩写， I/O技术是非常实用的技术，用于处理设备之间的数据传输。如读/写文件，网络通讯等。 输入input：读取外部数据（磁盘、光盘等存储设备的数据）到程序（内存）中。输出output：将程序（内存）数据输出到磁盘、光盘等存储设备中。 Java程序中，对于数据的输入/输出操作以 流(stream)的方式进行。  java.io包下提供了各种“流”类和接">
 <meta name="keywords" content="IO流">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IO流体系结构">
 <meta property="og:url" content="http://zhangligong.xyz/2019/10/08/blog013/index.html">
 <meta property="og:site_name" content="LIGONG`S BLOG">
-<meta property="og:description" content="IO流分类操作单元：字节流和字符流流的流向：输入流和输出流流的角色：节点流和处理流 IO流体系结构  抽象基本类           节点流(文件流)                                 缓冲流(处理流的一种) InputStream          FileInputStream (read(byte[] buffer))         BufferedInput">
+<meta property="og:description" content="IO流原理 I/O是Input/Output的缩写， I/O技术是非常实用的技术，用于处理设备之间的数据传输。如读/写文件，网络通讯等。 输入input：读取外部数据（磁盘、光盘等存储设备的数据）到程序（内存）中。输出output：将程序（内存）数据输出到磁盘、光盘等存储设备中。 Java程序中，对于数据的输入/输出操作以 流(stream)的方式进行。  java.io包下提供了各种“流”类和接">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://zhangligong.xyz/2019/10/08/blog013/hexo04.png">
+<meta property="og:image" content="http://zhangligong.xyz/2019/10/08/blog013/hexo03.png">
 <meta property="og:image" content="http://zhangligong.xyz/2019/10/08/blog013/hexo01.png">
 <meta property="og:image" content="http://zhangligong.xyz/2019/10/08/blog013/hexo02.png">
-<meta property="og:updated_time" content="2019-10-08T00:08:52.290Z">
+<meta property="og:updated_time" content="2019-10-08T14:13:45.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IO流体系结构">
-<meta name="twitter:description" content="IO流分类操作单元：字节流和字符流流的流向：输入流和输出流流的角色：节点流和处理流 IO流体系结构  抽象基本类           节点流(文件流)                                 缓冲流(处理流的一种) InputStream          FileInputStream (read(byte[] buffer))         BufferedInput">
-<meta name="twitter:image" content="http://zhangligong.xyz/2019/10/08/blog013/hexo01.png">
+<meta name="twitter:description" content="IO流原理 I/O是Input/Output的缩写， I/O技术是非常实用的技术，用于处理设备之间的数据传输。如读/写文件，网络通讯等。 输入input：读取外部数据（磁盘、光盘等存储设备的数据）到程序（内存）中。输出output：将程序（内存）数据输出到磁盘、光盘等存储设备中。 Java程序中，对于数据的输入/输出操作以 流(stream)的方式进行。  java.io包下提供了各种“流”类和接">
+<meta name="twitter:image" content="http://zhangligong.xyz/2019/10/08/blog013/hexo04.png">
   <link rel="alternate" href="/atom.xml" title="LIGONG`S BLOG" type="application/atom+xml">
   <link rel="canonical" href="http://zhangligong.xyz/2019/10/08/blog013/">
 
@@ -331,7 +333,7 @@
                 
               
 
-              <time title="创建时间：2019-10-08 09:12:25 / 修改时间：08:08:52" itemprop="dateCreated datePublished" datetime="2019-10-08T09:12:25+08:00">2019-10-08</time>
+              <time title="创建时间：2019-10-08 09:12:25 / 修改时间：22:13:45" itemprop="dateCreated datePublished" datetime="2019-10-08T09:12:25+08:00">2019-10-08</time>
             </span>
           
             
@@ -371,7 +373,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">601</span>
+              <span title="本文字数">838</span>
             </span>
           
             <span class="post-meta-item">
@@ -394,17 +396,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="IO流分类"><a href="#IO流分类" class="headerlink" title="IO流分类"></a>IO流分类</h3><p>操作单元：字节流和字符流<br>流的流向：输入流和输出流<br>流的角色：节点流和处理流</p>
-<h3 id="IO流体系结构"><a href="#IO流体系结构" class="headerlink" title="IO流体系结构"></a>IO流体系结构</h3><blockquote>
-<ul>
-<li>抽象基本类           节点流(文件流)                                 缓冲流(处理流的一种)</li>
-<li>InputStream          FileInputStream (read(byte[] buffer))         BufferedInputStream (read(byte[] buffer))</li>
-<li>OutputStream         FileOutputStream (write(byte[] buffer,0,len)  BufferedOutputStream (write(byte[] buffer,0,len) / flush()</li>
-<li>Reader               FileReader (read(char[] cbuf))                BufferedReader (read(char[] cbuf) / readLine())</li>
-<li>Writer               FileWriter (write(char[] cbuf,0,len)          BufferedWriter (write(char[] cbuf,0,len) / flush()</li>
-</ul>
-</blockquote>
-<h3 id="结构图"><a href="#结构图" class="headerlink" title="结构图"></a>结构图</h3><h4 id="操作方式分类结构图"><a href="#操作方式分类结构图" class="headerlink" title="操作方式分类结构图"></a>操作方式分类结构图</h4><p><img src="/2019/10/08/blog013/hexo01.png" alt="操作方式分类结构图"></p>
+        <h3 id="IO流原理"><a href="#IO流原理" class="headerlink" title="IO流原理"></a>IO流原理</h3><p> I/O是Input/Output的缩写， I/O技术是非常实用的技术，<strong>用于处理设备之间的数据传输</strong>。如读/写文件，网络通讯等。</p>
+<p><strong>输入input</strong>：读取外部数据（磁盘、光盘等存储设备的数据）到程序（内存）中。<br><strong>输出output</strong>：将程序（内存）数据输出到磁盘、光盘等存储设备中。</p>
+<p>Java程序中，对于数据的输入/输出操作以 <strong>流(stream)</strong>的方式进行。</p>
+<p> java.io包下提供了各种“流”类和接口，用以获取不同种类的数据，并通过<strong>标准的方法</strong>输入或输出数据。</p>
+<h3 id="IO流分类"><a href="#IO流分类" class="headerlink" title="IO流分类"></a>IO流分类</h3><p><strong>操作单元</strong>：字节流和字符流<br><strong>流的流向</strong>：输入流和输出流<br><strong>流的角色</strong>：节点流和处理流</p>
+<p><img src="/2019/10/08/blog013/hexo04.png" alt="流的分类"></p>
+<h3 id="IO流体系结构"><a href="#IO流体系结构" class="headerlink" title="IO流体系结构"></a>IO流体系结构</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">抽象基本类           节点流(文件流)                                 缓冲流(处理流的一种)</span><br><span class="line"><span class="function">InputStream          <span class="title">FileInputStream</span> <span class="params">(read(<span class="keyword">byte</span>[] buffer)</span>)         <span class="title">BufferedInputStream</span> <span class="params">(read(<span class="keyword">byte</span>[] buffer)</span>)</span></span><br><span class="line"><span class="function">OutputStream         <span class="title">FileOutputStream</span> <span class="params">(write(<span class="keyword">byte</span>[] buffer,<span class="number">0</span>,len)</span>  <span class="title">BufferedOutputStream</span> <span class="params">(write(<span class="keyword">byte</span>[] buffer,<span class="number">0</span>,len)</span> / <span class="title">flush</span><span class="params">()</span></span></span><br><span class="line"><span class="function">Reader               <span class="title">FileReader</span> <span class="params">(read(<span class="keyword">char</span>[] cbuf)</span>)                <span class="title">BufferedReader</span> <span class="params">(read(<span class="keyword">char</span>[] cbuf)</span> / <span class="title">readLine</span><span class="params">()</span>)</span></span><br><span class="line"><span class="function">Writer               <span class="title">FileWriter</span> <span class="params">(write(<span class="keyword">char</span>[] cbuf,<span class="number">0</span>,len)</span>          <span class="title">BufferedWriter</span> <span class="params">(write(<span class="keyword">char</span>[] cbuf,<span class="number">0</span>,len)</span> / <span class="title">flush</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="结构图"><a href="#结构图" class="headerlink" title="结构图"></a>结构图</h3><h4 id="IO流体系"><a href="#IO流体系" class="headerlink" title="IO流体系"></a>IO流体系</h4><p><img src="/2019/10/08/blog013/hexo03.png" alt="IO流体系"></p>
+<h4 id="操作方式分类结构图"><a href="#操作方式分类结构图" class="headerlink" title="操作方式分类结构图"></a>操作方式分类结构图</h4><p><img src="/2019/10/08/blog013/hexo01.png" alt="操作方式分类结构图"></p>
 <h4 id="操作对象分类结构图"><a href="#操作对象分类结构图" class="headerlink" title="操作对象分类结构图"></a>操作对象分类结构图</h4><p><img src="/2019/10/08/blog013/hexo02.png" alt="操作对象分类结构图"></p>
 
     </div>
@@ -425,7 +426,7 @@
   <p><span>本文标题:</span><a href="/2019/10/08/blog013/">IO流体系结构</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 ligong zhang 的个人博客">ligong zhang</a></p>
   <p><span>发布时间:</span>2019年10月08日 - 09:10</p>
-  <p><span>最后更新:</span>2019年10月08日 - 08:10</p>
+  <p><span>最后更新:</span>2019年10月08日 - 22:10</p>
   <p><span>原始链接:</span><a href="/2019/10/08/blog013/" title="IO流体系结构">http://zhangligong.xyz/2019/10/08/blog013/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://zhangligong.xyz/2019/10/08/blog013/"  aria-label="复制成功！"></i></span>
   </p>
@@ -477,8 +478,8 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-              <a href="/2019/10/08/blog015/" rel="prev" title="blog015">
-                blog015 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/10/08/blog015/" rel="prev" title="节点流(文件流)">
+                节点流(文件流) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -721,7 +722,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#IO流分类"><span class="nav-number">1.</span> <span class="nav-text">IO流分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IO流体系结构"><span class="nav-number">2.</span> <span class="nav-text">IO流体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构图"><span class="nav-number">3.</span> <span class="nav-text">结构图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#操作方式分类结构图"><span class="nav-number">3.1.</span> <span class="nav-text">操作方式分类结构图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作对象分类结构图"><span class="nav-number">3.2.</span> <span class="nav-text">操作对象分类结构图</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#IO流原理"><span class="nav-number">1.</span> <span class="nav-text">IO流原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IO流分类"><span class="nav-number">2.</span> <span class="nav-text">IO流分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IO流体系结构"><span class="nav-number">3.</span> <span class="nav-text">IO流体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构图"><span class="nav-number">4.</span> <span class="nav-text">结构图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#IO流体系"><span class="nav-number">4.1.</span> <span class="nav-text">IO流体系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作方式分类结构图"><span class="nav-number">4.2.</span> <span class="nav-text">操作方式分类结构图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作对象分类结构图"><span class="nav-number">4.3.</span> <span class="nav-text">操作对象分类结构图</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -749,12 +750,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">58k</span>
+    <span title="站点总字数">67k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">53 分钟</span>
+    <span title="站点阅读时长">1:01</span>
 </div>
 
 
