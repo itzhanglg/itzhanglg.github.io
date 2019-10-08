@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.3.0',
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    search: {
+      root: '/',
+      path: 'search.xml'
+    },
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="File类的使用   java.io.File类：文件和文件目录路径的抽象表示形式，与平台无关  1.File 能新建、删除、重命名文件和目录，但 File 不能访问文件内容本身。如果需要访问文件内容本身，则需要使用输入/输出流。  2.想要在Java程序中表示一个真实存在的文件或目录，那么必须有一个File对象，但是Java程序中的一个File对象，可能没有一个真实存在的文件或目录。  3.Fi">
+<meta name="keywords" content="File类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="File类的使用">
+<meta property="og:url" content="http://zhangligong.xyz/2019/10/08/blog014/index.html">
+<meta property="og:site_name" content="LIGONG`S BLOG">
+<meta property="og:description" content="File类的使用   java.io.File类：文件和文件目录路径的抽象表示形式，与平台无关  1.File 能新建、删除、重命名文件和目录，但 File 不能访问文件内容本身。如果需要访问文件内容本身，则需要使用输入/输出流。  2.想要在Java程序中表示一个真实存在的文件或目录，那么必须有一个File对象，但是Java程序中的一个File对象，可能没有一个真实存在的文件或目录。  3.Fi">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-08T00:06:23.041Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="File类的使用">
+<meta name="twitter:description" content="File类的使用   java.io.File类：文件和文件目录路径的抽象表示形式，与平台无关  1.File 能新建、删除、重命名文件和目录，但 File 不能访问文件内容本身。如果需要访问文件内容本身，则需要使用输入/输出流。  2.想要在Java程序中表示一个真实存在的文件或目录，那么必须有一个File对象，但是Java程序中的一个File对象，可能没有一个真实存在的文件或目录。  3.Fi">
+  <link rel="alternate" href="/atom.xml" title="LIGONG`S BLOG" type="application/atom+xml">
+  <link rel="canonical" href="http://zhangligong.xyz/2019/10/08/blog014/">
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>File类的使用 | LIGONG`S BLOG</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?90842fee1868b5a4f63b476ab8c13deb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/itzhanglg"><img style="position:absolute;top:0;right:0;border:0;" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+	
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LIGONG`S BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">技术分享及生活中的点点滴滴</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+      
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+      
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">9</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+      
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">5</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">17</span></a>
+
+  </li>
+        <li class="menu-item menu-item-search">
+          <a href="javascript:;" class="popup-trigger">
+          
+            <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+    
+
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+    </div>
+</nav>
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhangligong.xyz/2019/10/08/blog014/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ligong zhang">
+      <meta itemprop="description" content="人心中的成见是一座大山，任你怎么努力都休想搬动">
+      <meta itemprop="image" content="/images/head.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LIGONG`S BLOG">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">File类的使用
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-08 08:06:23" itemprop="dateCreated datePublished" datetime="2019-10-08T08:06:23+08:00">2019-10-08</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IO流/" itemprop="url" rel="index"><span itemprop="name">IO流</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon"
+              >
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          <br>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span title="本文字数">6.6k</span>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span title="阅读时长">6 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="File类的使用"><a href="#File类的使用" class="headerlink" title="File类的使用"></a>File类的使用</h3><blockquote>
+<p>  java.io.File类：文件和文件目录路径的抽象表示形式，与平台无关<br>  1.File 能新建、删除、重命名文件和目录，但 File 不能访问文件内容本身。如果需要访问文件内容本身，则需要使用输入/输出流。<br>  2.想要在Java程序中表示一个真实存在的文件或目录，那么必须有一个File对象，但是Java程序中的一个File对象，可能没有一个真实存在的文件或目录。<br>  3.File对象可以作为参数传递给流的构造器</p>
+</blockquote>
+<h3 id="常用构造器"><a href="#常用构造器" class="headerlink" title="常用构造器"></a>常用构造器</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.<span class="function"><span class="keyword">public</span> <span class="title">File</span><span class="params">(String pathname)</span></span></span><br><span class="line"><span class="function">	以pathname为路径创建File对象，可以是 绝对路径或者相对路径，如果pathname是相对路径，则默认的当前路径在系统属性user.dir中存储。</span></span><br><span class="line"><span class="function">	 绝对路径：是一个固定的路径,从盘符开始</span></span><br><span class="line"><span class="function">	 相对路径：是相对于某个位置开始</span></span><br><span class="line"><span class="function">2.<span class="keyword">public</span> <span class="title">File</span><span class="params">(String parent,String child)</span></span></span><br><span class="line"><span class="function">	以parent为父路径，child为子路径创建File对象。</span></span><br><span class="line"><span class="function">3.<span class="keyword">public</span> <span class="title">File</span><span class="params">(File parent,String child)</span></span></span><br><span class="line"><span class="function">	根据一个父File对象和子文件路径创建File对象</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><h4 id="获取功能"><a href="#获取功能" class="headerlink" title="获取功能"></a>获取功能</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getPath</span><span class="params">()</span> ：获取路径</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> ：获取名称</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getParent</span><span class="params">()</span>：获取上层文件目录路径。若无，返回<span class="keyword">null</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">length</span><span class="params">()</span> ：获取文件长度（即：字节数）。不能获取目录的长度。</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">lastModified</span><span class="params">()</span> ：获取最后一次的修改时间，毫秒值</span></span><br><span class="line"><span class="function">适用于文件目录:</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String[] <span class="title">list</span><span class="params">()</span> ：获取指定目录下的所有文件或者文件目录的名称数组</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> File[] <span class="title">listFiles</span><span class="params">()</span> ：获取指定目录下的所有文件或者文件目录的File数组</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="重命名功能"><a href="#重命名功能" class="headerlink" title="重命名功能"></a>重命名功能</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">renameTo</span><span class="params">(File dest)</span>:把文件重命名为指定的文件路径<span class="params">(移动/重命名)</span></span></span><br></pre></td></tr></table></figure>
+
+<h4 id="判断功能"><a href="#判断功能" class="headerlink" title="判断功能"></a>判断功能</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isDirectory</span><span class="params">()</span>：判断是否是文件目录</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isFile</span><span class="params">()</span> ：判断是否是文件</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">exists</span><span class="params">()</span> ：判断是否存在</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canRead</span><span class="params">()</span> ：判断是否可读</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canWrite</span><span class="params">()</span> ：判断是否可写</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isHidden</span><span class="params">()</span> ：判断是否隐藏</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="创建功能"><a href="#创建功能" class="headerlink" title="创建功能"></a>创建功能</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">createNewFile</span><span class="params">()</span> ：创建文件。若文件存在，则不创建，返回<span class="keyword">false</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">mkdir</span><span class="params">()</span> ：创建文件目录。如果此文件目录存在，就不创建了。如果此文件目录的上层目录不存在，也不创建。</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">mkdirs</span><span class="params">()</span> ：创建文件目录。如果上层文件目录不存在，一并创建</span></span><br><span class="line"><span class="function">注意事项：如果你创建文件或者文件目录没有写盘符路径，那么， 默认在项目路径下</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="删除功能"><a href="#删除功能" class="headerlink" title="删除功能"></a>删除功能</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">delete</span><span class="params">()</span>：删除文件或者文件夹</span></span><br><span class="line"><span class="function">    删除注意事项：</span></span><br><span class="line"><span class="function">        Java中的删除不走回收站。</span></span><br><span class="line"><span class="function">        要删除一个文件目录，请注意该文件目录内不能包含文件或者文件目录</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="File类使用示例"><a href="#File类使用示例" class="headerlink" title="File类使用示例"></a>File类使用示例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.cykj.file;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 1.File类的一个对象，代表一个文件或一个文件目录</span></span><br><span class="line"><span class="comment"> * 2.File类声明在java.io包下</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> zlg</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-10-06 15:19</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 常用构造器：</span></span><br><span class="line"><span class="comment">     * 1.如何创建File类的实例</span></span><br><span class="line"><span class="comment">     *      File(String filepath)</span></span><br><span class="line"><span class="comment">     *      File(String parent,String child)</span></span><br><span class="line"><span class="comment">     *      File(File parent,String child)</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * 2.相对路径：相较于某个路径下，指明的路径</span></span><br><span class="line"><span class="comment">     *   绝对路径：包含盘符在内的文件或文件目录的路径</span></span><br><span class="line"><span class="comment">     * IDEA中：</span></span><br><span class="line"><span class="comment">        如果大家开发使用JUnit中的单元测试方法测试，相对路径即为当前Module下。</span></span><br><span class="line"><span class="comment">        如果大家使用main()测试，相对路径即为当前的Project下。</span></span><br><span class="line"><span class="comment">       Eclipse中：</span></span><br><span class="line"><span class="comment">        不管使用单元测试方法还是使用main()测试，相对路径都是当前的Project下。</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * 3.路径分隔符</span></span><br><span class="line"><span class="comment">     *      windows：\\</span></span><br><span class="line"><span class="comment">     *      unix：/</span></span><br><span class="line"><span class="comment">     *      通用：File.separator</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//构造器1</span></span><br><span class="line">        <span class="comment">//相对于当前module</span></span><br><span class="line">        File file1 = <span class="keyword">new</span> File(<span class="string">"hello.txt"</span>);</span><br><span class="line">        <span class="comment">//绝对路径</span></span><br><span class="line">        File file2 = <span class="keyword">new</span> File(<span class="string">"E:\\ideaworkspace\\java-high\\io\\he.txt"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(file1);  <span class="comment">// hello.txt</span></span><br><span class="line">        System.out.println(file2);  <span class="comment">// E:\ideaworkspace\java-high\io\he.txt</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//构造器2</span></span><br><span class="line">        File file3 = <span class="keyword">new</span> File(<span class="string">"E:\\ideaworkspace"</span>, <span class="string">"java-high"</span>);</span><br><span class="line">        System.out.println(file3);  <span class="comment">// E:\ideaworkspace\java-high</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//构造器3</span></span><br><span class="line">        File file4 = <span class="keyword">new</span> File(file3, <span class="string">"hi.txt"</span>);</span><br><span class="line">        System.out.println(file4);  <span class="comment">// E:\ideaworkspace\java-high\hi.txt</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 常用方法：</span></span><br><span class="line"><span class="comment">     * 1.获取功能</span></span><br><span class="line"><span class="comment">     public String getAbsolutePath()：获取绝对路径</span></span><br><span class="line"><span class="comment">     public String getPath() ：获取路径</span></span><br><span class="line"><span class="comment">     public String getName() ：获取名称</span></span><br><span class="line"><span class="comment">     public String getParent()：获取上层文件目录路径。若无，返回null</span></span><br><span class="line"><span class="comment">     public long length() ：获取文件长度（即：字节数）。不能获取目录的长度。</span></span><br><span class="line"><span class="comment">     public long lastModified() ：获取最后一次的修改时间，毫秒值</span></span><br><span class="line"><span class="comment">     适用于文件目录:</span></span><br><span class="line"><span class="comment">     public String[] list() ：获取指定目录下的所有文件或者文件目录的名称数组</span></span><br><span class="line"><span class="comment">     public File[] listFiles() ：获取指定目录下的所有文件或者文件目录的File数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span></span>&#123;</span><br><span class="line">        File file1 = <span class="keyword">new</span> File(<span class="string">"hello.txt"</span>);</span><br><span class="line">        System.out.println(file1.getAbsolutePath());</span><br><span class="line">        System.out.println(file1.getPath());</span><br><span class="line">        System.out.println(file1.getName());    <span class="comment">//文件名称</span></span><br><span class="line">        System.out.println(file1.getParent());  <span class="comment">//形参为相对路径，找不到上一级</span></span><br><span class="line"></span><br><span class="line">        System.out.println(file1.length());</span><br><span class="line">        System.out.println(<span class="keyword">new</span> Date(file1.lastModified()));</span><br><span class="line"></span><br><span class="line">        File file2 = <span class="keyword">new</span> File(<span class="string">"E:\\ideaworkspace"</span>, <span class="string">"java-high"</span>);</span><br><span class="line">        <span class="keyword">for</span>(String s:file2.list())&#123;     <span class="comment">//名称数组</span></span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(File f:file2.listFiles())&#123;  <span class="comment">//File数组</span></span><br><span class="line">            System.out.println(f);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 2.重命名功能</span></span><br><span class="line"><span class="comment">     public boolean renameTo(File dest):把文件重命名为指定的文件路径(移动/重命名)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test3</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        File file1 = <span class="keyword">new</span> File(<span class="string">"hello.txt"</span>); <span class="comment">//目标文件不存在</span></span><br><span class="line">        File file2 = <span class="keyword">new</span> File(<span class="string">"hi.txt"</span>);    <span class="comment">//原文件存在</span></span><br><span class="line">        <span class="keyword">boolean</span> bool = file2.renameTo(file1);</span><br><span class="line">        System.out.println(bool);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 3.判断功能</span></span><br><span class="line"><span class="comment">     public boolean isDirectory()：判断是否是文件目录</span></span><br><span class="line"><span class="comment">     public boolean isFile() ：判断是否是文件</span></span><br><span class="line"><span class="comment">     public boolean exists() ：判断是否存在</span></span><br><span class="line"><span class="comment">     public boolean canRead() ：判断是否可读</span></span><br><span class="line"><span class="comment">     public boolean canWrite() ：判断是否可写</span></span><br><span class="line"><span class="comment">     public boolean isHidden() ：判断是否隐藏</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test4</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        File file = <span class="keyword">new</span> File(<span class="string">"hello.txt"</span>);</span><br><span class="line">        System.out.println(file.isDirectory());     <span class="comment">//是否是文件夹</span></span><br><span class="line">        System.out.println(file.isFile());          <span class="comment">//是否是文件</span></span><br><span class="line">        System.out.println(file.exists());          <span class="comment">//是否存在</span></span><br><span class="line">        System.out.println(file.canRead());</span><br><span class="line">        System.out.println(file.canWrite());</span><br><span class="line">        System.out.println(file.isHidden());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 4.创建功能</span></span><br><span class="line"><span class="comment">     public boolean createNewFile() ：创建文件。若文件存在，则不创建，返回false</span></span><br><span class="line"><span class="comment">     public boolean mkdir() ：创建文件目录。如果此文件目录存在，就不创建了。如果此文件目录的上层目录不存在，也不创建。</span></span><br><span class="line"><span class="comment">     public boolean mkdirs() ：创建文件目录。如果上层文件目录不存在，一并创建</span></span><br><span class="line"><span class="comment">     注意事项：如果你创建文件或者文件目录没有写盘符路径，那么， 默认在项目路径下</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test5</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//文件创建</span></span><br><span class="line">        File file1 = <span class="keyword">new</span> File(<span class="string">"world.txt"</span>);</span><br><span class="line">        <span class="keyword">if</span>(!file1.exists())&#123;</span><br><span class="line">            file1.createNewFile();</span><br><span class="line">            System.out.println(<span class="string">"创建成功！"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            file1.delete();</span><br><span class="line">            System.out.println(<span class="string">"删除成功！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 5.删除功能</span></span><br><span class="line"><span class="comment">     public boolean delete()：删除文件或者文件夹</span></span><br><span class="line"><span class="comment">     删除注意事项：</span></span><br><span class="line"><span class="comment">        Java中的删除不走回收站。</span></span><br><span class="line"><span class="comment">        要删除一个文件目录，请注意该文件目录内不能包含文件或者文件目录</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test6</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        File file = <span class="keyword">new</span> File(<span class="string">"hello.txt"</span>);</span><br><span class="line">        <span class="comment">//删除文件或文件夹</span></span><br><span class="line">        deleteDirectory(file);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除文件或文件夹</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteDirectory</span><span class="params">(File file)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 如果file是文件，直接delete</span></span><br><span class="line">        <span class="comment">// 如果file是目录，先把它的下一级干掉，然后删除自己</span></span><br><span class="line">        <span class="keyword">if</span> (file.isDirectory()) &#123;</span><br><span class="line">            File[] all = file.listFiles();</span><br><span class="line">            <span class="comment">// 循环删除的是file的下一级</span></span><br><span class="line">            <span class="keyword">for</span> (File f : all) &#123;<span class="comment">// f代表file的每一个下级</span></span><br><span class="line">                deleteDirectory(f);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 删除自己</span></span><br><span class="line">        file.delete();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/10/08/blog014/">File类的使用</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 ligong zhang 的个人博客">ligong zhang</a></p>
+  <p><span>发布时间:</span>2019年10月08日 - 08:10</p>
+  <p><span>最后更新:</span>2019年10月08日 - 08:10</p>
+  <p><span>原始链接:</span><a href="/2019/10/08/blog014/" title="File类的使用">http://zhangligong.xyz/2019/10/08/blog014/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://zhangligong.xyz/2019/10/08/blog014/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+      
+	</div>
+
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #666;font-size: 16px;margin-top: 30px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+	  
+	</div>
+
+    <footer class="post-footer">
+          
+        
+        <div class="post-tags">
+            <a href="/tags/File类/" rel="tag"># File类</a>
+          
+        </div>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+              <a href="/2019/09/15/blog012/" rel="next" title="es6入门">
+                <i class="fa fa-chevron-left"></i> es6入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+              <a href="/2019/10/08/blog013/" rel="prev" title="IO流体系结构">
+                IO流体系结构 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NjQ4My8yMjk5NA=="></div>
+  </div>
+  
+
+
+
+
+
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/head.png"
+      alt="ligong zhang">
+  <p class="site-author-name" itemprop="name">ligong zhang</p>
+  <div class="site-description motion-element" itemprop="description">人心中的成见是一座大山，任你怎么努力都休想搬动</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="chat motion-element"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://blog.csdn.net/zhixingwu" title="CSDN &rarr; https://blog.csdn.net/zhixingwu" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>CSDN</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.cnblogs.com/itzlg/" title="博客园 &rarr; https://www.cnblogs.com/itzlg/" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>博客园</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/itzhanglg" title="GitHub &rarr; https://github.com/itzhanglg" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/5378314785/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" title="微博 &rarr; https://weibo.com/5378314785/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>微博</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.zhihu.com/people/zhang-li-gong-2/activities" title="知乎 &rarr; https://www.zhihu.com/people/zhang-li-gong-2/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>知乎</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://juejin.im/user/58004bd5128fe1005492d51f" title="掘金 &rarr; https://juejin.im/user/58004bd5128fe1005492d51f" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>掘金</a>
+      </span>
+    
+  </div>
+
+
+  <div class="links-of-blogroll motion-element links-of-blogroll-block">
+    <div class="links-of-blogroll-title">
+      <i class="fa  fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://segmentfault.com/" title="https://segmentfault.com/" rel="noopener" target="_blank">Segmentfault</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.v2ex.com/" title="https://www.v2ex.com/" rel="noopener" target="_blank">V2EX</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.infoq.cn/" title="https://www.infoq.cn/" rel="noopener" target="_blank">InfoQ</a>
+        </li>
+      
+    </ul>
+  </div>
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#File类的使用"><span class="nav-number">1.</span> <span class="nav-text">File类的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用构造器"><span class="nav-number">2.</span> <span class="nav-text">常用构造器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用方法"><span class="nav-number">3.</span> <span class="nav-text">常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#获取功能"><span class="nav-number">3.1.</span> <span class="nav-text">获取功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重命名功能"><span class="nav-number">3.2.</span> <span class="nav-text">重命名功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断功能"><span class="nav-number">3.3.</span> <span class="nav-text">判断功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建功能"><span class="nav-number">3.4.</span> <span class="nav-text">创建功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除功能"><span class="nav-number">3.5.</span> <span class="nav-text">删除功能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File类使用示例"><span class="nav-number">4.</span> <span class="nav-text">File类使用示例</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhangligong</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">58k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">53 分钟</span>
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+      </div>
+
+    
+
+  </div>
+
+  
+    
+    
+  
+    
+    
+  
+  <script color='0,0,255' opacity='0.7' zIndex='-2' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script defer src="/lib/three/three.min.js"></script>
+  <script defer src="true"></script>
+
+  <script src="/js/utils.js?v=7.3.0"></script>
+  <script src="/js/motion.js?v=7.3.0"></script>
+
+
+
+  
+  <script src="/js/schemes/muse.js?v=7.3.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.3.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script>
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<script>
+  window.livereOptions = {
+    refer: '2019/10/08/blog014/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+  
+	<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
