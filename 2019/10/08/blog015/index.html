@@ -77,7 +77,7 @@
 <meta property="og:site_name" content="LIGONG`S BLOG">
 <meta property="og:description" content="FileReader/FileWriter应用将hello.txt文件内容读入程序中，并输出到控制台说明点：  read()的理解：返回读入的一个字符。如果达到文件末尾，返回-1 异常的处理：为了保证流资源一定可以执行关闭操作。需要使用try-catch-finally处理 读入的文件一定要存在，否则就会报FileNotFoundException。  1234567891011121314151">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-13T14:44:38.390Z">
+<meta property="og:updated_time" content="2019-10-13T17:31:07.745Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文件流(节点流)">
 <meta name="twitter:description" content="FileReader/FileWriter应用将hello.txt文件内容读入程序中，并输出到控制台说明点：  read()的理解：返回读入的一个字符。如果达到文件末尾，返回-1 异常的处理：为了保证流资源一定可以执行关闭操作。需要使用try-catch-finally处理 读入的文件一定要存在，否则就会报FileNotFoundException。  1234567891011121314151">
@@ -239,7 +239,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">21</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">22</span></a>
 
   </li>
         <li class="menu-item menu-item-search">
@@ -341,7 +341,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-13 22:44:38" itemprop="dateModified" datetime="2019-10-13T22:44:38+08:00">2019-10-13</time>
+                <time title="修改时间：2019-10-14 01:31:07" itemprop="dateModified" datetime="2019-10-14T01:31:07+08:00">2019-10-14</time>
               </span>
             
           
@@ -403,9 +403,9 @@
       
         <h3 id="FileReader-FileWriter应用"><a href="#FileReader-FileWriter应用" class="headerlink" title="FileReader/FileWriter应用"></a>FileReader/FileWriter应用</h3><h4 id="将hello-txt文件内容读入程序中，并输出到控制台"><a href="#将hello-txt文件内容读入程序中，并输出到控制台" class="headerlink" title="将hello.txt文件内容读入程序中，并输出到控制台"></a>将hello.txt文件内容读入程序中，并输出到控制台</h4><p>说明点：</p>
 <ol>
-<li>read()的理解：返回读入的一个字符。如果达到文件末尾，返回-1</li>
-<li>异常的处理：为了保证流资源一定可以执行关闭操作。需要使用try-catch-finally处理</li>
-<li>读入的文件一定要存在，否则就会报FileNotFoundException。</li>
+<li><code>read()</code>的理解：返回读入的一个字符。如果达到文件末尾，返回<strong>-1</strong></li>
+<li>异常的处理：为了保证流资源一定可以执行关闭操作。需要使用<code>try-catch-finally</code>处理</li>
+<li>读入的文件一定要存在，否则就会报<code>FileNotFoundException</code>。</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fileReaderTest1</span><span class="params">()</span>  </span>&#123;</span><br><span class="line">       FileReader fileReader = <span class="keyword">null</span>;</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           <span class="comment">//1.实例化File对象</span></span><br><span class="line">           File file = <span class="keyword">new</span> File(<span class="string">"hello.txt"</span>);</span><br><span class="line">           <span class="comment">//2.提供具体流</span></span><br><span class="line">           fileReader = <span class="keyword">new</span> FileReader(file);</span><br><span class="line">           <span class="comment">//3.数据读取</span></span><br><span class="line">           <span class="comment">//read():返回读入的一个字符。如果达到文件末尾，返回-1</span></span><br><span class="line">           <span class="keyword">int</span> data = -<span class="number">1</span>;</span><br><span class="line">           <span class="keyword">while</span> ( (data = fileReader.read()) != -<span class="number">1</span>)&#123;</span><br><span class="line">               System.out.print((<span class="keyword">char</span>) data);  <span class="comment">//将int类强制转化为char输出</span></span><br><span class="line">           &#125;</span><br><span class="line">       &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">           e.printStackTrace();</span><br><span class="line">       &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">           <span class="comment">//4.关闭流</span></span><br><span class="line">           <span class="keyword">if</span>(fileReader != <span class="keyword">null</span>)&#123; <span class="comment">//先判断是否为null，避免NullPointerException</span></span><br><span class="line">               <span class="keyword">try</span> &#123;</span><br><span class="line">                   fileReader.close();</span><br><span class="line">               &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                   e.printStackTrace();</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
@@ -415,11 +415,11 @@
 <h4 id="从内存中写出数据到硬盘的文件里"><a href="#从内存中写出数据到硬盘的文件里" class="headerlink" title="从内存中写出数据到硬盘的文件里"></a>从内存中写出数据到硬盘的文件里</h4><p>说明：</p>
 <ol>
 <li>输出操作，对应的File可以不存在的。并不会报异常</li>
-<li>File对应的硬盘中的文件<br>如果不存在，在输出的过程中，会自动创建此文件。<br>如果存在：<br>如果流使用的构造器是：FileWriter(file,false) / FileWriter(file):对原有文件的覆盖<br>如果流使用的构造器是：FileWriter(file,true):不会对原有文件覆盖，而是在原有文件基础上追加内容</li>
+<li>File对应的硬盘中的文件<br>如果不存在，在输出的过程中，会自动创建此文件。<br>如果存在：<br>如果流使用的构造器是：<code>FileWriter(file,false) / FileWriter(file)</code>:对原有文件的覆盖<br>如果流使用的构造器是：<code>FileWriter(file,true)</code>:不会对原有文件覆盖，而是在原有文件基础上追加内容</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fileWriterTest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       FileWriter fileWriter = <span class="keyword">null</span>;</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           <span class="comment">//1.File类实例化</span></span><br><span class="line">           File file = <span class="keyword">new</span> File(<span class="string">"hello1.txt"</span>);</span><br><span class="line">           <span class="comment">//2.具体流实例化</span></span><br><span class="line">           fileWriter = <span class="keyword">new</span> FileWriter(file,<span class="keyword">false</span>);</span><br><span class="line">           <span class="comment">//3.数据写入</span></span><br><span class="line">           fileWriter.write(<span class="string">"I have a dream!\n"</span>);</span><br><span class="line">           fileWriter.write(<span class="string">"You need to have a dream!"</span>);</span><br><span class="line">       &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">           e.printStackTrace();</span><br><span class="line">       &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">           <span class="keyword">if</span>(fileWriter!=<span class="keyword">null</span>)&#123;</span><br><span class="line">               <span class="comment">//4.关闭流</span></span><br><span class="line">               <span class="keyword">try</span> &#123;</span><br><span class="line">                   fileWriter.close();</span><br><span class="line">               &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                   e.printStackTrace();</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="实现文本文件的复制"><a href="#实现文本文件的复制" class="headerlink" title="实现文本文件的复制"></a>实现文本文件的复制</h4><p>1.源文件必须存在<br>2.目标文件可以不存在<br>3.读取时常用：read(char[] cbuf)<br>   写入时常用：write(char[] cbuf,int off,int len)<br>4.不能使用字符流来处理图片等字节数据</p>
+<h4 id="实现文本文件的复制"><a href="#实现文本文件的复制" class="headerlink" title="实现文本文件的复制"></a>实现文本文件的复制</h4><p>1.源文件必须存在<br>2.目标文件可以不存在<br>3.读取时常用：<code>read(char[] cbuf)</code><br>   写入时常用：<code>write(char[] cbuf,int off,int len)</code><br>4.不能使用字符流来处理图片等字节数据</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">copyFileTest</span><span class="params">()</span>  </span>&#123;</span><br><span class="line">       FileReader fr = <span class="keyword">null</span>;</span><br><span class="line">       FileWriter fw = <span class="keyword">null</span>;</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           <span class="comment">//File实例化</span></span><br><span class="line">           File srcFile = <span class="keyword">new</span> File(<span class="string">"hello.txt"</span>);</span><br><span class="line">           File destFile = <span class="keyword">new</span> File(<span class="string">"hello2.txt"</span>);</span><br><span class="line">           <span class="comment">//具体流实例化</span></span><br><span class="line">           fr = <span class="keyword">new</span> FileReader(srcFile);</span><br><span class="line">           fw = <span class="keyword">new</span> FileWriter(destFile);</span><br><span class="line">           <span class="comment">//数据读取与写入</span></span><br><span class="line">           <span class="keyword">char</span>[] cbuf = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">5</span>];  <span class="comment">//每次读取5个字符并存放在数组中</span></span><br><span class="line">           <span class="keyword">int</span> len;    <span class="comment">//记录每次读入到cbuf数组中的字符的个数</span></span><br><span class="line">           <span class="keyword">while</span>((len = fr.read(cbuf)) != -<span class="number">1</span>)&#123;</span><br><span class="line">               <span class="comment">//每次写出len个字符</span></span><br><span class="line">               fw.write(cbuf,<span class="number">0</span>,len);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">           e.printStackTrace();</span><br><span class="line">       &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">           <span class="comment">//关闭流</span></span><br><span class="line">           <span class="keyword">try</span> &#123;</span><br><span class="line">               <span class="keyword">if</span>(fr!=<span class="keyword">null</span>)</span><br><span class="line">               fr.close();</span><br><span class="line">           &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">               e.printStackTrace();</span><br><span class="line">           &#125;   <span class="comment">//若第一个try-catch发送异常，会进行处理，后面语句会执行</span></span><br><span class="line">           <span class="keyword">try</span> &#123;</span><br><span class="line">               <span class="keyword">if</span>(fw!=<span class="keyword">null</span>)</span><br><span class="line">               fw.close();</span><br><span class="line">           &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">               e.printStackTrace();</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="FileInputStream-FileOutputStream应用"><a href="#FileInputStream-FileOutputStream应用" class="headerlink" title="FileInputStream/FileOutputStream应用"></a>FileInputStream/FileOutputStream应用</h3><h4 id="处理文本文件，可能出现乱码"><a href="#处理文本文件，可能出现乱码" class="headerlink" title="处理文本文件，可能出现乱码"></a>处理文本文件，可能出现乱码</h4><ul>
@@ -434,9 +434,9 @@
 
 <h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><ul>
 <li><ol>
-<li>对于文本文件(.txt,.java,.c,.cpp)，使用字符流处理</li>
-<li>对于非文本文件(.jpg,.mp3,.mp4,.avi,.doc,.ppt,.xsl,…)，使用字节流处理</li>
-<li>对于复制操作，文本文件也可以使用字节流处理，相当于进行底层搬运；</li>
+<li>对于<strong>文本</strong>文件(.txt,.java,.c,.cpp)，使用<strong>字符流</strong>处理</li>
+<li>对于<strong>非文本</strong>文件(.jpg,.mp3,.mp4,.avi,.doc,.ppt,.xsl,…)，使用<strong>字节流</strong>处理</li>
+<li>对于<strong>复制</strong>操作，文本文件也可以使用<strong>字节流</strong>处理，相当于进行底层搬运；</li>
 </ol>
 <p>反之，非文本文件，是不可以用字符流来处理的</p>
 </li>
@@ -460,7 +460,7 @@
   <p><span>本文标题:</span><a href="/2019/10/08/blog015/">文件流(节点流)</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 ligong zhang 的个人博客">ligong zhang</a></p>
   <p><span>发布时间:</span>2019年10月08日 - 13:10</p>
-  <p><span>最后更新:</span>2019年10月13日 - 22:10</p>
+  <p><span>最后更新:</span>2019年10月14日 - 01:10</p>
   <p><span>原始链接:</span><a href="/2019/10/08/blog015/" title="文件流(节点流)">http://zhangligong.xyz/2019/10/08/blog015/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://zhangligong.xyz/2019/10/08/blog015/"  aria-label="复制成功！"></i></span>
   </p>
@@ -580,7 +580,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -784,12 +784,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">92k</span>
+    <span title="站点总字数">98k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:24</span>
+    <span title="站点阅读时长">1:29</span>
 </div>
 
 

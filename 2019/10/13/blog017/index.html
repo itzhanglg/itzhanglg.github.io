@@ -78,7 +78,7 @@
 <meta property="og:description" content="概念 转换流提供了在字节流和字符流之间的转换  javaAPI提供了两个转换流： InputStreamReader：将InputStream转换为Reader OutPutStreamWriter：将Writer转换为OutputStream  字节流中的数据都是字符时，转成字符流操作更高效  可以使用转换流来处理文件乱码问题。实现编码和解码功能   API介绍 InputStreamReade">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zhangligong.xyz/2019/10/13/blog017/hexo01.png">
-<meta property="og:updated_time" content="2019-10-13T14:16:55.865Z">
+<meta property="og:updated_time" content="2019-10-13T17:27:53.021Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="转换流(处理流)">
 <meta name="twitter:description" content="概念 转换流提供了在字节流和字符流之间的转换  javaAPI提供了两个转换流： InputStreamReader：将InputStream转换为Reader OutPutStreamWriter：将Writer转换为OutputStream  字节流中的数据都是字符时，转成字符流操作更高效  可以使用转换流来处理文件乱码问题。实现编码和解码功能   API介绍 InputStreamReade">
@@ -241,7 +241,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">21</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">22</span></a>
 
   </li>
         <li class="menu-item menu-item-search">
@@ -330,11 +330,21 @@
                 
               
 
-              <time title="创建时间：2019-10-13 19:34:26 / 修改时间：22:16:55" itemprop="dateCreated datePublished" datetime="2019-10-13T19:34:26+08:00">2019-10-13</time>
+              <time title="创建时间：2019-10-13 19:34:26" itemprop="dateCreated datePublished" datetime="2019-10-13T19:34:26+08:00">2019-10-13</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-10-14 01:27:53" itemprop="dateModified" datetime="2019-10-14T01:27:53+08:00">2019-10-14</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -397,8 +407,8 @@
 <li><p>转换流提供了在<strong>字节流和字符流</strong>之间的转换</p>
 </li>
 <li><p>javaAPI提供了两个转换流：</p>
-<p><strong>InputStreamReader</strong>：将InputStream转换为Reader</p>
-<p><strong>OutPutStreamWriter</strong>：将Writer转换为OutputStream</p>
+<p><strong><code>InputStreamReader</code></strong>：将InputStream转换为Reader</p>
+<p><strong><code>OutPutStreamWriter</code></strong>：将Writer转换为OutputStream</p>
 </li>
 <li><p>字节流中的数据都是字符时，转成字符流操作更高效</p>
 </li>
@@ -406,20 +416,20 @@
 </li>
 </ol>
 <h3 id="API介绍"><a href="#API介绍" class="headerlink" title="API介绍"></a>API介绍</h3><ol>
-<li><p>InputStreamReader</p>
+<li><p><code>InputStreamReader</code></p>
 <p>实现将<strong>字节</strong>的输入流按指定<strong>字符集</strong>转换为<strong>字符</strong>的输入流</p>
 <p>需要和 <strong>InputStream</strong> “套接”</p>
 <p>构造器：</p>
-<p>​    public InputStreamReader(InputStream in)</p>
-<p>​    public InputStreamReader(InputStream in, String charsetName)</p>
-<p>如：Reader isr = new InputStreamReader(System.in, “gbk”);</p>
+<p>​    <code>public InputStreamReader(InputStream in)</code></p>
+<p>​    <code>public InputStreamReader(InputStream in, String charsetName)</code></p>
+<p>如：<code>Reader isr = new InputStreamReader(System.in, &quot;gbk&quot;);</code></p>
 </li>
-<li><p>OutputStreamWriter</p>
+<li><p><code>OutputStreamWriter</code></p>
 <p>实现将<strong>字符</strong>的输出流按指定<strong>字符集</strong>转换为<strong>字节</strong>的输出流</p>
 <p>需要和 <strong>OutputStream</strong> “套接”</p>
 <p>构造器：</p>
-<p>​    public OutputStreamWriter(OutputStream out)</p>
-<p>​    public OutputStreamWriter(OutputStream out, String charsetName)</p>
+<p>​    <code>public OutputStreamWriter(OutputStream out)</code></p>
+<p>​    <code>public OutputStreamWriter(OutputStream out, String charsetName)</code></p>
 </li>
 </ol>
 <h3 id="图例"><a href="#图例" class="headerlink" title="图例"></a>图例</h3><p><img src="/2019/10/13/blog017/hexo01.png" alt="示例图"></p>
@@ -444,7 +454,7 @@
   <p><span>本文标题:</span><a href="/2019/10/13/blog017/">转换流(处理流)</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 ligong zhang 的个人博客">ligong zhang</a></p>
   <p><span>发布时间:</span>2019年10月13日 - 19:10</p>
-  <p><span>最后更新:</span>2019年10月13日 - 22:10</p>
+  <p><span>最后更新:</span>2019年10月14日 - 01:10</p>
   <p><span>原始链接:</span><a href="/2019/10/13/blog017/" title="转换流(处理流)">http://zhangligong.xyz/2019/10/13/blog017/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://zhangligong.xyz/2019/10/13/blog017/"  aria-label="复制成功！"></i></span>
   </p>
@@ -564,7 +574,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -768,12 +778,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">92k</span>
+    <span title="站点总字数">98k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:24</span>
+    <span title="站点阅读时长">1:29</span>
 </div>
 
 

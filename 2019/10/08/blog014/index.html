@@ -77,7 +77,7 @@
 <meta property="og:site_name" content="LIGONG`S BLOG">
 <meta property="og:description" content="File类的使用   java.io.File类：文件和文件目录路径的抽象表示形式，与平台无关  1.File 能新建、删除、重命名文件和目录，但 File 不能访问文件内容本身。如果需要访问文件内容本身，则需要使用输入/输出流。  2.想要在Java程序中表示一个真实存在的文件或目录，那么必须有一个File对象，但是Java程序中的一个File对象，可能没有一个真实存在的文件或目录。  3.Fi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-13T14:49:42.043Z">
+<meta property="og:updated_time" content="2019-10-13T17:32:11.500Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="File类的使用">
 <meta name="twitter:description" content="File类的使用   java.io.File类：文件和文件目录路径的抽象表示形式，与平台无关  1.File 能新建、删除、重命名文件和目录，但 File 不能访问文件内容本身。如果需要访问文件内容本身，则需要使用输入/输出流。  2.想要在Java程序中表示一个真实存在的文件或目录，那么必须有一个File对象，但是Java程序中的一个File对象，可能没有一个真实存在的文件或目录。  3.Fi">
@@ -239,7 +239,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">21</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">22</span></a>
 
   </li>
         <li class="menu-item menu-item-search">
@@ -341,7 +341,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-13 22:49:42" itemprop="dateModified" datetime="2019-10-13T22:49:42+08:00">2019-10-13</time>
+                <time title="修改时间：2019-10-14 01:32:11" itemprop="dateModified" datetime="2019-10-14T01:32:11+08:00">2019-10-14</time>
               </span>
             
           
@@ -402,7 +402,7 @@
 
       
         <h3 id="File类的使用"><a href="#File类的使用" class="headerlink" title="File类的使用"></a>File类的使用</h3><blockquote>
-<p>  java.io.File类：文件和文件目录路径的抽象表示形式，与平台无关<br>  1.File 能新建、删除、重命名文件和目录，但 File 不能访问文件内容本身。如果需要访问文件内容本身，则需要使用输入/输出流。<br>  2.想要在Java程序中表示一个真实存在的文件或目录，那么必须有一个File对象，但是Java程序中的一个File对象，可能没有一个真实存在的文件或目录。<br>  3.File对象可以作为参数传递给流的构造器</p>
+<p>  java.io.File类：<strong>文件和文件目录</strong>路径的抽象表示形式，与平台无关<br>  1.File 能<strong>新建、删除、重命名</strong>文件和目录，但 File 不能访问文件内容本身。如果需要访问文件内容本身，则需要使用输入/输出流。<br>  2.想要在Java程序中表示一个真实存在的文件或目录，那么必须有一个File对象，但是Java程序中的一个File对象，可能没有一个真实存在的文件或目录。<br>  3.File对象可以作为<strong>参数传递给流的构造器</strong></p>
 </blockquote>
 <h3 id="常用构造器"><a href="#常用构造器" class="headerlink" title="常用构造器"></a>常用构造器</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.<span class="function"><span class="keyword">public</span> <span class="title">File</span><span class="params">(String pathname)</span></span></span><br><span class="line"><span class="function">	以pathname为路径创建File对象，可以是 绝对路径或者相对路径，如果pathname是相对路径，则默认的当前路径在系统属性user.dir中存储。</span></span><br><span class="line"><span class="function">	 绝对路径：是一个固定的路径,从盘符开始</span></span><br><span class="line"><span class="function">	 相对路径：是相对于某个位置开始</span></span><br><span class="line"><span class="function">2.<span class="keyword">public</span> <span class="title">File</span><span class="params">(String parent,String child)</span></span></span><br><span class="line"><span class="function">	以parent为父路径，child为子路径创建File对象。</span></span><br><span class="line"><span class="function">3.<span class="keyword">public</span> <span class="title">File</span><span class="params">(File parent,String child)</span></span></span><br><span class="line"><span class="function">	根据一个父File对象和子文件路径创建File对象</span></span><br></pre></td></tr></table></figure>
 
@@ -441,7 +441,7 @@
   <p><span>本文标题:</span><a href="/2019/10/08/blog014/">File类的使用</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 ligong zhang 的个人博客">ligong zhang</a></p>
   <p><span>发布时间:</span>2019年10月08日 - 08:10</p>
-  <p><span>最后更新:</span>2019年10月13日 - 22:10</p>
+  <p><span>最后更新:</span>2019年10月14日 - 01:10</p>
   <p><span>原始链接:</span><a href="/2019/10/08/blog014/" title="File类的使用">http://zhangligong.xyz/2019/10/08/blog014/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://zhangligong.xyz/2019/10/08/blog014/"  aria-label="复制成功！"></i></span>
   </p>
@@ -561,7 +561,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -765,12 +765,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">92k</span>
+    <span title="站点总字数">98k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:24</span>
+    <span title="站点阅读时长">1:29</span>
 </div>
 
 
