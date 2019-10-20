@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.3.0',
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    search: {
+      root: '/',
+      path: 'search.xml'
+    },
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="一:网络编程概述 Java提供的网络类库，可以实现无痛的网络连接，联网的底层细节被隐藏在 Java 的本机安装系统里，由 JVM 进行控制。并且 Java 实现了一个跨平台的网络库， 程序员面对的是一个统一的网络编程环境。 计算机网络: 把分布在不同地理区域的计算机与专门的外部设备用通信线路互连成一个规模大、功能强的网络系统，从而使众多的计算机可以方便地互相传递信息、共享硬件、软件、数据信息等资源">
+<meta name="keywords" content="网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络通信要素">
+<meta property="og:url" content="http://zhangligong.xyz/2019/10/20/blog023/index.html">
+<meta property="og:site_name" content="LIGONG`S BLOG">
+<meta property="og:description" content="一:网络编程概述 Java提供的网络类库，可以实现无痛的网络连接，联网的底层细节被隐藏在 Java 的本机安装系统里，由 JVM 进行控制。并且 Java 实现了一个跨平台的网络库， 程序员面对的是一个统一的网络编程环境。 计算机网络: 把分布在不同地理区域的计算机与专门的外部设备用通信线路互连成一个规模大、功能强的网络系统，从而使众多的计算机可以方便地互相传递信息、共享硬件、软件、数据信息等资源">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://zhangligong.xyz/2019/10/20/blog023/hexo01.png">
+<meta property="og:image" content="http://zhangligong.xyz/2019/10/20/blog023/hexo02.png">
+<meta property="og:image" content="http://zhangligong.xyz/2019/10/20/blog023/hexo03.png">
+<meta property="og:image" content="http://zhangligong.xyz/2019/10/20/blog023/hexo04.png">
+<meta property="og:updated_time" content="2019-10-20T15:01:14.544Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网络通信要素">
+<meta name="twitter:description" content="一:网络编程概述 Java提供的网络类库，可以实现无痛的网络连接，联网的底层细节被隐藏在 Java 的本机安装系统里，由 JVM 进行控制。并且 Java 实现了一个跨平台的网络库， 程序员面对的是一个统一的网络编程环境。 计算机网络: 把分布在不同地理区域的计算机与专门的外部设备用通信线路互连成一个规模大、功能强的网络系统，从而使众多的计算机可以方便地互相传递信息、共享硬件、软件、数据信息等资源">
+<meta name="twitter:image" content="http://zhangligong.xyz/2019/10/20/blog023/hexo01.png">
+  <link rel="alternate" href="/atom.xml" title="LIGONG`S BLOG" type="application/atom+xml">
+  <link rel="canonical" href="http://zhangligong.xyz/2019/10/20/blog023/">
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>网络通信要素 | LIGONG`S BLOG</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?90842fee1868b5a4f63b476ab8c13deb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/itzhanglg"><img style="position:absolute;top:0;right:0;border:0;" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+	
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LIGONG`S BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">技术分享及生活中的点点滴滴</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+      
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+      
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">9</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+      
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">5</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">26</span></a>
+
+  </li>
+        <li class="menu-item menu-item-search">
+          <a href="javascript:;" class="popup-trigger">
+          
+            <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+    
+
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+    </div>
+</nav>
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhangligong.xyz/2019/10/20/blog023/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ligong zhang">
+      <meta itemprop="description" content="人心中的成见是一座大山，任你怎么努力都休想搬动">
+      <meta itemprop="image" content="/images/head.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LIGONG`S BLOG">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">网络通信要素
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-20 18:04:24 / 修改时间：23:01:14" itemprop="dateCreated datePublished" datetime="2019-10-20T18:04:24+08:00">2019-10-20</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络/" itemprop="url" rel="index"><span itemprop="name">网络</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon"
+              >
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          <br>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span title="本文字数">5.1k</span>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span title="阅读时长">5 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="一-网络编程概述"><a href="#一-网络编程概述" class="headerlink" title="一:网络编程概述"></a>一:网络编程概述</h3><ol>
+<li>Java提供的网络类库，可以实现无痛的网络连接，联网的底层细节被隐藏在 Java 的本机安装系统里，由 JVM 进行控制。并且 Java 实现了一个跨平台的网络库， <strong>程序员面对的是一个统一的网络编程环境。</strong></li>
+<li>计算机网络: 把分布在不同地理区域的计算机与专门的外部设备用通信线路互连成一个规模大、功能强的网络系统，从而使众多的计算机可以方便地互相传递信息、共享硬件、软件、数据信息等资源.</li>
+<li>网络编程的目的: <strong>直接或间接地通过网络协议与其它计算机实现数据交换，进行通讯。</strong></li>
+<li>主要问题: <ol>
+<li><strong>如何准确地定位网络上一台或多台主机；定位主机上特定的应用.</strong></li>
+<li><strong>找到主机后如何可靠高效地进行数据传输.</strong></li>
+</ol>
+</li>
+</ol>
+<h3 id="二-通信要素概述"><a href="#二-通信要素概述" class="headerlink" title="二:通信要素概述"></a>二:通信要素概述</h3><h4 id="1-如何实现网络中的主机互相通信"><a href="#1-如何实现网络中的主机互相通信" class="headerlink" title="1.如何实现网络中的主机互相通信"></a>1.如何实现网络中的主机互相通信</h4><ol>
+<li><strong>通信双方地址: IP 和 端口号</strong></li>
+<li><strong>网络通信协议: OSI参考模型 和 TCP/IP参考模型(协议)</strong></li>
+</ol>
+<h4 id="2-网络通信协议"><a href="#2-网络通信协议" class="headerlink" title="2.网络通信协议"></a>2.网络通信协议</h4><p><img src="/2019/10/20/blog023/hexo01.png" alt="网络通信协议"></p>
+<h4 id="3-数据传输"><a href="#3-数据传输" class="headerlink" title="3.数据传输"></a>3.数据传输</h4><p><img src="/2019/10/20/blog023/hexo02.png" alt="数据传输"></p>
+<h3 id="三-IP和端口号"><a href="#三-IP和端口号" class="headerlink" title="三:IP和端口号"></a>三:IP和端口号</h3><h4 id="1-IP地址-InetAddress"><a href="#1-IP地址-InetAddress" class="headerlink" title="1.IP地址: InetAddress"></a>1.IP地址: InetAddress</h4><ol>
+<li>唯一的标识 Internet 上的计算机（通信实体）</li>
+<li>本地回环地址(hostAddress)：127.0.0.1 主机名(hostName)：localhost</li>
+<li>IP地址分类方式1：<strong>IPV4 和 IPV6</strong><ol>
+<li>IPV4: 4个字节组成,4个0-255. 2011年初已经用尽.以点分十进制表示,如192.168.0.1</li>
+<li>IPV6: 16个字节组成, 128位,写成8个无符号整数, 每个整数用四个十六进制位表示,数之间用冒号(:)分开,如3ffe:3201:1401:1280:c8ff:fe4d:db39:1984</li>
+</ol>
+</li>
+<li>IP地址分类方式2： <strong>公网地址( 万维网使用)和 私有地址( 局域网使用)。192.168.开头的就是私有址址，范围即为192.168.0.0–192.168.255.255，专门为组织机构内部使用</strong></li>
+</ol>
+<h4 id="2-端口号"><a href="#2-端口号" class="headerlink" title="2.端口号"></a>2.端口号</h4><ol>
+<li>标识正在计算机上运行的进程（程序）,不同的进程有不同的端口号</li>
+<li>被规定为一个 16 位的整数 0~65535</li>
+<li>端口分类:<ol>
+<li><strong>公认端口：0~1023</strong>。被预先定义的服务通信占用（如：HTTP占用端口80，FTP占用端口21，Telnet占用端口23）</li>
+<li><strong>注册端口：1024~49151</strong>。分配给用户进程或应用程序。（如：Tomcat占用端口8080，MySQL占用端口3306，Oracle占用端口1521等）</li>
+<li><strong>动态/ 私有端口：49152~65535</strong>.</li>
+</ol>
+</li>
+</ol>
+<p><strong>IP地址与端口号的组合得出一个网络套接字：Socket。</strong></p>
+<h4 id="3-InetAddress类"><a href="#3-InetAddress类" class="headerlink" title="3.InetAddress类"></a>3.InetAddress类</h4><ol>
+<li><p>Internet上的主机有两种方式表示地址：</p>
+<p><strong>域名(hostName)</strong>：<a href="http://www.zhangligong.xyz" target="_blank" rel="noopener">www.zhangligong.xyz</a><br><strong>IP 地址(hostAddress)</strong>：220.250.64.225</p>
+</li>
+<li><p>InetAddress类主要表示IP地址，两个子类：Inet4Address、Inet6Address。</p>
+</li>
+<li><p>域名容易记忆，当在连接网络时输入一个主机的域名后，<strong>域名服务器(DNS)负责将域名转化成IP地址</strong>，这样才能和主机建立连接。(先找本机hosts，是否有输入的域名地址，没有的话，再通过DNS服务器，找主机。) ——- <strong>域名解析</strong></p>
+</li>
+<li><p>InetAddress 类没有提供公共的构造器，而是提供了如下几个静态方法来获取InetAddress 实例</p>
+<p><code>public static InetAddress getLocalHost()</code><br><code>public static InetAddress getByName(String host)</code></p>
+</li>
+<li><p>InetAddress 提供了如下几个常用的方法</p>
+<p><strong>public String getHostAddress()</strong> ：返回 IP 地址字符串（以文本表现形式）。<br><strong>public String getHostName()</strong> ：获取此 IP 地址的主机名<br><strong>public boolean isReachable(int timeout)</strong>： ：测试是否可以达到该地址</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.net.InetAddress;</span><br><span class="line"><span class="keyword">import</span> java.net.UnknownHostException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 一、网络编程中有两个主要的问题：</span></span><br><span class="line"><span class="comment"> * 1.如何准确地定位网络上一台或多台主机；定位主机上的特定的应用</span></span><br><span class="line"><span class="comment"> * 2.找到主机后如何可靠高效地进行数据传输</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 二、网络编程中的两个要素：</span></span><br><span class="line"><span class="comment"> * 1.对应问题一：IP和端口号</span></span><br><span class="line"><span class="comment"> * 2.对应问题二：提供网络通信协议：TCP/IP参考模型（应用层、传输层、网络层、物理+数据链路层）</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 三、通信要素一：IP和端口号</span></span><br><span class="line"><span class="comment"> * 1. IP:唯一的标识 Internet 上的计算机（通信实体）</span></span><br><span class="line"><span class="comment"> * 2. 在Java中使用InetAddress类代表IP</span></span><br><span class="line"><span class="comment"> * 3. IP分类：IPv4 和 IPv6 ; 万维网 和 局域网</span></span><br><span class="line"><span class="comment"> * 4. 域名:   www.baidu.com   www.mi.com  www.sina.com  www.jd.com</span></span><br><span class="line"><span class="comment"> *            www.vip.com</span></span><br><span class="line"><span class="comment"> * 5. 本地回路地址：127.0.0.1 对应着：localhost</span></span><br><span class="line"><span class="comment"> * 6. 如何实例化InetAddress:两个方法：getByName(String host) 、 getLocalHost()</span></span><br><span class="line"><span class="comment"> *        两个常用方法：getHostName() / getHostAddress()</span></span><br><span class="line"><span class="comment"> * 7. 端口号：正在计算机上运行的进程。</span></span><br><span class="line"><span class="comment"> * 要求：不同的进程有不同的端口号</span></span><br><span class="line"><span class="comment"> * 范围：被规定为一个 16 位的整数 0~65535。</span></span><br><span class="line"><span class="comment"> * 8. 端口号与IP地址的组合得出一个网络套接字：Socket</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> zlg</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-10-16 1:01</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InetAdressTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ipTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//根据域名返回InetAddress对象</span></span><br><span class="line">            InetAddress inet = InetAddress.getByName(<span class="string">"zhangligong.com"</span>);</span><br><span class="line">            System.out.println(inet);   <span class="comment">// zhangligong.com/220.250.64.225</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//获取本地ip</span></span><br><span class="line">            InetAddress lh = InetAddress.getByName(<span class="string">"localhost"</span>);</span><br><span class="line">            System.out.println(lh);  <span class="comment">// localhost/127.0.0.1</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//获取本地ip</span></span><br><span class="line">            InetAddress localHost = InetAddress.getLocalHost();</span><br><span class="line">            System.out.println(localHost);  <span class="comment">// IT-Xiaobai/169.254.34.219</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//获取IP名</span></span><br><span class="line">            String hostName = localHost.getHostName();</span><br><span class="line">            System.out.println(hostName);   <span class="comment">// IT-Xiaobai</span></span><br><span class="line">            <span class="comment">//获取IP地址</span></span><br><span class="line">            String hostAddress = localHost.getHostAddress();</span><br><span class="line">            System.out.println(hostAddress);    <span class="comment">// 169.254.34.219</span></span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (UnknownHostException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="四-通信协议"><a href="#四-通信协议" class="headerlink" title="四:通信协议"></a>四:通信协议</h3><p><strong>计算机网络中实现通信必须有一些约定，即通信协议，对速率、传输代码、代码结构、传输控制步骤、出错控制等制定标准。</strong></p>
+<h4 id="1-TCP-IP协议簇"><a href="#1-TCP-IP协议簇" class="headerlink" title="1.TCP/IP协议簇"></a>1.TCP/IP协议簇</h4><ol>
+<li>传输层协议中有两个非常重要的协议：<strong>传输控制协议TCP(Transmission Control Protocol) 和 用户数据报协议UDP(User Datagram Protocol)</strong>。</li>
+<li><strong>TCP/IP  以其两个主要协议：传输控制协议(TCP) 和网络互联协议(IP)</strong>而得名，实际上是一组协议，包括多个具有不同功能且互为关联的协议。</li>
+<li>IP(Internet Protocol)协议是<strong>网络层</strong>的主要协议，支持网间互连的数据通信。</li>
+<li>TCP/IP协议模型从更实用的角度出发，形成了高效的四层体系结构，即 <strong>物理链路层、IP 层、传输层和应用层。</strong></li>
+</ol>
+<h4 id="2-TCP协议"><a href="#2-TCP协议" class="headerlink" title="2.TCP协议"></a>2.TCP协议</h4><ol>
+<li>使用TCP协议前，须先<strong>建立TCP连接，形成传输数据通道</strong></li>
+<li>传输前，采用“ <strong>三次握手</strong>”方式，<strong>点对点通信，是可靠的</strong></li>
+<li>TCP协议进行通信的两个应用进程：<strong>客户端、服务端</strong></li>
+<li>在连接中可<strong>进行大数据量的传输</strong></li>
+<li>传输完毕，需<strong>释放已建立的连接，效率低</strong></li>
+</ol>
+<h4 id="3-UDP协议"><a href="#3-UDP协议" class="headerlink" title="3.UDP协议"></a>3.UDP协议</h4><ol>
+<li>将数据、源、目的封装成数据包，<strong>不需要建立连接</strong></li>
+<li>每个数据报的大小<strong>限制在64K内</strong></li>
+<li>发送不管对方是否准备好，接收方收到也不确认，故是<strong>不可靠的</strong></li>
+<li>可以广播发送</li>
+<li>发送数据结束时<strong>无需释放资源，开销小，速度快</strong></li>
+</ol>
+<h4 id="4-TCP三次握手"><a href="#4-TCP三次握手" class="headerlink" title="4.TCP三次握手"></a>4.TCP三次握手</h4><p><img src="/2019/10/20/blog023/hexo03.png" alt="TCP三次握手"></p>
+<h4 id="5-TCP四次挥手"><a href="#5-TCP四次挥手" class="headerlink" title="5.TCP四次挥手"></a>5.TCP四次挥手</h4><p><img src="/2019/10/20/blog023/hexo04.png" alt="TCP四次挥手"></p>
+<h4 id="6-Socket套接字"><a href="#6-Socket套接字" class="headerlink" title="6.Socket套接字"></a>6.Socket套接字</h4><ol>
+<li><p><strong>网络上具有唯一标识的IP地址和端口号组合在一起才能构成唯一能识别的标识符套接字。</strong></p>
+</li>
+<li><p>通信的两端都要有Socket，是两台机器间通信的端点。网络通信其实就是Socket间的通信。</p>
+</li>
+<li><p>Socket允许程序把网络连接当成一个流，数据在两个Socket间通过IO传输。</p>
+</li>
+<li><p>一般主动发起通信的应用程序属客户端，等待通信请求的为服务端。</p>
+</li>
+<li><p>Socket分类：</p>
+<ol>
+<li><strong>流套接字（stream socket）：使用TCP提供可依赖的字节流服务</strong></li>
+<li><strong>数据报套接字（datagram socket）：使用UDP提供“尽力而为”的数据报服务</strong></li>
+</ol>
+</li>
+<li><p>常用API</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Socket 类的常用构造器 ：</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(InetAddress address,<span class="keyword">int</span> port)</span>创建一个流套接字并将其连接到指定IP地址的指定端口号。</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(String host,<span class="keyword">int</span> port)</span>创建一个流套接字并将其连接到指定主机上的指定端口号。</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">// Socket 类的常用方法：</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InputStream <span class="title">getInputStream</span><span class="params">()</span>返回此套接字的输入流。可以用于接收网络消息</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> OutputStream <span class="title">getOutputStream</span><span class="params">()</span>返回此套接字的输出流。可以用于发送网络消息</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getInetAddress</span><span class="params">()</span>此套接字连接到的远程 IP 地址；如果套接字是未连接的，则返回 <span class="keyword">null</span>。</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getLocalAddress</span><span class="params">()</span>获取套接字绑定的本地地址。 即本端的IP地址</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPort</span><span class="params">()</span>此套接字连接到的远程端口号；如果尚未连接套接字，则返回0。</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLocalPort</span><span class="params">()</span>返回此套接字绑定到的本地端口。 如果尚未绑定套接字，则返回-1。即本端的端口号。</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span>关闭此套接字。套接字被关闭后，便不可在以后的网络连接中使用（即无法重新连接或重新绑定）。需要创建新的套接字对象。 关闭此套接字也将会关闭该套接字的InputStream 和OutputStream。</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shutdownInput</span><span class="params">()</span>如果在套接字上调用 <span class="title">shutdownInput</span><span class="params">()</span> 后从套接字输入流读取内容，则流将返回 EOF（文件结束符）。即不能在从此套接字的输入流中接收任何数据。</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shutdownOutput</span><span class="params">()</span>禁用此套接字的输出流。对于 TCP 套接字，任何以前写入的数据都将被发送，并且后跟 TCP 的正常连接终止序列。 如果在套接字上调用 <span class="title">shutdownOutput</span><span class="params">()</span> 后写入套接字输出流，则该流将抛出 IOException。 即不能通过此套接字的输出流发送任何数据。</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/10/20/blog023/">网络通信要素</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 ligong zhang 的个人博客">ligong zhang</a></p>
+  <p><span>发布时间:</span>2019年10月20日 - 18:10</p>
+  <p><span>最后更新:</span>2019年10月20日 - 23:10</p>
+  <p><span>原始链接:</span><a href="/2019/10/20/blog023/" title="网络通信要素">http://zhangligong.xyz/2019/10/20/blog023/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://zhangligong.xyz/2019/10/20/blog023/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+      
+	</div>
+
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #666;font-size: 16px;margin-top: 30px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+	  
+	</div>
+
+    <footer class="post-footer">
+          
+        
+        <div class="post-tags">
+            <a href="/tags/网络/" rel="tag"># 网络</a>
+          
+        </div>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+              <a href="/2019/10/19/blog022/" rel="next" title="NIO.2概念及相关类的使用">
+                <i class="fa fa-chevron-left"></i> NIO.2概念及相关类的使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+              <a href="/2019/10/20/blog024/" rel="prev" title="网络编程">
+                网络编程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NjQ4My8yMjk5NA=="></div>
+  </div>
+  
+
+
+
+
+
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/head.png"
+      alt="ligong zhang">
+  <p class="site-author-name" itemprop="name">ligong zhang</p>
+  <div class="site-description motion-element" itemprop="description">人心中的成见是一座大山，任你怎么努力都休想搬动</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="chat motion-element"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://blog.csdn.net/zhixingwu" title="CSDN &rarr; https://blog.csdn.net/zhixingwu" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>CSDN</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.cnblogs.com/itzlg/" title="博客园 &rarr; https://www.cnblogs.com/itzlg/" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>博客园</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/itzhanglg" title="GitHub &rarr; https://github.com/itzhanglg" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/5378314785/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" title="微博 &rarr; https://weibo.com/5378314785/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>微博</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.zhihu.com/people/zhang-li-gong-2/activities" title="知乎 &rarr; https://www.zhihu.com/people/zhang-li-gong-2/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>知乎</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://juejin.im/user/58004bd5128fe1005492d51f" title="掘金 &rarr; https://juejin.im/user/58004bd5128fe1005492d51f" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>掘金</a>
+      </span>
+    
+  </div>
+
+
+  <div class="links-of-blogroll motion-element links-of-blogroll-block">
+    <div class="links-of-blogroll-title">
+      <i class="fa  fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://segmentfault.com/" title="https://segmentfault.com/" rel="noopener" target="_blank">Segmentfault</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.v2ex.com/" title="https://www.v2ex.com/" rel="noopener" target="_blank">V2EX</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.infoq.cn/" title="https://www.infoq.cn/" rel="noopener" target="_blank">InfoQ</a>
+        </li>
+      
+    </ul>
+  </div>
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-网络编程概述"><span class="nav-number">1.</span> <span class="nav-text">一:网络编程概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-通信要素概述"><span class="nav-number">2.</span> <span class="nav-text">二:通信要素概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-如何实现网络中的主机互相通信"><span class="nav-number">2.1.</span> <span class="nav-text">1.如何实现网络中的主机互相通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-网络通信协议"><span class="nav-number">2.2.</span> <span class="nav-text">2.网络通信协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-数据传输"><span class="nav-number">2.3.</span> <span class="nav-text">3.数据传输</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-IP和端口号"><span class="nav-number">3.</span> <span class="nav-text">三:IP和端口号</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-IP地址-InetAddress"><span class="nav-number">3.1.</span> <span class="nav-text">1.IP地址: InetAddress</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-端口号"><span class="nav-number">3.2.</span> <span class="nav-text">2.端口号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-InetAddress类"><span class="nav-number">3.3.</span> <span class="nav-text">3.InetAddress类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-通信协议"><span class="nav-number">4.</span> <span class="nav-text">四:通信协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-TCP-IP协议簇"><span class="nav-number">4.1.</span> <span class="nav-text">1.TCP/IP协议簇</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-TCP协议"><span class="nav-number">4.2.</span> <span class="nav-text">2.TCP协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-UDP协议"><span class="nav-number">4.3.</span> <span class="nav-text">3.UDP协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-TCP三次握手"><span class="nav-number">4.4.</span> <span class="nav-text">4.TCP三次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-TCP四次挥手"><span class="nav-number">4.5.</span> <span class="nav-text">5.TCP四次挥手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-Socket套接字"><span class="nav-number">4.6.</span> <span class="nav-text">6.Socket套接字</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhangligong</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">127k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:55</span>
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+      </div>
+
+    
+
+  </div>
+
+  
+    
+    
+  
+    
+    
+  
+  <script color='0,0,255' opacity='0.7' zIndex='-2' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script defer src="/lib/three/three.min.js"></script>
+  <script defer src="true"></script>
+
+  <script src="/js/utils.js?v=7.3.0"></script>
+  <script src="/js/motion.js?v=7.3.0"></script>
+
+
+
+  
+  <script src="/js/schemes/muse.js?v=7.3.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.3.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script>
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<script>
+  window.livereOptions = {
+    refer: '2019/10/20/blog023/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+  
+	<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
