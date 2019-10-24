@@ -3,7 +3,7 @@ const ap = new APlayer({
     fixed: true,
     autoplay: false,
     audio: [
-      {
+      /*{
         name: "来自天堂的魔鬼",
         artist: '邓紫棋',
         url: 'http://www.ytmp3.cn/down/33626.mp3',
@@ -56,6 +56,6 @@ const ap = new APlayer({
         artist: '葛林',
         url: 'http://www.ytmp3.cn/down/46333.mp3',
         cover: 'http://img.ytmp3.cn/image/8.jpg',
-      },
+      },*/
     ]
 });
