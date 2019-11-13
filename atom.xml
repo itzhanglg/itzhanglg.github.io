@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhangligong.xyz/"/>
-  <updated>2019-10-29T15:40:05.067Z</updated>
+  <updated>2019-11-13T15:58:20.550Z</updated>
   <id>http://zhangligong.xyz/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VSCode工具插件推荐</title>
+    <link href="http://zhangligong.xyz/2019/11/13/blog027/"/>
+    <id>http://zhangligong.xyz/2019/11/13/blog027/</id>
+    <published>2019-11-13T15:07:38.000Z</published>
+    <updated>2019-11-13T15:58:20.550Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="一-VSCode简介"><a href="#一-VSCode简介" class="headerlink" title="一:VSCode简介"></a>一:VSCode简介</h3><p>VSCode（ Visual Studio Code）是微软出的一款轻量级代码编辑器 ，重要的是它在Windows, OS X 和Linux操作系统的桌面上均可运行。Visual Studio Code内置了对JavaScript, TypeScript和Node.js语言的支持，并且为其他语言如C++, C#, Python, PHP等提供了丰富的扩展库和运行时。</p><h3 id="二-VSCode安装"><a href="#二-VSCode安装" class="headerlink" title="二:VSCode安装"></a>二:VSCode安装</h3><h4 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h4><p>官网下载: <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">https://code.visualstudio.com/</a></p><h4 id="2-推荐插件安装"><a href="#2-推荐插件安装" class="headerlink" title="2.推荐插件安装"></a>2.推荐插件安装</h4><ol><li>HTML Snippets : H5代码片段以及提示</li><li>HTML CSS Support : 让 html 标签上写class 智能提示当前项目所支持的样式 新版已经支持scss文件检索</li><li>Debugger for Chrome : 让 vscode 映射 chrome 的 debug功能，静态页面都可以用 vscode 来打断点调试</li><li>vetur : vue框架所需的插件 语法高亮、智能感知、Emmet等</li><li>VueHelper : snippet代码片段</li><li>Auto Close Tag : 自动补全关闭标签</li><li>Auto Rename Tag : 自动重命名标签</li><li>Beautify : HTML、CSS、JS、JSON SASS语法高亮,格式化代码的工具,ctrl+shift+p输入beautify就有提示。</li><li>Better Comments : 不同的注释显示不同的颜色, *, ?, ! 注释颜色是不同的</li><li>Bracket Pair Colorizer : 对应括号显示同样的颜色.</li><li>Code Runner : 运行js文件工具, ctrl+alt+n 就可以运行文件,系统自动调用node运行文件</li><li>Document This : ctrl+alt+D,两次.文档注释(/** tab)</li><li>JavaScript(ES6) code snippets : es6代码自动补全</li><li>jQuery Code Snippets : jquery代码自动补全,如 jqAjax生成ajax代码</li><li>Node.js Modules IntelliSense : 提供JavaScript 和 TypeScript导入声明时自动补全</li><li>Path Autocomplete :路径补全工具</li><li>Project Manager : 项目管理工具</li><li>vscode-icons : 文件图标主题</li><li>vue-beautify : vue文件格式化</li><li>markdown使用 : 新建md文件,ctrl+shift+v可边写边预览    </li></ol><h4 id="3-配置菜单"><a href="#3-配置菜单" class="headerlink" title="3.配置菜单"></a>3.配置菜单</h4><p>点击菜单: 文件–勾选自动保存</p><p>窗口字体缩放: ctrl + -, ctrl + +</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;一-VSCode简介&quot;&gt;&lt;a href=&quot;#一-VSCode简介&quot; class=&quot;headerlink&quot; title=&quot;一:VSCode简介&quot;&gt;&lt;/a&gt;一:VSCode简介&lt;/h3&gt;&lt;p&gt;VSCode（ Visual Studio Code）是微软出的一款轻量级代
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://zhangligong.xyz/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="http://zhangligong.xyz/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>线程的生命周期,同步,和通信</title>
@@ -498,24 +523,6 @@
     
     
       <category term="前后端分离" scheme="http://zhangligong.xyz/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>test</title>
-    <link href="http://zhangligong.xyz/2019/09/02/test/"/>
-    <id>http://zhangligong.xyz/2019/09/02/test/</id>
-    <published>2019-09-01T16:32:05.000Z</published>
-    <updated>2019-09-05T18:13:02.935Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="图片" scheme="http://zhangligong.xyz/categories/%E5%9B%BE%E7%89%87/"/>
-    
-    
-      <category term="图片" scheme="http://zhangligong.xyz/tags/%E5%9B%BE%E7%89%87/"/>
     
   </entry>
   
