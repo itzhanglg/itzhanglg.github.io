@@ -5,9 +5,9 @@ const ap = new APlayer({
     audio: [
       {
         name: '你的答案',
-        artist: '解忧邵帅',
+        artist: '阿冗',
         url: 'http://music.163.com/song/media/outer/url?id=1400256289.mp3',
-        cover: 'http://p1.music.126.net/pjuhmIbOS3t6T87xgq7t8g==/109951164450922616.jpg?param=180y180',
+        cover: 'http://p1.music.126.net/m7yn-Elt8nROIGIoJQ3pIA==/109951163544008137.jpg?param=180y180',
       },
       {
         name: '你是人间四月天',
