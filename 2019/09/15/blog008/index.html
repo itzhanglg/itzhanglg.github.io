@@ -14,7 +14,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>前后端分离 | FishLeap</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -30,6 +30,9 @@
 
 
 <body>
+
+    <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
@@ -345,7 +348,7 @@
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -385,6 +388,7 @@
               fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
+
         
     </nav>
 
@@ -546,11 +550,6 @@
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-09-15
-                </div>
-                
 
                 
                 <div class="info-break-policy">
@@ -579,10 +578,10 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>前后端分离已成为互联网项目开发的业界标准使用方式，通过nginx+tomcat的方式（也可以中间加一个nodejs）有效的进行解耦，并且前后端分离会为以后的大型分布式架构、弹性计算架构、微服务架构、多端化服务（多种客户端，例如：浏览器，车载终端，安卓，IOS等等）打下坚实的基础。</p>
-<p><img src="/2019/09/15/blog008/hexo01.png" alt="前后端分离"></p>
+<p><img src="/loading.gif" data-original="/2019/09/15/blog008/hexo01.png" alt="前后端分离"></p>
 <h3 id="2-老的方式"><a href="#2-老的方式" class="headerlink" title="2.老的方式"></a>2.老的方式</h3><p>1.产品经理/领导/客户提出需求<br>2.UI做出设计图<br>3.前端工程师做出html页面<br>4.后端工程师将html页面套成jsp页面(前后端强依赖，后端必须要等前端的html做好才能套jsp。如果html发生变更，就更痛了，开发效率低)<br>5.集成出现问题<br>6.前端返工<br>7.后端返工<br>8.二次集成<br>9.集成成功<br>10.交付</p>
 <h3 id="3-新的方式"><a href="#3-新的方式" class="headerlink" title="3.新的方式"></a>3.新的方式</h3><p>1.产品经理/领导/客户提出需求<br>2.UI做出设计图<br>3.前后端约定接口&amp;数据&amp;参数<br>4.前后端并行开发（无强依赖，可前后端并行开发，如果需求变更，只要接口&amp;参数不变，就不用两边都修改代码，开发效率高）<br>5.前后端集成<br>6.前端页面调整<br>7.集成成功<br>8.交付</p>
-<h3 id="4-前端技术架构"><a href="#4-前端技术架构" class="headerlink" title="4.前端技术架构"></a>4.前端技术架构</h3><p><img src="/2019/09/15/blog008/hexo02.png" alt="前端技术栈"></p>
+<h3 id="4-前端技术架构"><a href="#4-前端技术架构" class="headerlink" title="4.前端技术架构"></a>4.前端技术架构</h3><p><img src="/loading.gif" data-original="/2019/09/15/blog008/hexo02.png" alt="前端技术栈"></p>
 <p>架构描述：以Node.js为核心的Vue.js前端技术生态架构</p>
 
             </div>
@@ -884,10 +883,6 @@ public
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
@@ -1176,11 +1171,11 @@ $(function () {
     
 
     
-    
+
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 
 </html>

@@ -23,7 +23,8 @@
     .head-container {
         position: absolute;
         padding: 0px 30px;
-        width: 100%;
+        width: 90%;
+        margin: 0 auto;
     }
 
     .post-container {
@@ -172,7 +173,7 @@ code {
     z-index: 1;
     filter: invert(50%);
     cursor: pointer;
-} 
+}
 
 .code-expand {
     position: absolute;
@@ -248,7 +249,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    background-image: linear-gradient(to right, #E3DDE3 0%, #908493 100%);
 }
 
 .text-color {
@@ -554,8 +555,8 @@ header .go-back i {
 }
 
 .bg-cover:after {
-    -webkit-animation: rainbow 60s infinite;
-    animation: rainbow 60s infinite;
+    /*-webkit-animation: rainbow 60s infinite;*/
+    /*animation: rainbow 60s infinite;*/
 }
 
 .bg-cover:before,
@@ -689,7 +690,7 @@ header .go-back i {
 }
 
 .index-card {
-    margin-top: -10px;
+    margin-top: -60px;
     padding-top: 20px;
 }
 

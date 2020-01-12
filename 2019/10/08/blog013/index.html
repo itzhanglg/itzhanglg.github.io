@@ -15,7 +15,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>IO流体系结构 | FishLeap</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -31,6 +31,9 @@
 
 
 <body>
+
+    <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
@@ -346,7 +349,7 @@
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -386,6 +389,7 @@
               fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
+
         
     </nav>
 
@@ -547,11 +551,6 @@
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-10-20
-                </div>
-                
 
                 
                 <div class="info-break-policy">
@@ -584,7 +583,7 @@
 <p>Java程序中，对于数据的输入/输出操作以 <strong>流(stream)</strong>的方式进行。</p>
 <p> java.io包下提供了各种“流”类和接口，用以获取不同种类的数据，并通过<strong>标准的方法</strong>输入或输出数据。</p>
 <h3 id="IO流分类"><a href="#IO流分类" class="headerlink" title="IO流分类"></a>IO流分类</h3><p><strong>操作单元</strong>：字节流和字符流<br><strong>流的流向</strong>：输入流和输出流<br><strong>流的角色</strong>：节点流和处理流</p>
-<p><img src="/2019/10/08/blog013/hexo04.png" alt="流的分类"></p>
+<p><img src="/loading.gif" data-original="/2019/10/08/blog013/hexo04.png" alt="流的分类"></p>
 <h3 id="IO流体系结构"><a href="#IO流体系结构" class="headerlink" title="IO流体系结构"></a>IO流体系结构</h3><pre class=" language-java"><code class="language-java">抽象基本类           节点流<span class="token punctuation">(</span>文件流<span class="token punctuation">)</span>                                 缓冲流<span class="token punctuation">(</span>处理流的一种<span class="token punctuation">)</span>
 InputStream          <span class="token function">FileInputStream</span> <span class="token punctuation">(</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buffer<span class="token punctuation">)</span><span class="token punctuation">)</span>         <span class="token function">BufferedInputStream</span> <span class="token punctuation">(</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buffer<span class="token punctuation">)</span><span class="token punctuation">)</span>
 OutputStream         <span class="token function">FileOutputStream</span> <span class="token punctuation">(</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buffer<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>len<span class="token punctuation">)</span>  <span class="token function">BufferedOutputStream</span> <span class="token punctuation">(</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buffer<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>len<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -682,9 +681,9 @@ Writer               <span class="token function">FileWriter</span> <span class=
 <p>关闭此输出流并释放与该流关联的所有系统资源</p>
 </li>
 </ol>
-<h3 id="结构图"><a href="#结构图" class="headerlink" title="结构图"></a>结构图</h3><h4 id="IO流体系"><a href="#IO流体系" class="headerlink" title="IO流体系"></a>IO流体系</h4><p><img src="/2019/10/08/blog013/hexo03.png" alt="IO流体系"></p>
-<h4 id="操作方式分类结构图"><a href="#操作方式分类结构图" class="headerlink" title="操作方式分类结构图"></a>操作方式分类结构图</h4><p><img src="/2019/10/08/blog013/hexo01.png" alt="操作方式分类结构图"></p>
-<h4 id="操作对象分类结构图"><a href="#操作对象分类结构图" class="headerlink" title="操作对象分类结构图"></a>操作对象分类结构图</h4><p><img src="/2019/10/08/blog013/hexo02.png" alt="操作对象分类结构图"></p>
+<h3 id="结构图"><a href="#结构图" class="headerlink" title="结构图"></a>结构图</h3><h4 id="IO流体系"><a href="#IO流体系" class="headerlink" title="IO流体系"></a>IO流体系</h4><p><img src="/loading.gif" data-original="/2019/10/08/blog013/hexo03.png" alt="IO流体系"></p>
+<h4 id="操作方式分类结构图"><a href="#操作方式分类结构图" class="headerlink" title="操作方式分类结构图"></a>操作方式分类结构图</h4><p><img src="/loading.gif" data-original="/2019/10/08/blog013/hexo01.png" alt="操作方式分类结构图"></p>
+<h4 id="操作对象分类结构图"><a href="#操作对象分类结构图" class="headerlink" title="操作对象分类结构图"></a>操作对象分类结构图</h4><p><img src="/loading.gif" data-original="/2019/10/08/blog013/hexo02.png" alt="操作对象分类结构图"></p>
 
             </div>
             <hr/>
@@ -980,10 +979,6 @@ read()的理解：返回读入的一个字符。如果达到文件末尾，返�
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
@@ -1272,11 +1267,11 @@ $(function () {
     
 
     
-    
+
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 
 </html>

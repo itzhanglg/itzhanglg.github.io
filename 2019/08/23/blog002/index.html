@@ -20,7 +20,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>UML类图及类之间关系 | FishLeap</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -36,6 +36,9 @@
 
 
 <body>
+
+    <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
@@ -351,7 +354,7 @@
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -391,6 +394,7 @@
               fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
+
         
     </nav>
 
@@ -552,11 +556,6 @@
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-08-29
-                </div>
-                
 
                 
                 <div class="info-break-policy">
@@ -585,7 +584,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="一：UML类图"><a href="#一：UML类图" class="headerlink" title="一：UML类图"></a>一：UML类图</h3><h4 id="1-UML基本介绍"><a href="#1-UML基本介绍" class="headerlink" title="1.UML基本介绍"></a>1.UML基本介绍</h4><p>UML：统一建模语言，是一种用于软件系统分析和设计的语言工具</p>
-<p><img src="/2019/08/23/blog002/hexo1.png" alt="UML类图"></p>
+<p><img src="/loading.gif" data-original="/2019/08/23/blog002/hexo1.png" alt="UML类图"></p>
 <h4 id="2-UML图"><a href="#2-UML图" class="headerlink" title="2.UML图"></a>2.UML图</h4><pre class=" language-java"><code class="language-java">UML图分类：
     用例图
     静态结构图：类图，对象图，包图，组件图，部署图
@@ -593,7 +592,7 @@
 类图是描述类与类之间的关系的，是UML图中最核心的</code></pre>
 <h4 id="3-UML类图"><a href="#3-UML类图" class="headerlink" title="3.UML类图"></a>3.UML类图</h4><p>用于描述系统中类(对象)本身的组成和类(对象)之间的各种静态关系<br>类之间的关系：依赖，泛化(继承)，实现，关联，聚合与组合</p>
 <h5 id="3-1依赖关系"><a href="#3-1依赖关系" class="headerlink" title="3.1依赖关系"></a>3.1依赖关系</h5><p>只要在类中用到了对方，那么他们之间就存在依赖关系。如没有对方，连编译都通过不了</p>
-<p><img src="/2019/08/23/blog002/hexo2.png" alt="依赖关系"></p>
+<p><img src="/loading.gif" data-original="/2019/08/23/blog002/hexo2.png" alt="依赖关系"></p>
 <pre class=" language-java"><code class="language-java">小结：
     <span class="token number">1</span>）类中用到了对方
     <span class="token number">2</span>）如果是类的成员属性
@@ -601,12 +600,12 @@
     <span class="token number">4</span>）如果是方法接受的参数类型
     <span class="token number">5</span>）方法中使用到<span class="token punctuation">(</span>局部<span class="token punctuation">)</span></code></pre>
 <h5 id="3-2泛化关系"><a href="#3-2泛化关系" class="headerlink" title="3.2泛化关系"></a>3.2泛化关系</h5><p>实际上就是继承关系，是依赖关系的特例</p>
-<p><img src="/2019/08/23/blog002/hexo3.png" alt="继承"></p>
+<p><img src="/loading.gif" data-original="/2019/08/23/blog002/hexo3.png" alt="继承"></p>
 <pre class=" language-java"><code class="language-java">小结：
     <span class="token number">1</span>）泛化关系实际上就是继承关系
     <span class="token number">2</span>）如果A类继承了B类，就说A和B存在泛化关系</code></pre>
 <h5 id="3-3实现关系"><a href="#3-3实现关系" class="headerlink" title="3.3实现关系"></a>3.3实现关系</h5><p>实际上是A类实现B接口，是依赖关系的特例</p>
-<p><img src="/2019/08/23/blog002/hexo4.png" alt="实现"></p>
+<p><img src="/loading.gif" data-original="/2019/08/23/blog002/hexo4.png" alt="实现"></p>
 <h5 id="3-4关联关系"><a href="#3-4关联关系" class="headerlink" title="3.4关联关系"></a>3.4关联关系</h5><p>实际上就是类与类之间的联系，是依赖关系的特例<br>关联具有导航性：即双向关系或单向关系<br>关联具有多重性：一对多，多对一，多对多</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//单向一对一关系</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
@@ -621,9 +620,9 @@
 <span class="token punctuation">}</span></code></pre>
 <h5 id="3-5聚合关系"><a href="#3-5聚合关系" class="headerlink" title="3.5聚合关系"></a>3.5聚合关系</h5><p>聚合关系(Aggregation)表示的是整体和部分的关系,整体与部分可以分开。聚合关系是关联关系的特例,所以他具有关联的导航性与多重性。</p>
 <p>如:一台电脑由键盘(keyboard)、显示器(monitor),鼠标等组成;组成电脑的各个配件是可以从电脑上分离出来的,使用带空心菱形的实线来表示:</p>
-<p><img src="/2019/08/23/blog002/hexo5.png" alt="聚合"></p>
+<p><img src="/loading.gif" data-original="/2019/08/23/blog002/hexo5.png" alt="聚合"></p>
 <h5 id="3-6组合关系"><a href="#3-6组合关系" class="headerlink" title="3.6组合关系"></a>3.6组合关系</h5><p>组合关系:也是整体与部分的关系,但是整体与部分不可以分开。<br>再看一个案例:在程序中我们定义实体: Person与IDCard, Head,那么Head和Person就是组合, IDCard和 Person就是聚合。<br>但是如果在程序中Person实体中定义了对IDCard进行级联删除,即删除Person时连同IDCard一起删除,那么IDCard和Person就是组合了。</p>
-<p><img src="/2019/08/23/blog002/hexo6.png" alt="组合"></p>
+<p><img src="/loading.gif" data-original="/2019/08/23/blog002/hexo6.png" alt="组合"></p>
 
             </div>
             <hr/>
@@ -919,10 +918,6 @@
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
@@ -1211,11 +1206,11 @@ $(function () {
     
 
     
-    
+
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 
 </html>

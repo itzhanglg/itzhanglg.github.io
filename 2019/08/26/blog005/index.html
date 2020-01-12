@@ -17,7 +17,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>设计模式之工厂模式 | FishLeap</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -33,6 +33,9 @@
 
 
 <body>
+
+    <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
@@ -348,7 +351,7 @@
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -388,6 +391,7 @@
               fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
+
         
     </nav>
 
@@ -549,11 +553,6 @@
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-08-29
-                </div>
-                
 
                 
                 <div class="info-break-policy">
@@ -586,7 +585,7 @@
 <span class="token number">2</span><span class="token punctuation">)</span>披萨的制作有 prepare，bake<span class="token punctuation">,</span> cut<span class="token punctuation">,</span> box
 <span class="token number">3</span><span class="token punctuation">)</span>完成披萨店订购功能。</code></pre>
 <p>2.传统方式来完成</p>
-<p><img src="/2019/08/26/blog005/hexo1.png" alt="工厂设计模式-传统方式"></p>
+<p><img src="/loading.gif" data-original="/2019/08/26/blog005/hexo1.png" alt="工厂设计模式-传统方式"></p>
 <p>编写 OrderPizza.java 去订购需要的各种 Pizza</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">OrderPizza</span> <span class="token punctuation">{</span>
 
@@ -629,7 +628,7 @@
 <span class="token number">3</span><span class="token punctuation">)</span>在软件开发中，当我们会用到大量的创建某种、某类或者某批对象时，就会使用到工厂模式<span class="token punctuation">.</span></code></pre>
 <p>4.使用简单工厂模式</p>
 <p>简单工厂模式的设计方案: 定义一个可以实例化 Pizaa 对象的类，封装创建对象的代码</p>
-<p><img src="/2019/08/26/blog005/hexo2.png" alt="简单工厂模式"></p>
+<p><img src="/loading.gif" data-original="/2019/08/26/blog005/hexo2.png" alt="简单工厂模式"></p>
 <p>SimpleFactory.java类：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//简单工厂类</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SimpleFactory</span> <span class="token punctuation">{</span>
@@ -785,7 +784,7 @@
 <h4 id="3-工厂方法模式介绍"><a href="#3-工厂方法模式介绍" class="headerlink" title="3.工厂方法模式介绍"></a>3.工厂方法模式介绍</h4><pre class=" language-java"><code class="language-java"><span class="token number">1</span><span class="token punctuation">)</span>工厂方法模式设计方案：将披萨项目的实例化功能抽象成抽象方法，在不同的口味点餐子类中具体实现。
 <span class="token number">2</span><span class="token punctuation">)</span>工厂方法模式：定义了一个创建对象的抽象方法，由子类决定要实例化的类。工厂方法模式将对象的实例化推迟到子类。</code></pre>
 <p>4.应用</p>
-<h5 id="4-1-思路分析"><a href="#4-1-思路分析" class="headerlink" title="4.1 思路分析"></a>4.1 思路分析</h5><p><img src="/2019/08/26/blog005/hexo3.png" alt="工厂方法模式"></p>
+<h5 id="4-1-思路分析"><a href="#4-1-思路分析" class="headerlink" title="4.1 思路分析"></a>4.1 思路分析</h5><p><img src="/loading.gif" data-original="/2019/08/26/blog005/hexo3.png" alt="工厂方法模式"></p>
 <h5 id="4-2-OrderPizza-java类"><a href="#4-2-OrderPizza-java类" class="headerlink" title="4.2 OrderPizza.java类"></a>4.2 OrderPizza.java类</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">OrderPizza</span> <span class="token punctuation">{</span>
 
     <span class="token comment" spellcheck="true">//定义一个抽象方法，createPizza , 让各个工厂子类自己实现</span>
@@ -861,7 +860,7 @@
 将工厂抽象成两层，<span class="token function">AbsFactory</span><span class="token punctuation">(</span>抽象工厂<span class="token punctuation">)</span> 和 具体实现的工厂子类。程序员可以根据创建对象类型使用对应的工厂子类。这样将单个的简单工厂类变成了工厂簇，更利于代码的维护和扩展。</code></pre>
 <p>2.应用</p>
 <p>2.1 思路分析</p>
-<p><img src="/2019/08/26/blog005/hexo4.png" alt="抽象工厂模式"></p>
+<p><img src="/loading.gif" data-original="/2019/08/26/blog005/hexo4.png" alt="抽象工厂模式"></p>
 <p>2.2 AbsFactory.java类</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//一个抽象工厂模式的抽象层(接口)</span>
 <span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">AbsFactory</span> <span class="token punctuation">{</span>
@@ -1315,10 +1314,6 @@ public class Sheep
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
@@ -1607,11 +1602,11 @@ $(function () {
     
 
     
-    
+
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 
 </html>

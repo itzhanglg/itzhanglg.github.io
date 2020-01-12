@@ -19,7 +19,7 @@ public class Sheep ">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>设计模式之原型模式 | FishLeap</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -35,6 +35,9 @@ public class Sheep ">
 
 
 <body>
+
+    <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
@@ -350,7 +353,7 @@ public class Sheep ">
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -390,6 +393,7 @@ public class Sheep ">
               fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
+
         
     </nav>
 
@@ -551,11 +555,6 @@ public class Sheep ">
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-08-29
-                </div>
-                
 
                 
                 <div class="info-break-policy">
@@ -585,7 +584,7 @@ public class Sheep ">
             <div id="articleContent">
                 <h3 id="1-克隆羊问题"><a href="#1-克隆羊问题" class="headerlink" title="1.克隆羊问题"></a>1.克隆羊问题</h3><p>现在有一只羊 tom，姓名为: tom, 年龄为：1，颜色为：白色，请编写程序创建和 tom 羊 属性完全相同的 10只羊。</p>
 <p>1.1 思路分析：</p>
-<p><img src="/2019/08/27/blog006/hexo1.png" alt="传统克隆羊解决方法"></p>
+<p><img src="/loading.gif" data-original="/2019/08/27/blog006/hexo1.png" alt="传统克隆羊解决方法"></p>
 <p>1.2 传统应用</p>
 <p>Sheep.java</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Sheep</span> <span class="token punctuation">{</span>
@@ -633,7 +632,7 @@ public class Sheep ">
 <span class="token number">3</span><span class="token punctuation">)</span>工作原理是<span class="token operator">:</span>通过将一个原型对象传给那个要发动创建的对象，这个要发动创建的对象通过请求原型对象拷贝它们自己来实施创建，即 对象<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token number">4</span><span class="token punctuation">)</span>形象的理解：孙大圣拔出猴毛， 变出其它孙大圣</code></pre>
 <p>2.2 uml类图：</p>
-<p><img src="/2019/08/27/blog006/hexo2.png" alt="原型模式类图"></p>
+<p><img src="/loading.gif" data-original="/2019/08/27/blog006/hexo2.png" alt="原型模式类图"></p>
 <blockquote>
 <p>  原理结构图说明：<br>  1)Prototype : 原型类，声明一个克隆自己的接口<br>  2)ConcretePrototype: 具体的原型类,  实现一个克隆自己的操作<br>  3)Client: 让一个原型对象克隆自己，从而创建一个新的对象(属性一样）</p>
 </blockquote>
@@ -1195,10 +1194,6 @@ public
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
@@ -1487,11 +1482,11 @@ $(function () {
     
 
     
-    
+
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 
 </html>

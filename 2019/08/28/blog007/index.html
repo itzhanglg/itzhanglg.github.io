@@ -19,7 +19,7 @@ public">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>设计模式之建造者模式 | FishLeap</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -35,6 +35,9 @@ public">
 
 
 <body>
+
+    <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
@@ -350,7 +353,7 @@ public">
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -390,6 +393,7 @@ public">
               fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
+
         
     </nav>
 
@@ -551,11 +555,6 @@ public">
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-11-24
-                </div>
-                
 
                 
                 <div class="info-break-policy">
@@ -585,7 +584,7 @@ public">
             <div id="articleContent">
                 <h3 id="1-盖房项目问题"><a href="#1-盖房项目问题" class="headerlink" title="1.盖房项目问题"></a>1.盖房项目问题</h3><p>1)需要建房子：这一过程为打桩、砌墙、封顶<br>2)房子有各种各样的，比如普通房，高楼，别墅，各种房子的过程虽然一样，但是要求不要相同的.</p>
 <p>1.1 思路分析：</p>
-<p><img src="/2019/08/28/blog007/hexo1.png" alt="传统盖房解决方法"></p>
+<p><img src="/loading.gif" data-original="/2019/08/28/blog007/hexo1.png" alt="传统盖房解决方法"></p>
 <p>1.2 传统应用</p>
 <p>AbstractHouse.java</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">AbstractHouse</span> <span class="token punctuation">{</span>
@@ -637,10 +636,10 @@ public">
 <span class="token number">2</span><span class="token punctuation">)</span>Builder（抽象建造者）： 创建一个 Product 对象的各个部件指定的 接口<span class="token operator">/</span>抽象类。
 <span class="token number">3</span><span class="token punctuation">)</span>ConcreteBuilder（具体建造者）： 实现接口，构建和装配各个部件。
 <span class="token number">4</span><span class="token punctuation">)</span>Director（指挥者）： 构建一个使用 Builder 接口的对象。它主要是用于创建一个复杂的对象。它主要有两个作用，一是：隔离了客户与对象的生产过程，二是：负责控制产品对象的生产过程。</code></pre>
-<p>2.3 原理类图<img src="/2019/08/28/blog007/hexo2.png" alt="建造者模式类图"></p>
+<p>2.3 原理类图<img src="/loading.gif" data-original="/2019/08/28/blog007/hexo2.png" alt="建造者模式类图"></p>
 <p>2.4 应用</p>
 <p>uml类图：</p>
-<p><img src="/2019/08/28/blog007/hexo3.png" alt="建造者模式uml图"></p>
+<p><img src="/loading.gif" data-original="/2019/08/28/blog007/hexo3.png" alt="建造者模式uml图"></p>
 <p>House.java</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//产品->Product</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">House</span> <span class="token punctuation">{</span>
@@ -1083,10 +1082,6 @@ public class Sheep
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
@@ -1375,11 +1370,11 @@ $(function () {
     
 
     
-    
+
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 
 </html>

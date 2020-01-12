@@ -15,7 +15,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>npm搭建vue全过程 | FishLeap</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -31,6 +31,9 @@
 
 
 <body>
+
+    <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
@@ -346,7 +349,7 @@
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -386,6 +389,7 @@
               fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
+
         
     </nav>
 
@@ -547,11 +551,6 @@
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-11-24
-                </div>
-                
 
                 
                 <div class="info-break-policy">
@@ -611,7 +610,7 @@ cd vue_demo        <span class="token comment" spellcheck="true">// 切换到vue
 cnpm install    <span class="token comment" spellcheck="true">// 安装依赖的模块</span>
 npm run dev        <span class="token comment" spellcheck="true">// 运行项目</span>
 npm run build     <span class="token comment" spellcheck="true">// 打包，生成静态文件</span></code></pre>
-<h3 id="9-项目结构"><a href="#9-项目结构" class="headerlink" title="9.项目结构"></a>9.项目结构</h3><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWcyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvOTkzNzkxLzIwMTkwOC85OTM3OTEtMjAxOTA4MTMwMDU5NDk5OTQtMzcwMTEzMzY5LnBuZw?x-oss-process=image/format,png" alt></p>
+<h3 id="9-项目结构"><a href="#9-项目结构" class="headerlink" title="9.项目结构"></a>9.项目结构</h3><p><img src="/loading.gif" data-original="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWcyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvOTkzNzkxLzIwMTkwOC85OTM3OTEtMjAxOTA4MTMwMDU5NDk5OTQtMzcwMTEzMzY5LnBuZw?x-oss-process=image/format,png" alt></p>
 <pre class=" language-java"><code class="language-java"><span class="token operator">|</span><span class="token operator">--</span> build <span class="token operator">:</span> webpack 相关的配置文件夹<span class="token punctuation">(</span>基本不需要修改<span class="token punctuation">)</span>
     <span class="token operator">|</span><span class="token operator">--</span> dev<span class="token operator">-</span>server<span class="token punctuation">.</span>js <span class="token operator">:</span> 通过 express 启动后台服务器
 <span class="token operator">|</span><span class="token operator">--</span> config<span class="token operator">:</span> webpack 相关的配置文件夹<span class="token punctuation">(</span>基本不需要修改<span class="token punctuation">)</span>
@@ -971,10 +970,6 @@ vue<span class="token operator">-</span>cli2<span class="token punctuation">.</s
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
@@ -1263,11 +1258,11 @@ $(function () {
     
 
     
-    
+
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 
 </html>

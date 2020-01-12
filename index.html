@@ -14,7 +14,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>FishLeap</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -30,6 +30,9 @@
 
 
 <body>
+
+    <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
@@ -345,7 +348,7 @@
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -385,6 +388,7 @@
               fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
+
         
     </nav>
 
@@ -454,12 +458,12 @@
                 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
                 <script>
                     var typed = new Typed("#subtitle", {
-                        strings: ['对生活微笑可以影响潮湿的心情，抹去不愉快的色彩','Smile to life can influence the damp mood，erase unhappy colors'],
+                        strings: ['不要逃避眼泪，也许那是一种说不出的幸福;','不要痴迷于微笑，那可能是一种无法言说的痛苦。'],
                         startDelay: 300,
                         typeSpeed: 100,
                         loop: true,
                         backSpeed: 50,
-                        showCursor: true
+                        showCursor: false
                     });
                 </script>
                 
@@ -483,11 +487,11 @@
 
                 
                     <a href="https://github.com/itzhanglg" class="waves-effect waves-light btn" target="_blank">
-                        <i class="fab fa-github "></i>Fork Me
+                        <i class="fab fa-github-alt"></i>Github
                     </a>
                 
             </div>
-            <div class="cover-social-link">
+            <!--<div class="cover-social-link">
     <a href="https://github.com/itzhanglg" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -518,7 +522,7 @@
         <i class="fas fa-rss"></i>
     </a>
 
-</div>
+</div>-->
         </div>
     </div>
 
@@ -584,7 +588,7 @@
     
     <div class="row">
         <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            你现在的努力，是为了以后有更多的选择。
+            你现在的努力，是为了以后有更多的选择。请用一秒去忘记烦恼，用一分钟去想幸福，用一小时去想喜欢的人度过，用一生去关心我最爱的人，再用微笑去送爱的祝福。
         </div>
     </div>
 </div>
@@ -600,6 +604,39 @@
 
 
 
+
+
+<div class="title"><i class="far fa-thumbs-up"></i>&nbsp;&nbsp;推荐文章</div>
+
+<div class="row">
+
+    
+    
+    <div class="col s12" >
+        <div class="post-card" style="background-image: url('/medias/featureimages/21.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        
+                            <a href="/categories/设计模式/" class="category">设计模式</a>
+                        
+                    
+                </div>
+                <a href="/2019/08/22/blog001/">
+                    <h3 class="post-title">设计模式六大原则</h3>
+                </a>
+                <p class="post-description">一：设计模式七大原则1.设计模式的目的编写软件过程中,程序员面临着来自耦合性,内聚性以及可维护性,可扩展性,重用性,灵活性等多方面的挑战,设计模式是为了让程序(软件),具</p>
+                <a href="/2019/08/22/blog001/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
                     </div>
                     
                 </div>
@@ -608,6 +645,37 @@
     </div>
     
 
+    
+        
+
+<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<div class="">
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="aplayer" class="music"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: 'true' === 'true',
+        autoplay: 'true' === 'true',
+        theme: '#42b983',
+        loop: 'all',
+        order: 'list',
+        preload: 'auto',
+        volume: Number('0.7'),
+        listFolded: 'true' === 'true',
+        listMaxHeight: '',
+        audio: eval([{"name":"你的答案","artist":"阿冗","url":"http://music.163.com/song/media/outer/url?id=1400256289.mp3","cover":"http://p1.music.126.net/m7yn-Elt8nROIGIoJQ3pIA==/109951163544008137.jpg?param=180y180"},{"name":"你是人间四月天","artist":"解忧邵帅","url":"http://music.163.com/song/media/outer/url?id=1344897943.mp3","cover":"http://p1.music.126.net/pjuhmIbOS3t6T87xgq7t8g==/109951164450922616.jpg?param=180y180"},{"name":"林中鸟","artist":"葛林","url":"http://music.163.com/song/media/outer/url?id=404784564.mp3","cover":"http://singerimg.kugou.com/uploadpic/softhead/240/20190909/20190909200303910780.jpg"},{"name":"风筝误","artist":"刘珂矣","url":"http://music.163.com/song/media/outer/url?id=32785674.mp3","cover":"http://singerimg.kugou.com/uploadpic/softhead/240/20190916/20190916165156913.jpg"},{"name":"把孤独当做晚餐","artist":"井胧","url":"http://music.163.com/song/media/outer/url?id=1379456709.mp3","cover":"http://singerimg.kugou.com/uploadpic/softhead/240/20190802/20190802180102888.jpg"},{"name":"回忆总想哭","artist":"南宫嘉骏","url":"http://music.163.com/song/media/outer/url?id=33887645.mp3","cover":"http://singerimg.kugou.com/uploadpic/softhead/240/20190815/20190815162602712.jpg"},{"name":"芒种","artist":"音阙诗听","url":"http://music.163.com/song/media/outer/url?id=1369798757.mp3","cover":"http://singerimg.kugou.com/uploadpic/softhead/240/20170721/20170721162945806.jpg"},{"name":"来自天堂的魔鬼","artist":"邓紫棋","url":"http://music.163.com/song/media/outer/url?id=36270426.mp3","cover":"http://imge.kugou.com/stdmusic/240/20151111/20151111174428152608.jpg"},{"name":"一曲相思","artist":"半阳","url":"http://music.163.com/song/media/outer/url?id=1313558186.mp3","cover":"http://singerimg.kugou.com/uploadpic/softhead/240/20181116/20181116190719480.jpg"},{"name":"烦恼歌","artist":"张学友","url":"http://music.163.com/song/media/outer/url?id=187672.mp3","cover":"http://singerimg.kugou.com/uploadpic/softhead/240/20140527/20140527095042283066.jpg"},{"name":"琵琶行","artist":"沈谧仁&奇然","url":"http://music.163.com/song/media/outer/url?id=476513774.mp3","cover":"http://singerimg.kugou.com/uploadpic/softhead/240/20161028/20161028095734731.jpg"},{"name":"带你去旅行","artist":"校长","url":"http://music.163.com/song/media/outer/url?id=1297747079.mp3","cover":"http://singerimg.kugou.com/uploadpic/softhead/240/20190624/20190624181655780.jpg"},{"name":"温柔乡","artist":"陈雅森","url":"http://music.163.com/song/media/outer/url?id=1300885435.mp3","cover":"http://singerimg.kugou.com/uploadpic/softhead/240/20190701/20190701102756737.jpg"}])
+    });
+});
+</script>
     
 
     
@@ -1429,11 +1497,11 @@ $(function () {
     
 
     
-    
+
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 
 </html>

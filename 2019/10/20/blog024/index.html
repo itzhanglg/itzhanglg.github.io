@@ -17,7 +17,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>网络编程 | FishLeap</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -33,6 +33,9 @@
 
 
 <body>
+
+    <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
@@ -348,7 +351,7 @@
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -388,6 +391,7 @@
               fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
+
         
     </nav>
 
@@ -549,11 +553,6 @@
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-10-21
-                </div>
-                
 
                 
                 <div class="info-break-policy">
@@ -582,7 +581,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="一-TCP网络编程"><a href="#一-TCP网络编程" class="headerlink" title="一:TCP网络编程"></a>一:TCP网络编程</h3><h4 id="1-Socket的TCP编程"><a href="#1-Socket的TCP编程" class="headerlink" title="1.Socket的TCP编程"></a>1.Socket的TCP编程</h4><p>Java语言的基于套接字编程分为服务端编程和客户端编程，其通信模型如图所示：</p>
-<p><img src="/2019/10/20/blog024/hexo01.png" alt="基于Socket的TCP编程"></p>
+<p><img src="/loading.gif" data-original="/2019/10/20/blog024/hexo01.png" alt="基于Socket的TCP编程"></p>
 <h4 id="2-客服端Socket的工作过程"><a href="#2-客服端Socket的工作过程" class="headerlink" title="2.客服端Socket的工作过程"></a>2.客服端Socket的工作过程</h4><ol>
 <li>创建 Socket ：根据指定服务端的 IP 地址或端口号构造 Socket 类对象。<strong>创建的同时会自动向服务器方发起连接,若服务器端响应，则建立客户端到服务器的通信线路。若连接失败，会出现异常。</strong></li>
 <li>打开连接到 Socket  的输入/ 出流： 使用 <strong>getInputStream()</strong>方法获得输入流，使用<strong>getOutputStream()</strong>方法获得输出流，进行数据传输.</li>
@@ -1171,10 +1170,6 @@ Java提供的网络类库，可以实现无痛的网络连接，联网的底层�
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
@@ -1463,11 +1458,11 @@ $(function () {
     
 
     
-    
+
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 
 </html>

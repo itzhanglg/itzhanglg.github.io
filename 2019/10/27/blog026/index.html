@@ -17,7 +17,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>线程的生命周期,同步,和通信 | FishLeap</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -33,6 +33,9 @@
 
 
 <body>
+
+    <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
@@ -348,7 +351,7 @@
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -388,6 +391,7 @@
               fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
+
         
     </nav>
 
@@ -549,11 +553,6 @@
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-10-29
-                </div>
-                
 
                 
                 <div class="info-break-policy">
@@ -589,7 +588,7 @@
 <li><strong>阻塞</strong>: 被人为挂起或执行输入输出操作时,让出CPU并临时终止自己的执行,进入阻塞状态</li>
 <li><strong>死亡</strong>: 线程完成全部工作或被提前强制性终止或出现异常导致结束</li>
 </ol>
-<h4 id="2-线程状态转换图"><a href="#2-线程状态转换图" class="headerlink" title="2.线程状态转换图"></a>2.线程状态转换图</h4><p><img src="/2019/10/27/blog026/hexo01.png" alt="线程状态图"></p>
+<h4 id="2-线程状态转换图"><a href="#2-线程状态转换图" class="headerlink" title="2.线程状态转换图"></a>2.线程状态转换图</h4><p><img src="/loading.gif" data-original="/2019/10/27/blog026/hexo01.png" alt="线程状态图"></p>
 <h3 id="二-线程的同步"><a href="#二-线程的同步" class="headerlink" title="二:线程的同步"></a>二:线程的同步</h3><h4 id="1-多线程的安全问题"><a href="#1-多线程的安全问题" class="headerlink" title="1.多线程的安全问题"></a>1.多线程的安全问题</h4><ol>
 <li>问题原有: 当多条语句在操作同一个线程共享数据时,一个线程对多条语句只执行了一部分,另一个线程就参与进来执行,导致共享数据的错误.</li>
 <li>解决办法: 对多条操作共享数据的语句,只能让一个线程都执行完,在执行过程中,其他线程不可以参与执行.</li>
@@ -1183,10 +1182,6 @@
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
@@ -1475,11 +1470,11 @@ $(function () {
     
 
     
-    
+
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 
 </html>

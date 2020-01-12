@@ -15,7 +15,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>字符编码 | FishLeap</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -31,6 +31,9 @@
 
 
 <body>
+
+    <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
@@ -346,7 +349,7 @@
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -386,6 +389,7 @@
               fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
+
         
     </nav>
 
@@ -547,11 +551,6 @@
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-10-13
-                </div>
-                
 
                 
                 <div class="info-break-policy">
@@ -581,15 +580,15 @@
             <div id="articleContent">
                 <h3 id="编码表由来"><a href="#编码表由来" class="headerlink" title="编码表由来"></a>编码表由来</h3><p>计算机只能识别二进制数据，早期由来是电信号。为了方便应用计算机，让它可以识别各个国家的文字。就将各个国家的文字用数字来表示，并一一对应，形成一张表。这就是编码表。</p>
 <h3 id="常见编码表"><a href="#常见编码表" class="headerlink" title="常见编码表"></a>常见编码表</h3><p><strong>ASCII</strong>：美国标准信息交换码。用一个字节的7位可以表示。<br><strong>ISO8859-1</strong>：拉丁码表。欧洲码表。用一个字节的8位表示。<br><strong>GB2312</strong>：中国的中文编码表。最多两个字节编码所有字符<br><strong>GBK</strong>：中国的中文编码表升级，融合了更多的中文文字符号。最多两个字节编码<br><strong>Unicode</strong>：国际标准码，融合了目前人类使用的所有字符。为每个字符分配唯一的字符码。所有的文字都用两个字节来表示。<br><strong>UTF-8</strong>：变长的编码方式，可用1-4个字节来表示一个字符。</p>
-<h3 id="图例"><a href="#图例" class="headerlink" title="图例"></a>图例</h3><p><img src="/2019/10/13/blog018/hexo01.png" alt="图例"></p>
+<h3 id="图例"><a href="#图例" class="headerlink" title="图例"></a>图例</h3><p><img src="/loading.gif" data-original="/2019/10/13/blog018/hexo01.png" alt="图例"></p>
 <p>ANSI与Unicode</p>
-<p><img src="/2019/10/13/blog018/hexo03.png" alt></p>
+<p><img src="/loading.gif" data-original="/2019/10/13/blog018/hexo03.png" alt></p>
 <h3 id="Unicode问题"><a href="#Unicode问题" class="headerlink" title="Unicode问题"></a>Unicode问题</h3><ol>
 <li>Unicode不完美，这里就有三个问题，一个是，我们已经知道，英文字母只用一个字节表示就够了，第二个问题是如何才能区别Unicode和ASCII？计算机怎么知道两个字节表示一个符号，而不是分别表示两个符号呢？第三个，如果和GBK等双字节编码方式一样，用最高位是1或0表示两个字节和一个字节，就少了很多值无法用于表示字符，不够表示所有字符。Unicode在很长一段时间内无法推广，直到互联网的出现。</li>
 <li>面向传输的众多 UTF（UCS Transfer Format）标准出现了，顾名思义，UTF-8就是每次8个位传输数据，而UTF-16就是每次16个位。这是为传输而设计的编码，并使编码无国界，这样就可以显示全世界上所有文化的字符了。</li>
 <li>Unicode只是定义了一个庞大的、全球通用的字符集，并为每个字符规定了唯一确定的编号，具体存储成什么样的字节流，取决于字符编码方案。推荐的Unicode编码是UTF-8和UTF-16</li>
 </ol>
-<p><img src="/2019/10/13/blog018/hexo02.png" alt="原理"></p>
+<p><img src="/loading.gif" data-original="/2019/10/13/blog018/hexo02.png" alt="原理"></p>
 <h3 id="编码与解码"><a href="#编码与解码" class="headerlink" title="编码与解码"></a>编码与解码</h3><p>编码：字符数组、<strong>字符串</strong> —&gt; 字节、<strong>字节数组</strong>      <strong>OutputStreamWriter</strong>(写入)</p>
 <p>解码：字节、<strong>字节数组</strong>  —&gt;字符数组、<strong>字符串</strong>      <strong>InputStreamReader</strong>(读取)</p>
 
@@ -895,10 +894,6 @@ OutPutStreamWriter：将Writer转换为OutputStre
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
@@ -1187,11 +1182,11 @@ $(function () {
     
 
     
-    
+
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 
 </html>

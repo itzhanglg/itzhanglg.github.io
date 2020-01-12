@@ -20,7 +20,7 @@ Bu">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>缓冲流(处理流) | FishLeap</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -36,6 +36,9 @@ Bu">
 
 
 <body>
+
+    <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
@@ -351,7 +354,7 @@ Bu">
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -391,6 +394,7 @@ Bu">
               fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
+
         
     </nav>
 
@@ -552,11 +556,6 @@ Bu">
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-10-14
-                </div>
-                
 
                 
                 <div class="info-break-policy">
@@ -587,7 +586,7 @@ Bu">
                 <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ol>
 <li>为了提高数据读写的速度，Java API提供了带缓冲功能的流类，在使用这些流类时，会创建一个内部缓冲区数组，缺省使用8192个字节(8Kb)的缓冲区。</li>
 </ol>
-<p><img src="/2019/10/08/blog016/hexo01.png" alt="default"></p>
+<p><img src="/loading.gif" data-original="/2019/10/08/blog016/hexo01.png" alt="default"></p>
 <ol start="2">
 <li><p>缓冲流要“套接”在相应的节点流之上，根据数据操作单位可以把缓冲流分为：</p>
 <p><code>BufferedInputStream</code> 和 和 <code>BufferedOutputStream</code><br><code>BufferedReader</code> 和 和 <code>BufferedWriter</code></p>
@@ -601,7 +600,7 @@ Bu">
 <li><code>flush()</code>方法的使用：手动将buffer中内容写入文件</li>
 <li>如果是带缓冲区的流对象的<code>close()</code>方法，不但会关闭流，还会在关闭流之前刷新缓冲区，关闭后不能再写出</li>
 </ol>
-<p><img src="/2019/10/08/blog016/hexo02.png" alt="原理"></p>
+<p><img src="/loading.gif" data-original="/2019/10/08/blog016/hexo02.png" alt="原理"></p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 缓冲流的使用(处理流的一种)
  * 1.缓冲流
@@ -1216,10 +1215,6 @@ read()的理解：返回读入的一个字符。如果达到文件末尾，返�
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
@@ -1508,11 +1503,11 @@ $(function () {
     
 
     
-    
+
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
 
 </html>
