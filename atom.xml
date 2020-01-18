@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhangligong.xyz/"/>
-  <updated>2020-01-17T16:05:47.276Z</updated>
+  <updated>2020-01-18T08:36:46.017Z</updated>
   <id>http://zhangligong.xyz/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>推荐资源</title>
-    <link href="http://zhangligong.xyz/2020/01/16/tui-jian-zi-yuan/"/>
-    <id>http://zhangligong.xyz/2020/01/16/tui-jian-zi-yuan/</id>
-    <published>2020-01-16T04:16:16.000Z</published>
-    <updated>2020-01-17T16:05:47.276Z</updated>
+    <link href="http://zhangligong.xyz/2020/01/06/tui-jian-zi-yuan/"/>
+    <id>http://zhangligong.xyz/2020/01/06/tui-jian-zi-yuan/</id>
+    <published>2020-01-06T04:16:16.000Z</published>
+    <updated>2020-01-18T08:36:46.017Z</updated>
     
     <summary type="html">
     
@@ -43,11 +43,11 @@
   </entry>
   
   <entry>
-    <title>vue axios应用</title>
-    <link href="http://zhangligong.xyz/2019/11/24/blog036/"/>
-    <id>http://zhangligong.xyz/2019/11/24/blog036/</id>
-    <published>2019-11-24T07:27:56.000Z</published>
-    <updated>2019-11-24T07:43:06.153Z</updated>
+    <title>Java内存区域</title>
+    <link href="http://zhangligong.xyz/2019/11/26/java-nei-cun-qu-yu/"/>
+    <id>http://zhangligong.xyz/2019/11/26/java-nei-cun-qu-yu/</id>
+    <published>2019-11-26T04:16:16.000Z</published>
+    <updated>2020-01-18T08:58:03.303Z</updated>
     
     <summary type="html">
     
@@ -55,339 +55,25 @@
       
         
         
-          &lt;p&gt;编写小的demo应用axios异步请求.&lt;br&gt;&lt;strong&gt;效果图示:&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;/loading.gif&quot;
+          &lt;p&gt;该篇文章﻿转载于：&lt;a href=&quot;https://snailclimb.gitee.io/javaguide/#/docs/java/jvm/Java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F&quot; target=&quot;_blank&quot;
         
       
     
     </summary>
     
-      <category term="vue" scheme="http://zhangligong.xyz/categories/vue/"/>
+      <category term="Java高级" scheme="http://zhangligong.xyz/categories/Java%E9%AB%98%E7%BA%A7/"/>
     
     
-      <category term="vue" scheme="http://zhangligong.xyz/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue router应用及总结</title>
-    <link href="http://zhangligong.xyz/2019/11/24/blog035/"/>
-    <id>http://zhangligong.xyz/2019/11/24/blog035/</id>
-    <published>2019-11-24T07:26:23.000Z</published>
-    <updated>2019-11-24T07:42:53.553Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;编写一个小的demo，对router基础的应用学习和理解。&lt;br&gt;&lt;strong&gt;效果图示：&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;/loading.gif&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="http://zhangligong.xyz/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="http://zhangligong.xyz/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue组件化编程应用2</title>
-    <link href="http://zhangligong.xyz/2019/11/24/blog034/"/>
-    <id>http://zhangligong.xyz/2019/11/24/blog034/</id>
-    <published>2019-11-24T07:25:14.000Z</published>
-    <updated>2019-11-24T07:42:42.918Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;写几个小案例来理解vue的组件化编程思想,下面是一个demo.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;效果图示:&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;/loading.gif&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="http://zhangligong.xyz/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="http://zhangligong.xyz/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue组件化编程应用</title>
-    <link href="http://zhangligong.xyz/2019/11/24/blog033/"/>
-    <id>http://zhangligong.xyz/2019/11/24/blog033/</id>
-    <published>2019-11-24T07:24:15.000Z</published>
-    <updated>2019-11-24T07:42:33.494Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;写几个小案例来理解vue的组件化编程思想,下面是一个demo.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;效果图示:&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;/loading.gif&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="http://zhangligong.xyz/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="http://zhangligong.xyz/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue组件化编程</title>
-    <link href="http://zhangligong.xyz/2019/11/24/blog032/"/>
-    <id>http://zhangligong.xyz/2019/11/24/blog032/</id>
-    <published>2019-11-24T07:22:57.000Z</published>
-    <updated>2019-11-24T07:42:13.498Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;一-vue项目目录&quot;&gt;&lt;a href=&quot;#一-vue项目目录&quot; class=&quot;headerlink&quot; title=&quot;一:vue项目目录&quot;&gt;&lt;/a&gt;一:vue项目目录&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/loading.gif&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="http://zhangligong.xyz/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="http://zhangligong.xyz/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>npm搭建vue全过程</title>
-    <link href="http://zhangligong.xyz/2019/11/24/blog031/"/>
-    <id>http://zhangligong.xyz/2019/11/24/blog031/</id>
-    <published>2019-11-24T07:21:29.000Z</published>
-    <updated>2019-11-24T07:39:34.245Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;如何在Window下安装node-cnpm，并安装vue-js，创建项目&quot;&gt;&lt;a href=&quot;#如何在Window下安装node-cnpm，并安装vue-js，创建项目&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="http://zhangligong.xyz/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="http://zhangligong.xyz/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue生命周期</title>
-    <link href="http://zhangligong.xyz/2019/11/24/blog030/"/>
-    <id>http://zhangligong.xyz/2019/11/24/blog030/</id>
-    <published>2019-11-24T07:17:04.000Z</published>
-    <updated>2019-11-24T07:39:51.614Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;生命周期图示&quot;&gt;&lt;a href=&quot;#生命周期图示&quot; class=&quot;headerlink&quot; title=&quot;生命周期图示&quot;&gt;&lt;/a&gt;生命周期图示&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/loading.gif&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="http://zhangligong.xyz/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="http://zhangligong.xyz/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue指令</title>
-    <link href="http://zhangligong.xyz/2019/11/24/blog029/"/>
-    <id>http://zhangligong.xyz/2019/11/24/blog029/</id>
-    <published>2019-11-24T07:16:02.000Z</published>
-    <updated>2019-11-24T07:36:47.986Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-常用内置指令&quot;&gt;&lt;a href=&quot;#1-常用内置指令&quot; class=&quot;headerlink&quot; title=&quot;1.常用内置指令&quot;&gt;&lt;/a&gt;1.常用内置指令&lt;/h3&gt;&lt;pre class=&quot; language-java&quot;&gt;&lt;code
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="http://zhangligong.xyz/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="http://zhangligong.xyz/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue基础</title>
-    <link href="http://zhangligong.xyz/2019/11/24/blog028/"/>
-    <id>http://zhangligong.xyz/2019/11/24/blog028/</id>
-    <published>2019-11-24T07:09:10.000Z</published>
-    <updated>2019-11-24T07:36:25.660Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-vue基本使用&quot;&gt;&lt;a href=&quot;#1-vue基本使用&quot; class=&quot;headerlink&quot; title=&quot;1.vue基本使用&quot;&gt;&lt;/a&gt;1.vue基本使用&lt;/h3&gt;&lt;pre class=&quot; language-java&quot;&gt;&lt;code
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="http://zhangligong.xyz/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="http://zhangligong.xyz/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VSCode工具插件推荐</title>
-    <link href="http://zhangligong.xyz/2019/11/13/blog027/"/>
-    <id>http://zhangligong.xyz/2019/11/13/blog027/</id>
-    <published>2019-11-13T15:07:38.000Z</published>
-    <updated>2019-11-13T15:58:20.550Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;一-VSCode简介&quot;&gt;&lt;a href=&quot;#一-VSCode简介&quot; class=&quot;headerlink&quot; title=&quot;一:VSCode简介&quot;&gt;&lt;/a&gt;一:VSCode简介&lt;/h3&gt;&lt;p&gt;VSCode（ Visual Studio
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="http://zhangligong.xyz/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="前端" scheme="http://zhangligong.xyz/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>线程的生命周期,同步,和通信</title>
-    <link href="http://zhangligong.xyz/2019/10/27/blog026/"/>
-    <id>http://zhangligong.xyz/2019/10/27/blog026/</id>
-    <published>2019-10-27T11:56:29.000Z</published>
-    <updated>2019-10-29T15:40:05.067Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;一-线程的生命周期&quot;&gt;&lt;a href=&quot;#一-线程的生命周期&quot; class=&quot;headerlink&quot; title=&quot;一:线程的生命周期&quot;&gt;&lt;/a&gt;一:线程的生命周期&lt;/h3&gt;&lt;h4 id=&quot;1-Thread-State类&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="并发" scheme="http://zhangligong.xyz/categories/%E5%B9%B6%E5%8F%91/"/>
-    
-    
-      <category term="并发" scheme="http://zhangligong.xyz/tags/%E5%B9%B6%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>线程的概念和使用(创建)</title>
-    <link href="http://zhangligong.xyz/2019/10/22/blog025/"/>
-    <id>http://zhangligong.xyz/2019/10/22/blog025/</id>
-    <published>2019-10-22T15:59:31.000Z</published>
-    <updated>2019-10-28T16:03:22.318Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;一-基本概念&quot;&gt;&lt;a href=&quot;#一-基本概念&quot; class=&quot;headerlink&quot; title=&quot;一:基本概念&quot;&gt;&lt;/a&gt;一:基本概念&lt;/h3&gt;&lt;h4 id=&quot;1-程序-进程-线程的理解&quot;&gt;&lt;a href=&quot;#1-程序-进程-线程的理解&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="并发" scheme="http://zhangligong.xyz/categories/%E5%B9%B6%E5%8F%91/"/>
-    
-    
-      <category term="并发" scheme="http://zhangligong.xyz/tags/%E5%B9%B6%E5%8F%91/"/>
+      <category term="Java高级" scheme="http://zhangligong.xyz/tags/Java%E9%AB%98%E7%BA%A7/"/>
     
   </entry>
   
   <entry>
     <title>网络编程</title>
-    <link href="http://zhangligong.xyz/2019/10/20/blog024/"/>
-    <id>http://zhangligong.xyz/2019/10/20/blog024/</id>
-    <published>2019-10-20T14:49:43.000Z</published>
-    <updated>2019-10-20T17:12:05.321Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;一-TCP网络编程&quot;&gt;&lt;a href=&quot;#一-TCP网络编程&quot; class=&quot;headerlink&quot; title=&quot;一:TCP网络编程&quot;&gt;&lt;/a&gt;一:TCP网络编程&lt;/h3&gt;&lt;h4 id=&quot;1-Socket的TCP编程&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="网络" scheme="http://zhangligong.xyz/categories/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-      <category term="网络" scheme="http://zhangligong.xyz/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>网络通信要素</title>
-    <link href="http://zhangligong.xyz/2019/10/20/blog023/"/>
-    <id>http://zhangligong.xyz/2019/10/20/blog023/</id>
-    <published>2019-10-20T10:04:24.000Z</published>
-    <updated>2019-10-20T15:01:14.544Z</updated>
+    <link href="http://zhangligong.xyz/2019/11/19/wang-luo-bian-cheng/"/>
+    <id>http://zhangligong.xyz/2019/11/19/wang-luo-bian-cheng/</id>
+    <published>2019-11-19T04:16:16.000Z</published>
+    <updated>2020-01-18T08:59:04.568Z</updated>
     
     <summary type="html">
     
@@ -402,19 +88,19 @@
     
     </summary>
     
-      <category term="网络" scheme="http://zhangligong.xyz/categories/%E7%BD%91%E7%BB%9C/"/>
+      <category term="Java高级" scheme="http://zhangligong.xyz/categories/Java%E9%AB%98%E7%BA%A7/"/>
     
     
-      <category term="网络" scheme="http://zhangligong.xyz/tags/%E7%BD%91%E7%BB%9C/"/>
+      <category term="Java高级" scheme="http://zhangligong.xyz/tags/Java%E9%AB%98%E7%BA%A7/"/>
     
   </entry>
   
   <entry>
-    <title>NIO.2概念及相关类的使用</title>
-    <link href="http://zhangligong.xyz/2019/10/19/blog022/"/>
-    <id>http://zhangligong.xyz/2019/10/19/blog022/</id>
-    <published>2019-10-19T09:57:55.000Z</published>
-    <updated>2019-10-19T17:02:56.930Z</updated>
+    <title>Java新特性之JDK8</title>
+    <link href="http://zhangligong.xyz/2019/11/12/jdk8/"/>
+    <id>http://zhangligong.xyz/2019/11/12/jdk8/</id>
+    <published>2019-11-12T04:16:16.000Z</published>
+    <updated>2020-01-18T08:50:41.722Z</updated>
     
     <summary type="html">
     
@@ -422,26 +108,25 @@
       
         
         
-          &lt;h3 id=&quot;NIO概述&quot;&gt;&lt;a href=&quot;#NIO概述&quot; class=&quot;headerlink&quot; title=&quot;NIO概述&quot;&gt;&lt;/a&gt;NIO概述&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Java NIO (New IO，Non-Blocking IO)是从Java
+          &lt;h3 id=&quot;一-Java8新特性简介&quot;&gt;&lt;a href=&quot;#一-Java8新特性简介&quot; class=&quot;headerlink&quot; title=&quot;一.Java8新特性简介&quot;&gt;&lt;/a&gt;一.Java8新特性简介&lt;/h3&gt;&lt;p&gt;Java8
         
       
     
     </summary>
     
-      <category term="IO流" scheme="http://zhangligong.xyz/categories/IO%E6%B5%81/"/>
+      <category term="Java高级" scheme="http://zhangligong.xyz/categories/Java%E9%AB%98%E7%BA%A7/"/>
     
     
-      <category term="IO流" scheme="http://zhangligong.xyz/tags/IO%E6%B5%81/"/>
+      <category term="Java高级" scheme="http://zhangligong.xyz/tags/Java%E9%AB%98%E7%BA%A7/"/>
     
   </entry>
   
   <entry>
-    <title>随机存取文件流</title>
-    <link href="http://zhangligong.xyz/2019/10/19/blog021/"/>
-    <id>http://zhangligong.xyz/2019/10/19/blog021/</id>
-    <published>2019-10-19T09:57:22.000Z</published>
-    <updated>2019-10-19T14:20:56.648Z</updated>
+    <title>IO流总结</title>
+    <link href="http://zhangligong.xyz/2019/11/06/io-liu/"/>
+    <id>http://zhangligong.xyz/2019/11/06/io-liu/</id>
+    <published>2019-11-06T04:16:16.000Z</published>
+    <updated>2020-01-18T08:47:55.112Z</updated>
     
     <summary type="html">
     
@@ -449,25 +134,25 @@
       
         
         
-          &lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot;
+          &lt;h3 id=&quot;一-File类&quot;&gt;&lt;a href=&quot;#一-File类&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="IO流" scheme="http://zhangligong.xyz/categories/IO%E6%B5%81/"/>
+      <category term="Java高级" scheme="http://zhangligong.xyz/categories/Java%E9%AB%98%E7%BA%A7/"/>
     
     
-      <category term="IO流" scheme="http://zhangligong.xyz/tags/IO%E6%B5%81/"/>
+      <category term="Java高级" scheme="http://zhangligong.xyz/tags/Java%E9%AB%98%E7%BA%A7/"/>
     
   </entry>
   
   <entry>
-    <title>对象流(处理流)</title>
-    <link href="http://zhangligong.xyz/2019/10/14/blog020/"/>
-    <id>http://zhangligong.xyz/2019/10/14/blog020/</id>
-    <published>2019-10-13T16:47:03.000Z</published>
-    <updated>2019-10-13T17:24:20.663Z</updated>
+    <title>线程总结</title>
+    <link href="http://zhangligong.xyz/2019/11/01/xian-cheng-zong-jie/"/>
+    <id>http://zhangligong.xyz/2019/11/01/xian-cheng-zong-jie/</id>
+    <published>2019-11-01T04:16:16.000Z</published>
+    <updated>2020-01-18T08:43:27.420Z</updated>
     
     <summary type="html">
     
@@ -475,25 +160,25 @@
       
         
         
-          &lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;一-基本概念&quot;&gt;&lt;a href=&quot;#一-基本概念&quot; class=&quot;headerlink&quot; title=&quot;一:基本概念&quot;&gt;&lt;/a&gt;一:基本概念&lt;/h2&gt;&lt;h3 id=&quot;1-程序、进程、线程概念&quot;&gt;&lt;a href=&quot;#1-程序、进程、线程概念&quot;
         
       
     
     </summary>
     
-      <category term="IO流" scheme="http://zhangligong.xyz/categories/IO%E6%B5%81/"/>
+      <category term="Java高级" scheme="http://zhangligong.xyz/categories/Java%E9%AB%98%E7%BA%A7/"/>
     
     
-      <category term="IO流" scheme="http://zhangligong.xyz/tags/IO%E6%B5%81/"/>
+      <category term="Java高级" scheme="http://zhangligong.xyz/tags/Java%E9%AB%98%E7%BA%A7/"/>
     
   </entry>
   
   <entry>
-    <title>其他流(处理流)</title>
-    <link href="http://zhangligong.xyz/2019/10/13/blog019/"/>
-    <id>http://zhangligong.xyz/2019/10/13/blog019/</id>
-    <published>2019-10-13T11:35:00.000Z</published>
-    <updated>2019-10-13T17:26:34.598Z</updated>
+    <title>集合源码学习</title>
+    <link href="http://zhangligong.xyz/2019/10/28/ji-he-yuan-ma/"/>
+    <id>http://zhangligong.xyz/2019/10/28/ji-he-yuan-ma/</id>
+    <published>2019-10-28T04:16:16.000Z</published>
+    <updated>2020-01-18T08:25:40.881Z</updated>
     
     <summary type="html">
     
@@ -501,25 +186,25 @@
       
         
         
-          &lt;h3 id=&quot;标准输入、输出流&quot;&gt;&lt;a href=&quot;#标准输入、输出流&quot; class=&quot;headerlink&quot; title=&quot;标准输入、输出流&quot;&gt;&lt;/a&gt;标准输入、输出流&lt;/h3&gt;&lt;h4 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot;
+          &lt;h3 id=&quot;一-ArrayList&quot;&gt;&lt;a href=&quot;#一-ArrayList&quot; class=&quot;headerlink&quot; title=&quot;一.ArrayList&quot;&gt;&lt;/a&gt;一.ArrayList&lt;/h3&gt;&lt;p&gt;ArrayList
         
       
     
     </summary>
     
-      <category term="IO流" scheme="http://zhangligong.xyz/categories/IO%E6%B5%81/"/>
+      <category term="Java高级" scheme="http://zhangligong.xyz/categories/Java%E9%AB%98%E7%BA%A7/"/>
     
     
-      <category term="IO流" scheme="http://zhangligong.xyz/tags/IO%E6%B5%81/"/>
+      <category term="Java高级" scheme="http://zhangligong.xyz/tags/Java%E9%AB%98%E7%BA%A7/"/>
     
   </entry>
   
   <entry>
-    <title>字符编码</title>
-    <link href="http://zhangligong.xyz/2019/10/13/blog018/"/>
-    <id>http://zhangligong.xyz/2019/10/13/blog018/</id>
-    <published>2019-10-13T11:34:50.000Z</published>
-    <updated>2019-10-13T14:19:14.247Z</updated>
+    <title>集合总结</title>
+    <link href="http://zhangligong.xyz/2019/10/26/ji-he-zong-jie/"/>
+    <id>http://zhangligong.xyz/2019/10/26/ji-he-zong-jie/</id>
+    <published>2019-10-26T04:16:16.000Z</published>
+    <updated>2020-01-18T08:25:54.978Z</updated>
     
     <summary type="html">
     
@@ -527,16 +212,147 @@
       
         
         
-          &lt;h3 id=&quot;编码表由来&quot;&gt;&lt;a href=&quot;#编码表由来&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;一-Java集合框架概述&quot;&gt;&lt;a href=&quot;#一-Java集合框架概述&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="IO流" scheme="http://zhangligong.xyz/categories/IO%E6%B5%81/"/>
+      <category term="Java高级" scheme="http://zhangligong.xyz/categories/Java%E9%AB%98%E7%BA%A7/"/>
     
     
-      <category term="IO流" scheme="http://zhangligong.xyz/tags/IO%E6%B5%81/"/>
+      <category term="Java高级" scheme="http://zhangligong.xyz/tags/Java%E9%AB%98%E7%BA%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础之常用类</title>
+    <link href="http://zhangligong.xyz/2019/10/12/commonclass/"/>
+    <id>http://zhangligong.xyz/2019/10/12/commonclass/</id>
+    <published>2019-10-12T04:16:16.000Z</published>
+    <updated>2020-01-18T08:26:25.564Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一-字符串相关的类&quot;&gt;&lt;a href=&quot;#一-字符串相关的类&quot; class=&quot;headerlink&quot; title=&quot;一.字符串相关的类&quot;&gt;&lt;/a&gt;一.字符串相关的类&lt;/h2&gt;&lt;h3 id=&quot;1-String及常用方法&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Java基础" scheme="http://zhangligong.xyz/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Java基础" scheme="http://zhangligong.xyz/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础之异常处理</title>
+    <link href="http://zhangligong.xyz/2019/10/10/exception/"/>
+    <id>http://zhangligong.xyz/2019/10/10/exception/</id>
+    <published>2019-10-10T04:16:16.000Z</published>
+    <updated>2020-01-18T08:26:40.950Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;span style=&quot;color:red;&quot;&gt;世界上最遥远的距离，是我在if
+        
+      
+    
+    </summary>
+    
+      <category term="Java基础" scheme="http://zhangligong.xyz/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Java基础" scheme="http://zhangligong.xyz/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础之面向对象</title>
+    <link href="http://zhangligong.xyz/2019/10/08/object/"/>
+    <id>http://zhangligong.xyz/2019/10/08/object/</id>
+    <published>2019-10-08T04:16:16.000Z</published>
+    <updated>2020-01-18T08:26:55.181Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;一-面向对象&quot;&gt;&lt;a href=&quot;#一-面向对象&quot; class=&quot;headerlink&quot; title=&quot;一.面向对象&quot;&gt;&lt;/a&gt;一.面向对象&lt;/h3&gt;&lt;h4 id=&quot;1-面向过程与面向对象&quot;&gt;&lt;a href=&quot;#1-面向过程与面向对象&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java基础" scheme="http://zhangligong.xyz/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Java基础" scheme="http://zhangligong.xyz/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础之数组</title>
+    <link href="http://zhangligong.xyz/2019/10/06/array/"/>
+    <id>http://zhangligong.xyz/2019/10/06/array/</id>
+    <published>2019-10-06T04:16:16.000Z</published>
+    <updated>2020-01-18T08:23:36.036Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;一-概述&quot;&gt;&lt;a href=&quot;#一-概述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java基础" scheme="http://zhangligong.xyz/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Java基础" scheme="http://zhangligong.xyz/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础之语法</title>
+    <link href="http://zhangligong.xyz/2019/10/01/grammar/"/>
+    <id>http://zhangligong.xyz/2019/10/01/grammar/</id>
+    <published>2019-10-01T04:16:16.000Z</published>
+    <updated>2020-01-18T08:23:50.672Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;一-概述&quot;&gt;&lt;a href=&quot;#一-概述&quot; class=&quot;headerlink&quot; title=&quot;一.概述&quot;&gt;&lt;/a&gt;一.概述&lt;/h3&gt;&lt;h4 id=&quot;1-java语言概述&quot;&gt;&lt;a href=&quot;#1-java语言概述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java基础" scheme="http://zhangligong.xyz/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Java基础" scheme="http://zhangligong.xyz/tags/Java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
