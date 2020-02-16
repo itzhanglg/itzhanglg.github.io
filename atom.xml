@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhangligong.xyz/"/>
-  <updated>2020-01-18T08:36:46.017Z</updated>
+  <updated>2020-02-16T11:16:52.762Z</updated>
   <id>http://zhangligong.xyz/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GitHub上重要的几个搜索技巧</title>
+    <link href="http://zhangligong.xyz/2020/01/08/github-sou-suo-ji-qiao/"/>
+    <id>http://zhangligong.xyz/2020/01/08/github-sou-suo-ji-qiao/</id>
+    <published>2020-01-08T10:53:30.000Z</published>
+    <updated>2020-02-16T11:16:52.762Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;GitHub 作为目前广大程序员最大的游乐场,怎么在Github上搜索优秀的项目就显得尤为重要.下面是在Github上快速找到自己需要的开源项目的几个搜索技巧:&lt;/p&gt;
+&lt;h3 id=&quot;一-搜热门&quot;&gt;&lt;a href=&quot;#一-搜热门&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="github" scheme="http://zhangligong.xyz/categories/github/"/>
+    
+    
+      <category term="github" scheme="http://zhangligong.xyz/tags/github/"/>
+    
+  </entry>
   
   <entry>
     <title>推荐资源</title>
